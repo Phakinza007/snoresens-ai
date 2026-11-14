@@ -63,3 +63,8 @@ coverage/
 !/results/segmentation-debug/full-breathing-micro20.json
 !/results/segmentation-debug/micro20-report-desktop.png
 !/results/segmentation-debug/micro20-zoom-mobile.png
+
+# Deployment provenance is generated after the source commit.
+/deployments/snoresens-vercel/dist/build-info.json
+!/results/segmentation-debug/risk-checklist-browser-checks.json
+!/results/segmentation-debug/risk-checklist-mobile.png
