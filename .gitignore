@@ -63,3 +63,7 @@ coverage/
 !/results/segmentation-debug/full-breathing-micro20.json
 !/results/segmentation-debug/micro20-report-desktop.png
 !/results/segmentation-debug/micro20-zoom-mobile.png
+
+# Generated native installation archives
+*.ipa
+*.xcarchive/

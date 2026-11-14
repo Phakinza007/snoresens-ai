@@ -4,7 +4,7 @@
 
 ## iPhone
 
-ดู [คู่มือติดตั้งฟรีผ่าน Personal Team](IOS_INSTALL_TH.md) จากโฟลเดอร์นี้:
+ใช้ [AltServer/AltStore Classic โดยไม่ต้องลง Xcode](ALTSTORE_INSTALL_TH.md) หรือดู [คู่มือติดตั้งฟรีผ่าน Xcode Personal Team](IOS_INSTALL_TH.md) จากโฟลเดอร์นี้:
 
 ```sh
 ./setup.sh
