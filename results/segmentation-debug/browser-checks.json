@@ -1,0 +1,10 @@
+{
+  "parity": true,
+  "rows": 450,
+  "events": 10,
+  "snore_seconds": 12.4,
+  "errors": [],
+  "zoom": true,
+  "reanalysis": true,
+  "persistence": true
+}

@@ -1,0 +1,96 @@
+{
+  "source": "IISc Coswara prompted sound recordings",
+  "class_0": "breathing or counting speech",
+  "class_1": "prompted cough recording",
+  "selection": "loudest one-second window per recording",
+  "quality_filter": "manual quality 1 or 2",
+  "split": "participant-disjoint train/validation/test",
+  "recordings": 186,
+  "people": 32,
+  "train": 104,
+  "validation": 40,
+  "test": 42,
+  "threshold": 0.5100000000000002,
+  "test_confusion_matrix": [
+    [
+      27,
+      1
+    ],
+    [
+      2,
+      12
+    ]
+  ],
+  "test_report": {
+    "0": {
+      "precision": 0.9310344827586207,
+      "recall": 0.9642857142857143,
+      "f1-score": 0.9473684210526315,
+      "support": 28.0
+    },
+    "1": {
+      "precision": 0.9230769230769231,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.8888888888888888,
+      "support": 14.0
+    },
+    "accuracy": 0.9285714285714286,
+    "macro avg": {
+      "precision": 0.927055702917772,
+      "recall": 0.9107142857142857,
+      "f1-score": 0.9181286549707601,
+      "support": 42.0
+    },
+    "weighted avg": {
+      "precision": 0.9283819628647214,
+      "recall": 0.9285714285714286,
+      "f1-score": 0.9278752436647173,
+      "support": 42.0
+    }
+  },
+  "limitations": "Prompted clips, no cough timestamps, no snore or bedside negatives; not a validated cough counter or health diagnosis.",
+  "test_files": [
+    "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/breathing-deep.wav",
+    "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/breathing-shallow.wav",
+    "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/cough-heavy.wav",
+    "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/cough-shallow.wav",
+    "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/counting-fast.wav",
+    "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/counting-normal.wav",
+    "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/breathing-deep.wav",
+    "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/breathing-shallow.wav",
+    "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/cough-heavy.wav",
+    "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/cough-shallow.wav",
+    "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/counting-fast.wav",
+    "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/counting-normal.wav",
+    "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/breathing-deep.wav",
+    "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/breathing-shallow.wav",
+    "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/cough-heavy.wav",
+    "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/cough-shallow.wav",
+    "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/counting-fast.wav",
+    "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/counting-normal.wav",
+    "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/breathing-deep.wav",
+    "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/breathing-shallow.wav",
+    "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/cough-heavy.wav",
+    "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/cough-shallow.wav",
+    "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/counting-fast.wav",
+    "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/counting-normal.wav",
+    "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/breathing-deep.wav",
+    "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/breathing-shallow.wav",
+    "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/cough-heavy.wav",
+    "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/cough-shallow.wav",
+    "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/counting-fast.wav",
+    "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/counting-normal.wav",
+    "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/breathing-deep.wav",
+    "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/breathing-shallow.wav",
+    "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/cough-heavy.wav",
+    "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/cough-shallow.wav",
+    "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/counting-fast.wav",
+    "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/counting-normal.wav",
+    "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/breathing-deep.wav",
+    "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/breathing-shallow.wav",
+    "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/cough-heavy.wav",
+    "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/cough-shallow.wav",
+    "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/counting-fast.wav",
+    "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/counting-normal.wav"
+  ]
+}

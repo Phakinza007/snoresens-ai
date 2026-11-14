@@ -1,0 +1,1118 @@
+[
+  {
+    "file": "data/coswara/Extracted_data/20200505/0HIgO2EhOOW1msCbEw1kC8Qsx6D3/breathing-deep.wav",
+    "person_id": "0HIgO2EhOOW1msCbEw1kC8Qsx6D3",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0HIgO2EhOOW1msCbEw1kC8Qsx6D3/breathing-shallow.wav",
+    "person_id": "0HIgO2EhOOW1msCbEw1kC8Qsx6D3",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0HIgO2EhOOW1msCbEw1kC8Qsx6D3/cough-heavy.wav",
+    "person_id": "0HIgO2EhOOW1msCbEw1kC8Qsx6D3",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0HIgO2EhOOW1msCbEw1kC8Qsx6D3/cough-shallow.wav",
+    "person_id": "0HIgO2EhOOW1msCbEw1kC8Qsx6D3",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0HIgO2EhOOW1msCbEw1kC8Qsx6D3/counting-fast.wav",
+    "person_id": "0HIgO2EhOOW1msCbEw1kC8Qsx6D3",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0HIgO2EhOOW1msCbEw1kC8Qsx6D3/counting-normal.wav",
+    "person_id": "0HIgO2EhOOW1msCbEw1kC8Qsx6D3",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0Ha52POVIxTKEPqI1eGpIoMHUd52/breathing-deep.wav",
+    "person_id": "0Ha52POVIxTKEPqI1eGpIoMHUd52",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0Ha52POVIxTKEPqI1eGpIoMHUd52/cough-heavy.wav",
+    "person_id": "0Ha52POVIxTKEPqI1eGpIoMHUd52",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0Ha52POVIxTKEPqI1eGpIoMHUd52/cough-shallow.wav",
+    "person_id": "0Ha52POVIxTKEPqI1eGpIoMHUd52",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0Ha52POVIxTKEPqI1eGpIoMHUd52/counting-fast.wav",
+    "person_id": "0Ha52POVIxTKEPqI1eGpIoMHUd52",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/0Ha52POVIxTKEPqI1eGpIoMHUd52/counting-normal.wav",
+    "person_id": "0Ha52POVIxTKEPqI1eGpIoMHUd52",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/5xZE8Rq5oihwEixr96NmUmiy7zk1/breathing-deep.wav",
+    "person_id": "5xZE8Rq5oihwEixr96NmUmiy7zk1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/5xZE8Rq5oihwEixr96NmUmiy7zk1/breathing-shallow.wav",
+    "person_id": "5xZE8Rq5oihwEixr96NmUmiy7zk1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/5xZE8Rq5oihwEixr96NmUmiy7zk1/cough-heavy.wav",
+    "person_id": "5xZE8Rq5oihwEixr96NmUmiy7zk1",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/5xZE8Rq5oihwEixr96NmUmiy7zk1/cough-shallow.wav",
+    "person_id": "5xZE8Rq5oihwEixr96NmUmiy7zk1",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/5xZE8Rq5oihwEixr96NmUmiy7zk1/counting-fast.wav",
+    "person_id": "5xZE8Rq5oihwEixr96NmUmiy7zk1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/5xZE8Rq5oihwEixr96NmUmiy7zk1/counting-normal.wav",
+    "person_id": "5xZE8Rq5oihwEixr96NmUmiy7zk1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/WSNcPIb74jUzQoVPA7RGZKWtMrM2/breathing-deep.wav",
+    "person_id": "WSNcPIb74jUzQoVPA7RGZKWtMrM2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/WSNcPIb74jUzQoVPA7RGZKWtMrM2/breathing-shallow.wav",
+    "person_id": "WSNcPIb74jUzQoVPA7RGZKWtMrM2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/WSNcPIb74jUzQoVPA7RGZKWtMrM2/cough-heavy.wav",
+    "person_id": "WSNcPIb74jUzQoVPA7RGZKWtMrM2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/WSNcPIb74jUzQoVPA7RGZKWtMrM2/cough-shallow.wav",
+    "person_id": "WSNcPIb74jUzQoVPA7RGZKWtMrM2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/WSNcPIb74jUzQoVPA7RGZKWtMrM2/counting-fast.wav",
+    "person_id": "WSNcPIb74jUzQoVPA7RGZKWtMrM2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/WSNcPIb74jUzQoVPA7RGZKWtMrM2/counting-normal.wav",
+    "person_id": "WSNcPIb74jUzQoVPA7RGZKWtMrM2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XKn4doW0qvfsdM1VskIcJSPEhyz2/breathing-deep.wav",
+    "person_id": "XKn4doW0qvfsdM1VskIcJSPEhyz2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XKn4doW0qvfsdM1VskIcJSPEhyz2/breathing-shallow.wav",
+    "person_id": "XKn4doW0qvfsdM1VskIcJSPEhyz2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XKn4doW0qvfsdM1VskIcJSPEhyz2/cough-heavy.wav",
+    "person_id": "XKn4doW0qvfsdM1VskIcJSPEhyz2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XKn4doW0qvfsdM1VskIcJSPEhyz2/cough-shallow.wav",
+    "person_id": "XKn4doW0qvfsdM1VskIcJSPEhyz2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XKn4doW0qvfsdM1VskIcJSPEhyz2/counting-fast.wav",
+    "person_id": "XKn4doW0qvfsdM1VskIcJSPEhyz2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XKn4doW0qvfsdM1VskIcJSPEhyz2/counting-normal.wav",
+    "person_id": "XKn4doW0qvfsdM1VskIcJSPEhyz2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XOfL6t78sMQHHG9VppmLHnaawvg2/breathing-deep.wav",
+    "person_id": "XOfL6t78sMQHHG9VppmLHnaawvg2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XOfL6t78sMQHHG9VppmLHnaawvg2/breathing-shallow.wav",
+    "person_id": "XOfL6t78sMQHHG9VppmLHnaawvg2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XOfL6t78sMQHHG9VppmLHnaawvg2/cough-heavy.wav",
+    "person_id": "XOfL6t78sMQHHG9VppmLHnaawvg2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XOfL6t78sMQHHG9VppmLHnaawvg2/cough-shallow.wav",
+    "person_id": "XOfL6t78sMQHHG9VppmLHnaawvg2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XOfL6t78sMQHHG9VppmLHnaawvg2/counting-fast.wav",
+    "person_id": "XOfL6t78sMQHHG9VppmLHnaawvg2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/XOfL6t78sMQHHG9VppmLHnaawvg2/counting-normal.wav",
+    "person_id": "XOfL6t78sMQHHG9VppmLHnaawvg2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/jNkULA6oqOO3RwpvkA1OZ61hhi02/breathing-deep.wav",
+    "person_id": "jNkULA6oqOO3RwpvkA1OZ61hhi02",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/jNkULA6oqOO3RwpvkA1OZ61hhi02/breathing-shallow.wav",
+    "person_id": "jNkULA6oqOO3RwpvkA1OZ61hhi02",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/jNkULA6oqOO3RwpvkA1OZ61hhi02/cough-heavy.wav",
+    "person_id": "jNkULA6oqOO3RwpvkA1OZ61hhi02",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/jNkULA6oqOO3RwpvkA1OZ61hhi02/cough-shallow.wav",
+    "person_id": "jNkULA6oqOO3RwpvkA1OZ61hhi02",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/jNkULA6oqOO3RwpvkA1OZ61hhi02/counting-fast.wav",
+    "person_id": "jNkULA6oqOO3RwpvkA1OZ61hhi02",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/jNkULA6oqOO3RwpvkA1OZ61hhi02/counting-normal.wav",
+    "person_id": "jNkULA6oqOO3RwpvkA1OZ61hhi02",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/3kUDnCX53IYe2LGsEDHwuXE8bWP2/breathing-deep.wav",
+    "person_id": "3kUDnCX53IYe2LGsEDHwuXE8bWP2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/3kUDnCX53IYe2LGsEDHwuXE8bWP2/breathing-shallow.wav",
+    "person_id": "3kUDnCX53IYe2LGsEDHwuXE8bWP2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/3kUDnCX53IYe2LGsEDHwuXE8bWP2/cough-heavy.wav",
+    "person_id": "3kUDnCX53IYe2LGsEDHwuXE8bWP2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/3kUDnCX53IYe2LGsEDHwuXE8bWP2/cough-shallow.wav",
+    "person_id": "3kUDnCX53IYe2LGsEDHwuXE8bWP2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/3kUDnCX53IYe2LGsEDHwuXE8bWP2/counting-fast.wav",
+    "person_id": "3kUDnCX53IYe2LGsEDHwuXE8bWP2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/3kUDnCX53IYe2LGsEDHwuXE8bWP2/counting-normal.wav",
+    "person_id": "3kUDnCX53IYe2LGsEDHwuXE8bWP2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/4FJNm8IlWySNOgF0Jyyvw6beLxF2/breathing-deep.wav",
+    "person_id": "4FJNm8IlWySNOgF0Jyyvw6beLxF2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/4FJNm8IlWySNOgF0Jyyvw6beLxF2/breathing-shallow.wav",
+    "person_id": "4FJNm8IlWySNOgF0Jyyvw6beLxF2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/4FJNm8IlWySNOgF0Jyyvw6beLxF2/cough-heavy.wav",
+    "person_id": "4FJNm8IlWySNOgF0Jyyvw6beLxF2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/4FJNm8IlWySNOgF0Jyyvw6beLxF2/cough-shallow.wav",
+    "person_id": "4FJNm8IlWySNOgF0Jyyvw6beLxF2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/4FJNm8IlWySNOgF0Jyyvw6beLxF2/counting-fast.wav",
+    "person_id": "4FJNm8IlWySNOgF0Jyyvw6beLxF2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/4FJNm8IlWySNOgF0Jyyvw6beLxF2/counting-normal.wav",
+    "person_id": "4FJNm8IlWySNOgF0Jyyvw6beLxF2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/C7Q6zEVYAZR7yC0DeDQVIYqfWCi2/breathing-deep.wav",
+    "person_id": "C7Q6zEVYAZR7yC0DeDQVIYqfWCi2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/C7Q6zEVYAZR7yC0DeDQVIYqfWCi2/breathing-shallow.wav",
+    "person_id": "C7Q6zEVYAZR7yC0DeDQVIYqfWCi2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/C7Q6zEVYAZR7yC0DeDQVIYqfWCi2/cough-heavy.wav",
+    "person_id": "C7Q6zEVYAZR7yC0DeDQVIYqfWCi2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/C7Q6zEVYAZR7yC0DeDQVIYqfWCi2/cough-shallow.wav",
+    "person_id": "C7Q6zEVYAZR7yC0DeDQVIYqfWCi2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/C7Q6zEVYAZR7yC0DeDQVIYqfWCi2/counting-fast.wav",
+    "person_id": "C7Q6zEVYAZR7yC0DeDQVIYqfWCi2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/C7Q6zEVYAZR7yC0DeDQVIYqfWCi2/counting-normal.wav",
+    "person_id": "C7Q6zEVYAZR7yC0DeDQVIYqfWCi2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/IkwAlxsvmhXfpi9seBDU6rksY7C2/breathing-deep.wav",
+    "person_id": "IkwAlxsvmhXfpi9seBDU6rksY7C2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/IkwAlxsvmhXfpi9seBDU6rksY7C2/breathing-shallow.wav",
+    "person_id": "IkwAlxsvmhXfpi9seBDU6rksY7C2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/IkwAlxsvmhXfpi9seBDU6rksY7C2/cough-heavy.wav",
+    "person_id": "IkwAlxsvmhXfpi9seBDU6rksY7C2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/IkwAlxsvmhXfpi9seBDU6rksY7C2/cough-shallow.wav",
+    "person_id": "IkwAlxsvmhXfpi9seBDU6rksY7C2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/IkwAlxsvmhXfpi9seBDU6rksY7C2/counting-fast.wav",
+    "person_id": "IkwAlxsvmhXfpi9seBDU6rksY7C2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/IkwAlxsvmhXfpi9seBDU6rksY7C2/counting-normal.wav",
+    "person_id": "IkwAlxsvmhXfpi9seBDU6rksY7C2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LGiTXwr1u8YlLpxd1nvTlhGCZJn2/breathing-deep.wav",
+    "person_id": "LGiTXwr1u8YlLpxd1nvTlhGCZJn2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LGiTXwr1u8YlLpxd1nvTlhGCZJn2/cough-heavy.wav",
+    "person_id": "LGiTXwr1u8YlLpxd1nvTlhGCZJn2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LGiTXwr1u8YlLpxd1nvTlhGCZJn2/cough-shallow.wav",
+    "person_id": "LGiTXwr1u8YlLpxd1nvTlhGCZJn2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LGiTXwr1u8YlLpxd1nvTlhGCZJn2/counting-fast.wav",
+    "person_id": "LGiTXwr1u8YlLpxd1nvTlhGCZJn2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LGiTXwr1u8YlLpxd1nvTlhGCZJn2/counting-normal.wav",
+    "person_id": "LGiTXwr1u8YlLpxd1nvTlhGCZJn2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LyCZNUHMdqQtXwEox0mUHngB1Gx1/breathing-deep.wav",
+    "person_id": "LyCZNUHMdqQtXwEox0mUHngB1Gx1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LyCZNUHMdqQtXwEox0mUHngB1Gx1/breathing-shallow.wav",
+    "person_id": "LyCZNUHMdqQtXwEox0mUHngB1Gx1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LyCZNUHMdqQtXwEox0mUHngB1Gx1/cough-heavy.wav",
+    "person_id": "LyCZNUHMdqQtXwEox0mUHngB1Gx1",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LyCZNUHMdqQtXwEox0mUHngB1Gx1/cough-shallow.wav",
+    "person_id": "LyCZNUHMdqQtXwEox0mUHngB1Gx1",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LyCZNUHMdqQtXwEox0mUHngB1Gx1/counting-fast.wav",
+    "person_id": "LyCZNUHMdqQtXwEox0mUHngB1Gx1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/LyCZNUHMdqQtXwEox0mUHngB1Gx1/counting-normal.wav",
+    "person_id": "LyCZNUHMdqQtXwEox0mUHngB1Gx1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Ruz6RW2jXUVDXkYX7GsYC3hzagn1/breathing-deep.wav",
+    "person_id": "Ruz6RW2jXUVDXkYX7GsYC3hzagn1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Ruz6RW2jXUVDXkYX7GsYC3hzagn1/breathing-shallow.wav",
+    "person_id": "Ruz6RW2jXUVDXkYX7GsYC3hzagn1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Ruz6RW2jXUVDXkYX7GsYC3hzagn1/cough-heavy.wav",
+    "person_id": "Ruz6RW2jXUVDXkYX7GsYC3hzagn1",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Ruz6RW2jXUVDXkYX7GsYC3hzagn1/cough-shallow.wav",
+    "person_id": "Ruz6RW2jXUVDXkYX7GsYC3hzagn1",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Ruz6RW2jXUVDXkYX7GsYC3hzagn1/counting-fast.wav",
+    "person_id": "Ruz6RW2jXUVDXkYX7GsYC3hzagn1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Ruz6RW2jXUVDXkYX7GsYC3hzagn1/counting-normal.wav",
+    "person_id": "Ruz6RW2jXUVDXkYX7GsYC3hzagn1",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/aLeBZp6qmVVooQsTvP1ptnQk9IS2/cough-heavy.wav",
+    "person_id": "aLeBZp6qmVVooQsTvP1ptnQk9IS2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/aLeBZp6qmVVooQsTvP1ptnQk9IS2/cough-shallow.wav",
+    "person_id": "aLeBZp6qmVVooQsTvP1ptnQk9IS2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/aLeBZp6qmVVooQsTvP1ptnQk9IS2/counting-fast.wav",
+    "person_id": "aLeBZp6qmVVooQsTvP1ptnQk9IS2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/aLeBZp6qmVVooQsTvP1ptnQk9IS2/counting-normal.wav",
+    "person_id": "aLeBZp6qmVVooQsTvP1ptnQk9IS2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/cSBabP68WbPG0xQs8NnlgtVw5R42/breathing-deep.wav",
+    "person_id": "cSBabP68WbPG0xQs8NnlgtVw5R42",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/cSBabP68WbPG0xQs8NnlgtVw5R42/breathing-shallow.wav",
+    "person_id": "cSBabP68WbPG0xQs8NnlgtVw5R42",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/cSBabP68WbPG0xQs8NnlgtVw5R42/cough-heavy.wav",
+    "person_id": "cSBabP68WbPG0xQs8NnlgtVw5R42",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/cSBabP68WbPG0xQs8NnlgtVw5R42/cough-shallow.wav",
+    "person_id": "cSBabP68WbPG0xQs8NnlgtVw5R42",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/cSBabP68WbPG0xQs8NnlgtVw5R42/counting-fast.wav",
+    "person_id": "cSBabP68WbPG0xQs8NnlgtVw5R42",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/cSBabP68WbPG0xQs8NnlgtVw5R42/counting-normal.wav",
+    "person_id": "cSBabP68WbPG0xQs8NnlgtVw5R42",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/pBB2aZFbLCMky5VPRAoWIClKN2Y2/breathing-deep.wav",
+    "person_id": "pBB2aZFbLCMky5VPRAoWIClKN2Y2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/pBB2aZFbLCMky5VPRAoWIClKN2Y2/breathing-shallow.wav",
+    "person_id": "pBB2aZFbLCMky5VPRAoWIClKN2Y2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/pBB2aZFbLCMky5VPRAoWIClKN2Y2/cough-heavy.wav",
+    "person_id": "pBB2aZFbLCMky5VPRAoWIClKN2Y2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/pBB2aZFbLCMky5VPRAoWIClKN2Y2/cough-shallow.wav",
+    "person_id": "pBB2aZFbLCMky5VPRAoWIClKN2Y2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/pBB2aZFbLCMky5VPRAoWIClKN2Y2/counting-fast.wav",
+    "person_id": "pBB2aZFbLCMky5VPRAoWIClKN2Y2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/pBB2aZFbLCMky5VPRAoWIClKN2Y2/counting-normal.wav",
+    "person_id": "pBB2aZFbLCMky5VPRAoWIClKN2Y2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/qZEBUZAYCHhWEWXUeOGrLFhaZCW2/breathing-deep.wav",
+    "person_id": "qZEBUZAYCHhWEWXUeOGrLFhaZCW2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/qZEBUZAYCHhWEWXUeOGrLFhaZCW2/breathing-shallow.wav",
+    "person_id": "qZEBUZAYCHhWEWXUeOGrLFhaZCW2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/qZEBUZAYCHhWEWXUeOGrLFhaZCW2/cough-heavy.wav",
+    "person_id": "qZEBUZAYCHhWEWXUeOGrLFhaZCW2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/qZEBUZAYCHhWEWXUeOGrLFhaZCW2/cough-shallow.wav",
+    "person_id": "qZEBUZAYCHhWEWXUeOGrLFhaZCW2",
+    "label": 1,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/qZEBUZAYCHhWEWXUeOGrLFhaZCW2/counting-fast.wav",
+    "person_id": "qZEBUZAYCHhWEWXUeOGrLFhaZCW2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/qZEBUZAYCHhWEWXUeOGrLFhaZCW2/counting-normal.wav",
+    "person_id": "qZEBUZAYCHhWEWXUeOGrLFhaZCW2",
+    "label": 0,
+    "split": "train"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/6T43bddKoKfG7MwnJWvrPZSsyrc2/cough-heavy.wav",
+    "person_id": "6T43bddKoKfG7MwnJWvrPZSsyrc2",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/6T43bddKoKfG7MwnJWvrPZSsyrc2/cough-shallow.wav",
+    "person_id": "6T43bddKoKfG7MwnJWvrPZSsyrc2",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/6T43bddKoKfG7MwnJWvrPZSsyrc2/counting-fast.wav",
+    "person_id": "6T43bddKoKfG7MwnJWvrPZSsyrc2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/6T43bddKoKfG7MwnJWvrPZSsyrc2/counting-normal.wav",
+    "person_id": "6T43bddKoKfG7MwnJWvrPZSsyrc2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/HmLWj3LIICf3jJshJCvZPdw7S1I2/breathing-deep.wav",
+    "person_id": "HmLWj3LIICf3jJshJCvZPdw7S1I2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/HmLWj3LIICf3jJshJCvZPdw7S1I2/breathing-shallow.wav",
+    "person_id": "HmLWj3LIICf3jJshJCvZPdw7S1I2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/HmLWj3LIICf3jJshJCvZPdw7S1I2/cough-heavy.wav",
+    "person_id": "HmLWj3LIICf3jJshJCvZPdw7S1I2",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/HmLWj3LIICf3jJshJCvZPdw7S1I2/cough-shallow.wav",
+    "person_id": "HmLWj3LIICf3jJshJCvZPdw7S1I2",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/HmLWj3LIICf3jJshJCvZPdw7S1I2/counting-fast.wav",
+    "person_id": "HmLWj3LIICf3jJshJCvZPdw7S1I2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/HmLWj3LIICf3jJshJCvZPdw7S1I2/counting-normal.wav",
+    "person_id": "HmLWj3LIICf3jJshJCvZPdw7S1I2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/U5bTmSt9PRfWHiGleINUHMl8cg13/breathing-deep.wav",
+    "person_id": "U5bTmSt9PRfWHiGleINUHMl8cg13",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/U5bTmSt9PRfWHiGleINUHMl8cg13/breathing-shallow.wav",
+    "person_id": "U5bTmSt9PRfWHiGleINUHMl8cg13",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/U5bTmSt9PRfWHiGleINUHMl8cg13/cough-heavy.wav",
+    "person_id": "U5bTmSt9PRfWHiGleINUHMl8cg13",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/U5bTmSt9PRfWHiGleINUHMl8cg13/cough-shallow.wav",
+    "person_id": "U5bTmSt9PRfWHiGleINUHMl8cg13",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/U5bTmSt9PRfWHiGleINUHMl8cg13/counting-fast.wav",
+    "person_id": "U5bTmSt9PRfWHiGleINUHMl8cg13",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/U5bTmSt9PRfWHiGleINUHMl8cg13/counting-normal.wav",
+    "person_id": "U5bTmSt9PRfWHiGleINUHMl8cg13",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/yT9Pq9LwzFalmb7PBeWKoIoUcng1/breathing-deep.wav",
+    "person_id": "yT9Pq9LwzFalmb7PBeWKoIoUcng1",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/yT9Pq9LwzFalmb7PBeWKoIoUcng1/breathing-shallow.wav",
+    "person_id": "yT9Pq9LwzFalmb7PBeWKoIoUcng1",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/yT9Pq9LwzFalmb7PBeWKoIoUcng1/cough-heavy.wav",
+    "person_id": "yT9Pq9LwzFalmb7PBeWKoIoUcng1",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/yT9Pq9LwzFalmb7PBeWKoIoUcng1/cough-shallow.wav",
+    "person_id": "yT9Pq9LwzFalmb7PBeWKoIoUcng1",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/yT9Pq9LwzFalmb7PBeWKoIoUcng1/counting-fast.wav",
+    "person_id": "yT9Pq9LwzFalmb7PBeWKoIoUcng1",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/yT9Pq9LwzFalmb7PBeWKoIoUcng1/counting-normal.wav",
+    "person_id": "yT9Pq9LwzFalmb7PBeWKoIoUcng1",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/8e6tYVdZj2btq3rYpi9zsy5VujF3/breathing-deep.wav",
+    "person_id": "8e6tYVdZj2btq3rYpi9zsy5VujF3",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/8e6tYVdZj2btq3rYpi9zsy5VujF3/breathing-shallow.wav",
+    "person_id": "8e6tYVdZj2btq3rYpi9zsy5VujF3",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/8e6tYVdZj2btq3rYpi9zsy5VujF3/cough-heavy.wav",
+    "person_id": "8e6tYVdZj2btq3rYpi9zsy5VujF3",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/8e6tYVdZj2btq3rYpi9zsy5VujF3/cough-shallow.wav",
+    "person_id": "8e6tYVdZj2btq3rYpi9zsy5VujF3",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/8e6tYVdZj2btq3rYpi9zsy5VujF3/counting-fast.wav",
+    "person_id": "8e6tYVdZj2btq3rYpi9zsy5VujF3",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/8e6tYVdZj2btq3rYpi9zsy5VujF3/counting-normal.wav",
+    "person_id": "8e6tYVdZj2btq3rYpi9zsy5VujF3",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/KmMFugVd4Pa4fZW9FqWFcHBVovf2/breathing-deep.wav",
+    "person_id": "KmMFugVd4Pa4fZW9FqWFcHBVovf2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/KmMFugVd4Pa4fZW9FqWFcHBVovf2/breathing-shallow.wav",
+    "person_id": "KmMFugVd4Pa4fZW9FqWFcHBVovf2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/KmMFugVd4Pa4fZW9FqWFcHBVovf2/cough-heavy.wav",
+    "person_id": "KmMFugVd4Pa4fZW9FqWFcHBVovf2",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/KmMFugVd4Pa4fZW9FqWFcHBVovf2/cough-shallow.wav",
+    "person_id": "KmMFugVd4Pa4fZW9FqWFcHBVovf2",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/KmMFugVd4Pa4fZW9FqWFcHBVovf2/counting-fast.wav",
+    "person_id": "KmMFugVd4Pa4fZW9FqWFcHBVovf2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/KmMFugVd4Pa4fZW9FqWFcHBVovf2/counting-normal.wav",
+    "person_id": "KmMFugVd4Pa4fZW9FqWFcHBVovf2",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RFqBDNt9sLR9PxvBliE1JhFVzK42/breathing-deep.wav",
+    "person_id": "RFqBDNt9sLR9PxvBliE1JhFVzK42",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RFqBDNt9sLR9PxvBliE1JhFVzK42/breathing-shallow.wav",
+    "person_id": "RFqBDNt9sLR9PxvBliE1JhFVzK42",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RFqBDNt9sLR9PxvBliE1JhFVzK42/cough-heavy.wav",
+    "person_id": "RFqBDNt9sLR9PxvBliE1JhFVzK42",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RFqBDNt9sLR9PxvBliE1JhFVzK42/cough-shallow.wav",
+    "person_id": "RFqBDNt9sLR9PxvBliE1JhFVzK42",
+    "label": 1,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RFqBDNt9sLR9PxvBliE1JhFVzK42/counting-fast.wav",
+    "person_id": "RFqBDNt9sLR9PxvBliE1JhFVzK42",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RFqBDNt9sLR9PxvBliE1JhFVzK42/counting-normal.wav",
+    "person_id": "RFqBDNt9sLR9PxvBliE1JhFVzK42",
+    "label": 0,
+    "split": "validation"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/breathing-deep.wav",
+    "person_id": "GBZ88OAxQfg6NBTxjDRI0Pf59mq1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/breathing-shallow.wav",
+    "person_id": "GBZ88OAxQfg6NBTxjDRI0Pf59mq1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/cough-heavy.wav",
+    "person_id": "GBZ88OAxQfg6NBTxjDRI0Pf59mq1",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/cough-shallow.wav",
+    "person_id": "GBZ88OAxQfg6NBTxjDRI0Pf59mq1",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/counting-fast.wav",
+    "person_id": "GBZ88OAxQfg6NBTxjDRI0Pf59mq1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/counting-normal.wav",
+    "person_id": "GBZ88OAxQfg6NBTxjDRI0Pf59mq1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/breathing-deep.wav",
+    "person_id": "sxkvX8kn2eQnE8pbiKR58Ruea3n2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/breathing-shallow.wav",
+    "person_id": "sxkvX8kn2eQnE8pbiKR58Ruea3n2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/cough-heavy.wav",
+    "person_id": "sxkvX8kn2eQnE8pbiKR58Ruea3n2",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/cough-shallow.wav",
+    "person_id": "sxkvX8kn2eQnE8pbiKR58Ruea3n2",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/counting-fast.wav",
+    "person_id": "sxkvX8kn2eQnE8pbiKR58Ruea3n2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/counting-normal.wav",
+    "person_id": "sxkvX8kn2eQnE8pbiKR58Ruea3n2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/breathing-deep.wav",
+    "person_id": "Gs2gwBq34aMMglNC9jqGHS3ZzIs1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/breathing-shallow.wav",
+    "person_id": "Gs2gwBq34aMMglNC9jqGHS3ZzIs1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/cough-heavy.wav",
+    "person_id": "Gs2gwBq34aMMglNC9jqGHS3ZzIs1",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/cough-shallow.wav",
+    "person_id": "Gs2gwBq34aMMglNC9jqGHS3ZzIs1",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/counting-fast.wav",
+    "person_id": "Gs2gwBq34aMMglNC9jqGHS3ZzIs1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/counting-normal.wav",
+    "person_id": "Gs2gwBq34aMMglNC9jqGHS3ZzIs1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/breathing-deep.wav",
+    "person_id": "NqXT0llYhqhv9usc7uEPUKfonRD2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/breathing-shallow.wav",
+    "person_id": "NqXT0llYhqhv9usc7uEPUKfonRD2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/cough-heavy.wav",
+    "person_id": "NqXT0llYhqhv9usc7uEPUKfonRD2",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/cough-shallow.wav",
+    "person_id": "NqXT0llYhqhv9usc7uEPUKfonRD2",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/counting-fast.wav",
+    "person_id": "NqXT0llYhqhv9usc7uEPUKfonRD2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/counting-normal.wav",
+    "person_id": "NqXT0llYhqhv9usc7uEPUKfonRD2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/breathing-deep.wav",
+    "person_id": "RP28VzHbG0crJB2RnboqUaM9SRm1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/breathing-shallow.wav",
+    "person_id": "RP28VzHbG0crJB2RnboqUaM9SRm1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/cough-heavy.wav",
+    "person_id": "RP28VzHbG0crJB2RnboqUaM9SRm1",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/cough-shallow.wav",
+    "person_id": "RP28VzHbG0crJB2RnboqUaM9SRm1",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/counting-fast.wav",
+    "person_id": "RP28VzHbG0crJB2RnboqUaM9SRm1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/counting-normal.wav",
+    "person_id": "RP28VzHbG0crJB2RnboqUaM9SRm1",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/breathing-deep.wav",
+    "person_id": "awro2Lz4F9SgVweiUzROf1IE8GK2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/breathing-shallow.wav",
+    "person_id": "awro2Lz4F9SgVweiUzROf1IE8GK2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/cough-heavy.wav",
+    "person_id": "awro2Lz4F9SgVweiUzROf1IE8GK2",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/cough-shallow.wav",
+    "person_id": "awro2Lz4F9SgVweiUzROf1IE8GK2",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/counting-fast.wav",
+    "person_id": "awro2Lz4F9SgVweiUzROf1IE8GK2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/counting-normal.wav",
+    "person_id": "awro2Lz4F9SgVweiUzROf1IE8GK2",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/breathing-deep.wav",
+    "person_id": "uHPhyLsj5eYghJQOYj7iXa0fyOE3",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/breathing-shallow.wav",
+    "person_id": "uHPhyLsj5eYghJQOYj7iXa0fyOE3",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/cough-heavy.wav",
+    "person_id": "uHPhyLsj5eYghJQOYj7iXa0fyOE3",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/cough-shallow.wav",
+    "person_id": "uHPhyLsj5eYghJQOYj7iXa0fyOE3",
+    "label": 1,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/counting-fast.wav",
+    "person_id": "uHPhyLsj5eYghJQOYj7iXa0fyOE3",
+    "label": 0,
+    "split": "test"
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/counting-normal.wav",
+    "person_id": "uHPhyLsj5eYghJQOYj7iXa0fyOE3",
+    "label": 0,
+    "split": "test"
+  }
+]

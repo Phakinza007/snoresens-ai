@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-14",
+  "snore": {
+    "status": "Cannot reproduce original test evaluation from current local evidence",
+    "model_files_present": [
+      "yamnet_base.tflite",
+      "snore_head.keras",
+      "snore_score_head.keras",
+      "snore_score_head.tflite"
+    ],
+    "dataset_991_clips_found": false,
+    "test_files_manifest_present": false,
+    "seed_in_current_train_script": 42,
+    "missing": [
+      "Original labeled snoring dataset/version",
+      "Saved original test file list and audio hashes",
+      "Frozen original preprocessing/split provenance"
+    ],
+    "note": "Seed 42 alone does not prove original file ordering or exact original split. Current train.py metric schema also differs from saved metrics.json. Downloading a current copy would not by itself verify the original split."
+  },
+  "cough": {
+    "status": "Reevaluated existing TFLite on matching saved 42-file test list",
+    "samples": 186,
+    "people": 32,
+    "train": 104,
+    "validation": 40,
+    "test": 42,
+    "exact_test_path_list_matches": true,
+    "person_sets_disjoint": true,
+    "source_audio_hashes_recorded_now": true,
+    "original_audio_hashes_available": false
+  },
+  "artifact_sha256_before": {
+    "metrics.json": "fc64e395097802113d0622a5cdbfd4eb47387544b2894bdf154f4159d8866d94",
+    "cough_score_head.keras": "cc4a148586a91c9efc416cd2b6f45f4c87ebf113796dd691f6d32908206ee9d4",
+    "mobile_metrics.json": "0d3627b8726a7754407a20838c20610dcf1cefa6596a434e4960f36ac33ce2aa",
+    "snore_score_head.keras": "26cec0d3c2226eaec90767e36d6f1f76d1220625419ae8f37ee5780a57bc599b",
+    "snore_head.keras": "80c85b23af1ac153a594db1565a4a1d6bb9f8e07a96da99229178422a28cf694",
+    "cough_metrics.json": "d76c746bcbf0f95c84a6868834e66c5a379a9fb05cf24f990f30dd818eb4b92f",
+    "snore_score_head.tflite": "d9e7b456fee3148d267d3cf7d5225a9cb45fd82a45bec70fa2bfadbbe52363ae",
+    "cough_score_head.tflite": "e3449b519b871f33f89978c1833584750b316e8227b00780fd9a5dd339995a6c",
+    "yamnet_base.tflite": "10c95ea3eb9a7bb4cb8bddf6feb023250381008177ac162ce169694d05c317de"
+  },
+  "model_artifacts_unchanged": true
+}

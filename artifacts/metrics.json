@@ -1,0 +1,47 @@
+{
+  "source": "tareqkhanemu/snoring",
+  "samples": 991,
+  "train": 693,
+  "validation": 149,
+  "test": 149,
+  "threshold": 0.36000000000000015,
+  "auc": 1.0,
+  "confusion_matrix": [
+    [
+      74,
+      0
+    ],
+    [
+      0,
+      75
+    ]
+  ],
+  "report": {
+    "0": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 74.0
+    },
+    "1": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 75.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 149.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 149.0
+    }
+  },
+  "caveat": "Random clip split. Source person and recording IDs unavailable."
+}

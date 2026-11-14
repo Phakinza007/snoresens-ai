@@ -1,0 +1,52 @@
+{
+  "source_url": "https://snoresens-ai-int182.vercel.app",
+  "date": "2026-11-14",
+  "images": [
+    {
+      "file": "desktop/02-report.png",
+      "title": "รายงานผลเสียงเดโม 45 วินาที"
+    },
+    {
+      "file": "desktop/01-home.png",
+      "title": "หน้าหลักเว็บและผลล่าสุด"
+    },
+    {
+      "file": "desktop/03-history.png",
+      "title": "ประวัติจากเสียงตัวอย่างสองไฟล์"
+    },
+    {
+      "file": "mobile/01-home.png",
+      "title": "หน้าหลักบนมือถือ"
+    },
+    {
+      "file": "mobile/02-report-summary.png",
+      "title": "สรุปผลการวิเคราะห์"
+    },
+    {
+      "file": "mobile/03-report-playback.png",
+      "title": "Timeline และการย้อนฟัง"
+    },
+    {
+      "file": "mobile/04-history.png",
+      "title": "ประวัติบนมือถือ"
+    },
+    {
+      "file": "mobile/05-profile.png",
+      "title": "โปรไฟล์และข้อมูลส่วนตัว"
+    },
+    {
+      "file": "mobile/06-prepare.png",
+      "title": "คำแนะนำก่อนบันทึก"
+    },
+    {
+      "file": "mobile/07-consent.png",
+      "title": "ยินยอมก่อนใช้ไมโครโฟน"
+    },
+    {
+      "file": "mobile/08-recording.png",
+      "title": "หน้าบันทึกจากไมโครโฟนจำลอง"
+    }
+  ],
+  "javascript_errors": [],
+  "audio_post_requests": []
+}

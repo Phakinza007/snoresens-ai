@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict');
+const {snoreScore} = require('../web/measurements.js');
+const recording = (duration, snore) => ({summary:{recording_seconds:duration,detected_snore_seconds:snore}});
+assert.equal(snoreScore(recording(100,20)),80);
+assert.equal(snoreScore(recording(100,0)),100);
+assert.equal(snoreScore(recording(100,100)),0);
+assert.equal(snoreScore(recording(150.435,131)),12.9);
+assert.equal(snoreScore(recording(120,30)),snoreScore(recording(240,60)));
+for(const item of [{},recording(0,0),recording(-1,0),recording(100,-1),recording(100,101),recording(100,null),recording(null,0),recording(NaN,0),recording(100,Infinity)])assert.equal(snoreScore(item),null);
+console.log('Snore duration score checks passed');

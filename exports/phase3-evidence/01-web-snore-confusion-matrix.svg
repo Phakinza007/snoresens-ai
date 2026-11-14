@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="486pt" viewBox="0 0 864 486" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-14T14:38:41.845570</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 486 
+L 864 486 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 308.34 388.8 
+L 590.22 388.8 
+L 590.22 106.92 
+L 308.34 106.92 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#p3a34e814fd)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAYgAAAGHCAYAAACqFcXzAAAFcElEQVR4nO3XsQnCQACG0cTKFZzHERzDORzFIRzJKrVVApKAxVekU/C96uCa45qPf5xez3kA3k6Xu5+A1WE7AMAngQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAJJAAJAEAoAkEAAkgQAgCQQASSAASAIBQBIIAAQCgP0sCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAApPF4vs19Bf9nely//QT4GRYEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAKAJBAAJIEAIAkEAEkgAEgCAUASCACSQACQBAIAgQBgPwsCgCQQACSBACAJBABJIABIAgFAEggAkkAAkAQCgCQQACSBACAJBABJIABIAgFAEggAkkAAkAQCgCQQACSBACAJBABJIABIAgFAEggAkkAAkAQCgCQQACSBACAJBABJIABIAgFAEggAkkAAkAQCgCQQACSBAGAoCwIpC9BKtutnAAAAAElFTkSuQmCC" id="image1a7ee454f8" transform="scale(1 -1) translate(0 -281.52)" x="308.16" y="-107.28" width="282.24" height="281.52"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="me7ccdacf6f" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#me7ccdacf6f" x="378.81" y="388.8" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="378.81" y="406.436719" transform="rotate(-0 378.81 406.436719)">Non-snore</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#me7ccdacf6f" x="519.75" y="388.8" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="519.75" y="406.436719" transform="rotate(-0 519.75 406.436719)">Snore</text>
+     </g>
+    </g>
+    <g id="text_3">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="449.28" y="432.437813" transform="rotate(-0 449.28 432.437813)">Predicted class</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="m65fdc59cd1" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m65fdc59cd1" x="308.34" y="177.39" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end" x="301.34" y="182.708359" transform="rotate(-0 301.34 182.708359)">Non-snore</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m65fdc59cd1" x="308.34" y="318.33" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end" x="301.34" y="323.648359" transform="rotate(-0 301.34 323.648359)">Snore</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="214.220156" y="247.86" transform="rotate(-90 214.220156 247.86)">Actual class</text>
+    </g>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="378.81" y="186.481797" transform="rotate(-0 378.81 186.481797)">74</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0e1633" x="519.75" y="186.481797" transform="rotate(-0 519.75 186.481797)">0</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0e1633" x="378.81" y="327.421797" transform="rotate(-0 378.81 327.421797)">3</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="519.75" y="327.421797" transform="rotate(-0 519.75 327.421797)">72</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle" x="449.28" y="88.92" transform="rotate(-0 449.28 88.92)">Web model: 146 / 149 correct (97.99%)</text>
+   </g>
+  </g>
+  <g id="text_12">
+   <text style="font-weight: 700; font-size: 21px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0e1633" x="43.2" y="34.02" transform="rotate(-0 43.2 34.02)">SANOR / SNORE CLASSIFICATION</text>
+  </g>
+  <g id="text_13">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; fill: #444444" transform="translate(43.2 444.866719)">Saved evaluation • test n = 149 • threshold = 0.63</text>
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; fill: #444444" transform="translate(43.2 459.27)">Random clip split; no participant IDs or bedroom validation.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3a34e814fd">
+   <rect x="308.34" y="106.92" width="281.88" height="281.88"/>
+  </clipPath>
+ </defs>
+</svg>

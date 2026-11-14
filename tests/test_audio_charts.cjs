@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict');
+const {sampledPitch,spectralColor}=require('../web/audio-charts.js');
+const rows=Array.from({length:28800},(_,i)=>({start_seconds:i,pitch_hz:i%100<50?200:null}));
+const points=sampledPitch(rows,28800,600);
+assert.equal(points.length,600);
+assert(points.every(point=>point.y===null || point.y===200));
+assert.deepEqual(sampledPitch([],0),[]);
+assert.deepEqual(spectralColor(null),[237,240,233]);
+assert.deepEqual(spectralColor(-120),spectralColor(-110));
+assert.deepEqual(spectralColor(0),spectralColor(-20));
+assert(spectralColor(-60).every(value=>Number.isInteger(value) && value>=0 && value<=255));
+console.log('Audio chart calculation tests passed');

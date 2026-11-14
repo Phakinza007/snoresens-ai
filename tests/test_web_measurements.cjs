@@ -1,0 +1,15 @@
+const assert = require('node:assert/strict');
+const {timelineBins, comparisonValues, toCsv} = require('../web/measurements.js');
+const rows = Array.from({length: 28800}, (_, i) => ({start_seconds:i, duration_seconds:1, prediction:i === 1 ? 'snore':'non_snore', rms_dbfs:i === 1 ? -30:null}));
+const bins = timelineBins(rows, 28800, 700);
+assert.equal(bins.length, 700);
+assert.equal(bins[0].snore, true);
+assert.equal(bins[0].max, -30);
+assert.equal(bins[1].max, null);
+assert.equal(timelineBins([], 0).length, 0);
+const item = {summary:{recording_seconds:1800, detected_snore_seconds:300, snore_event_count:6, snore_percent_of_recording:16.67, snore_median_rms_dbfs:null}};
+assert.equal(comparisonValues(item).minutes_per_hour, 10);
+assert.equal(comparisonValues(item).dominant_hz, null);
+assert.match(toCsv([{file:'=bad,"name', value:null}]), /'=bad,""name/);
+assert.match(toCsv([{file:'a\nb'}]), /"a\nb"/);
+console.log('Web measurement tests passed');

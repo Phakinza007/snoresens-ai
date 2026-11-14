@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-14",
+  "model": "Existing cough TFLite head",
+  "threshold": 0.5100000000000002,
+  "threshold_policy": "Frozen saved validation threshold; no fitting or tuning",
+  "train": 104,
+  "validation": 40,
+  "test": 42,
+  "people": 32,
+  "samples": 186,
+  "test_list_matches_saved": true,
+  "confusion_matrix": [
+    [
+      27,
+      1
+    ],
+    [
+      2,
+      12
+    ]
+  ],
+  "report": {
+    "0": {
+      "precision": 0.9310344827586207,
+      "recall": 0.9642857142857143,
+      "f1-score": 0.9473684210526315,
+      "support": 28.0
+    },
+    "1": {
+      "precision": 0.9230769230769231,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.8888888888888888,
+      "support": 14.0
+    },
+    "accuracy": 0.9285714285714286,
+    "macro avg": {
+      "precision": 0.927055702917772,
+      "recall": 0.9107142857142857,
+      "f1-score": 0.9181286549707601,
+      "support": 42.0
+    },
+    "weighted avg": {
+      "precision": 0.9283819628647214,
+      "recall": 0.9285714285714286,
+      "f1-score": 0.9278752436647173,
+      "support": 42.0
+    }
+  },
+  "auc": 0.9540816326530612,
+  "matches_saved_confusion_matrix": true,
+  "limitation": "Prompted cough vs breathing/counting, participant-disjoint split; no bedroom/snore negatives or event timestamps."
+}

@@ -1,0 +1,132 @@
+{
+  "timeline": [
+    {
+      "start_seconds": 0,
+      "duration_seconds": 1.0,
+      "rms_dbfs": -20.0,
+      "prediction": "snore"
+    },
+    {
+      "start_seconds": 1,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 2,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 3,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 4,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 5,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 6,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 7,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 8,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 9,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 10,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 11,
+      "duration_seconds": 1.0,
+      "rms_dbfs": -20.0,
+      "prediction": "snore"
+    },
+    {
+      "start_seconds": 12,
+      "duration_seconds": 1.0,
+      "rms_dbfs": null,
+      "prediction": "non_snore"
+    },
+    {
+      "start_seconds": 13,
+      "duration_seconds": 1.0,
+      "rms_dbfs": -20.0,
+      "prediction": "snore"
+    }
+  ],
+  "events": [
+    {
+      "start_seconds": 0.0,
+      "end_seconds": 1.0,
+      "duration_seconds": 1.0
+    },
+    {
+      "start_seconds": 11.0,
+      "end_seconds": 12.0,
+      "duration_seconds": 1.0
+    },
+    {
+      "start_seconds": 13.0,
+      "end_seconds": 14.0,
+      "duration_seconds": 1.0
+    }
+  ],
+  "expected": {
+    "schema_version": 1,
+    "config": {
+      "quiet_threshold_dbfs": -45.0,
+      "min_quiet_gap_seconds": 10.0,
+      "window_seconds": 1,
+      "frequency_method": "mean-removed Hann rFFT magnitude; DC excluded; next-power-of-two padding",
+      "rhythm_method": "consecutive snoring-segment start intervals; population std"
+    },
+    "quiet_gaps": [
+      {
+        "start_seconds": 1.0,
+        "end_seconds": 11.0,
+        "duration_seconds": 10.0
+      }
+    ],
+    "frequency_summary": {
+      "median_dominant_frequency_hz": null,
+      "median_spectral_centroid_hz": null
+    },
+    "rhythm_summary": {
+      "interval_count": 2,
+      "mean_start_interval_seconds": 6.5,
+      "std_start_interval_seconds": 4.5,
+      "interval_cv": 0.692308
+    }
+  }
+}

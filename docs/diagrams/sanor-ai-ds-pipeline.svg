@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1390" viewBox="0 0 1000 1390">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#526575"/></marker></defs>
+<rect width="1000" height="1390" fill="white"/>
+<text x="50" y="55" font-family="Arial" font-size="34" font-weight="bold" fill="#142a38">Sanor Improved AI / DS Pipeline</text>
+<text x="50" y="92" font-family="Arial" font-size="21" fill="#526575">Training and inference stay separate; clinical validation remains pending</text>
+<text x="50" y="140" font-family="Arial" font-size="24" font-weight="bold" fill="#142a38">OFFLINE DATA AND TRAINING</text>
+<text x="530" y="140" font-family="Arial" font-size="24" font-weight="bold" fill="#142a38">LOCAL AUDIO INFERENCE</text>
+<rect x="50" y="166" width="420" height="108" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="68" y="198" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">1  Dataset sources</text>
+<text x="68" y="228" font-family="Arial" font-size="22" fill="#293e4b">Kaggle and Coswara available</text>
+<text x="68" y="255" font-family="Arial" font-size="22" fill="#293e4b">Clinical / event data pending</text>
+<path d="M260 274 L260 298" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="50" y="306" width="420" height="108" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="68" y="338" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">2  Quality and labels</text>
+<text x="68" y="368" font-family="Arial" font-size="22" fill="#293e4b">Audio checks, provenance</text>
+<text x="68" y="395" font-family="Arial" font-size="22" fill="#293e4b">Timestamp / reference labels</text>
+<path d="M260 414 L260 438" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="50" y="446" width="420" height="108" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="68" y="478" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">3  Split before windowing</text>
+<text x="68" y="508" font-family="Arial" font-size="22" fill="#293e4b">Group by person and night</text>
+<text x="68" y="535" font-family="Arial" font-size="22" fill="#293e4b">Legacy Kaggle uses clip split</text>
+<path d="M260 554 L260 578" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="50" y="586" width="420" height="108" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="68" y="618" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">4  Prepare and extract</text>
+<text x="68" y="648" font-family="Arial" font-size="22" fill="#293e4b">Mono 16 kHz + windows</text>
+<text x="68" y="675" font-family="Arial" font-size="22" fill="#293e4b">Frozen YAMNet / MFCC / DSP</text>
+<path d="M260 694 L260 718" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="50" y="726" width="420" height="108" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="68" y="758" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">5  Fit on training only</text>
+<text x="68" y="788" font-family="Arial" font-size="22" fill="#293e4b">Small snore and cough heads</text>
+<text x="68" y="815" font-family="Arial" font-size="22" fill="#293e4b">Apnea baseline: code only</text>
+<path d="M260 834 L260 858" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="50" y="866" width="420" height="108" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="68" y="898" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">6  Select and evaluate</text>
+<text x="68" y="928" font-family="Arial" font-size="22" fill="#293e4b">Validation selects thresholds</text>
+<text x="68" y="955" font-family="Arial" font-size="22" fill="#293e4b">Held-out test, error analysis</text>
+<path d="M260 974 L260 998" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="50" y="1006" width="420" height="108" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="68" y="1038" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">7  Export and version</text>
+<text x="68" y="1068" font-family="Arial" font-size="22" fill="#293e4b">TFLite + thresholds + metrics</text>
+<text x="68" y="1095" font-family="Arial" font-size="22" fill="#293e4b">Complete provenance next</text>
+<path d="M260 1114 L260 1138" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<rect x="50" y="1146" width="420" height="108" rx="12" fill="#f1f4f7" stroke="#8b98a5" stroke-width="2" stroke-dasharray="9 6"/>
+<text x="68" y="1178" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">8  External validation</text>
+<text x="68" y="1208" font-family="Arial" font-size="22" fill="#293e4b">New people, devices, bedrooms</text>
+<text x="68" y="1235" font-family="Arial" font-size="22" fill="#293e4b">Reference RR and false alarms</text>
+<rect x="530" y="166" width="420" height="108" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="548" y="198" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">1  Receive recording</text>
+<text x="548" y="228" font-family="Arial" font-size="22" fill="#293e4b">WAV upload / local recorder</text>
+<text x="548" y="255" font-family="Arial" font-size="22" fill="#293e4b">30-minute recording parts</text>
+<path d="M740 274 L740 298" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="530" y="306" width="420" height="108" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="548" y="338" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">2  Validate and preprocess</text>
+<text x="548" y="368" font-family="Arial" font-size="22" fill="#293e4b">File limits and signal checks</text>
+<text x="548" y="395" font-family="Arial" font-size="22" fill="#293e4b">Mono 16 kHz; retain true time</text>
+<path d="M740 414 L740 438" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="530" y="446" width="420" height="108" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="548" y="478" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">3  Shared model pass</text>
+<text x="548" y="508" font-family="Arial" font-size="22" fill="#293e4b">YAMNet once per 1 s window</text>
+<text x="548" y="535" font-family="Arial" font-size="22" fill="#293e4b">521 scores -&gt; small heads</text>
+<path d="M740 554 L740 578" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="530" y="586" width="420" height="108" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="548" y="618" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">4  Sound review + DSP</text>
+<text x="548" y="648" font-family="Arial" font-size="22" fill="#293e4b">Snore / cough / speech / breath</text>
+<text x="548" y="675" font-family="Arial" font-size="22" fill="#293e4b">RMS, pitch, spectrum, rhythm</text>
+<path d="M740 694 L740 718" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="530" y="726" width="420" height="108" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="548" y="758" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">5  Breathing estimate</text>
+<text x="548" y="788" font-family="Arial" font-size="22" fill="#293e4b">30 s envelope-cycle estimate</text>
+<text x="548" y="815" font-family="Arial" font-size="22" fill="#293e4b">Gate quality and mixed sound</text>
+<path d="M740 834 L740 858" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="530" y="866" width="420" height="108" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="548" y="898" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">6  Abstain when unclear</text>
+<text x="548" y="928" font-family="Arial" font-size="22" fill="#293e4b">Null with explicit reason</text>
+<text x="548" y="955" font-family="Arial" font-size="22" fill="#293e4b">Coverage is reported</text>
+<path d="M740 974 L740 998" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="530" y="1006" width="420" height="108" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="548" y="1038" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">7  Aggregate results</text>
+<text x="548" y="1068" font-family="Arial" font-size="22" fill="#293e4b">Segments and window statuses</text>
+<text x="548" y="1095" font-family="Arial" font-size="22" fill="#293e4b">Do not invent file continuity</text>
+<path d="M740 1114 L740 1138" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="530" y="1146" width="420" height="108" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="548" y="1178" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">8  Review and export</text>
+<text x="548" y="1208" font-family="Arial" font-size="22" fill="#293e4b">Timeline, playback, filters</text>
+<text x="548" y="1235" font-family="Arial" font-size="22" fill="#293e4b">JSON / CSV; no health score</text>
+<text x="50" y="1330" font-family="Arial" font-size="22" fill="#526575">Green: implemented   Amber: experimental / incomplete   Dashed: planned</text>
+<path d="M470 1060 L500 1060 L500 500 L520 500" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)"/></svg>

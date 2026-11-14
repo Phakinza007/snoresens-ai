@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="486pt" viewBox="0 0 864 486" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-14T14:38:41.906736</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 486 
+L 864 486 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 122.447647 374.22 
+L 380.027647 374.22 
+L 380.027647 116.64 
+L 122.447647 116.64 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#p6756f1a62b)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAWYAAAFmCAYAAABeJjAWAAAFJ0lEQVR4nO3WwQnCUBBAwRhsID0JKcdaPNiNPektl0Bs4kMeYaaAZdnDY2/b/jsmuIDl8Tp7BRhiHjMGgFGEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkg5r6s77N3gCG+n6dLcgk+ZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGiBFmgBhhBogRZoAYYQaIEWaAGGEGmFr+6tEKnTklogYAAAAASUVORK5CYII=" id="imagea9afc9d2d2" transform="scale(1 -1) translate(0 -257.76)" x="122.4" y="-116.64" width="257.76" height="257.76"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m1bf00e56eb" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m1bf00e56eb" x="186.842647" y="374.22" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="186.842647" y="391.856719" transform="rotate(-0 186.842647 391.856719)">Non-snore</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m1bf00e56eb" x="315.632647" y="374.22" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="315.632647" y="391.856719" transform="rotate(-0 315.632647 391.856719)">Snore</text>
+     </g>
+    </g>
+    <g id="text_3">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="251.237647" y="417.857813" transform="rotate(-0 251.237647 417.857813)">Predicted class</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="m9613f60823" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m9613f60823" x="122.447647" y="181.035" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end" x="115.447647" y="186.353359" transform="rotate(-0 115.447647 186.353359)">Non-snore</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m9613f60823" x="122.447647" y="309.825" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end" x="115.447647" y="315.143359" transform="rotate(-0 115.447647 315.143359)">Snore</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="28.327803" y="245.43" transform="rotate(-90 28.327803 245.43)">Actual class</text>
+    </g>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="186.842647" y="190.126797" transform="rotate(-0 186.842647 190.126797)">74</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0e1633" x="315.632647" y="190.126797" transform="rotate(-0 315.632647 190.126797)">0</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0e1633" x="186.842647" y="318.916797" transform="rotate(-0 186.842647 318.916797)">0</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="315.632647" y="318.916797" transform="rotate(-0 315.632647 318.916797)">75</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle" x="251.237647" y="98.64" transform="rotate(-0 251.237647 98.64)">Embedding head · 100.00%</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_3">
+    <path d="M 553.092353 374.22 
+L 810.672353 374.22 
+L 810.672353 116.64 
+L 553.092353 116.64 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#p585d34db2c)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAWYAAAFmCAYAAABeJjAWAAAFKUlEQVR4nO3WQQ2DUBBAQegJC9VTCZVRHUhBBJJ64twTNfETXsiMgM1mDy87H7/vOcENPN/b1SvAEI8xYwAYRZgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWKEGSBGmAFihBkgRpgBYoQZIEaYAWLm5bWeVy8BIxz7xyG5BR8zQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMAPECDNAjDADxAgzQIwwA8QIM0CMMANMLX/eBguOg93D5gAAAABJRU5ErkJggg==" id="image2961e0745d" transform="scale(1 -1) translate(0 -257.76)" x="552.96" y="-116.64" width="257.76" height="257.76"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m1bf00e56eb" x="617.487353" y="374.22" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="617.487353" y="391.856719" transform="rotate(-0 617.487353 391.856719)">Non-snore</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m1bf00e56eb" x="746.277353" y="374.22" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="746.277353" y="391.856719" transform="rotate(-0 746.277353 391.856719)">Snore</text>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="681.882353" y="417.857813" transform="rotate(-0 681.882353 417.857813)">Predicted class</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m9613f60823" x="553.092353" y="181.035" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end" x="546.092353" y="186.353359" transform="rotate(-0 546.092353 186.353359)">Non-snore</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m9613f60823" x="553.092353" y="309.825" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end" x="546.092353" y="315.143359" transform="rotate(-0 546.092353 315.143359)">Snore</text>
+     </g>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="458.972509" y="245.43" transform="rotate(-90 458.972509 245.43)">Actual class</text>
+    </g>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="617.487353" y="190.126797" transform="rotate(-0 617.487353 190.126797)">74</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0e1633" x="746.277353" y="190.126797" transform="rotate(-0 746.277353 190.126797)">0</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0e1633" x="617.487353" y="318.916797" transform="rotate(-0 617.487353 318.916797)">3</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="746.277353" y="318.916797" transform="rotate(-0 746.277353 318.916797)">72</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle" x="681.882353" y="98.64" transform="rotate(-0 681.882353 98.64)">Score head / web · 97.99%</text>
+   </g>
+  </g>
+  <g id="text_23">
+   <text style="font-weight: 700; font-size: 23px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0e1633" x="43.2" y="34.02" transform="rotate(-0 43.2 34.02)">SAVED SNORE MODEL COMPARISON</text>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; fill: #444444" transform="translate(43.2 444.866719)">Each saved report: test n = 149 (74 non-snore / 75 snore).</text>
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; fill: #444444" transform="translate(43.2 459.27)">Original split manifest is missing: exact sample identity across models is not independently verified.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6756f1a62b">
+   <rect x="122.447647" y="116.64" width="257.58" height="257.58"/>
+  </clipPath>
+  <clipPath id="p585d34db2c">
+   <rect x="553.092353" y="116.64" width="257.58" height="257.58"/>
+  </clipPath>
+ </defs>
+</svg>

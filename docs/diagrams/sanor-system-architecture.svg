@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#526575"/></marker></defs>
+<rect width="1000" height="1200" fill="white"/>
+<text x="50" y="55" font-family="Arial" font-size="34" font-weight="bold" fill="#142a38">Sanor Local System Architecture</text>
+<text x="50" y="92" font-family="Arial" font-size="21" fill="#526575">Current web path, experimental analysis, and mobile path under development</text>
+<rect x="50" y="140" width="420" height="120" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="68" y="172" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Browser client</text>
+<text x="68" y="202" font-family="Arial" font-size="22" fill="#293e4b">Upload / recorder / playback</text>
+<text x="68" y="229" font-family="Arial" font-size="22" fill="#293e4b">Charts, filtering, JSON / CSV</text>
+<rect x="530" y="140" width="420" height="120" rx="12" fill="#f1f4f7" stroke="#8b98a5" stroke-width="2" stroke-dasharray="9 6"/>
+<text x="548" y="172" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Flutter client</text>
+<text x="548" y="202" font-family="Arial" font-size="22" fill="#293e4b">Source exists; build pending</text>
+<text x="548" y="229" font-family="Arial" font-size="22" fill="#293e4b">Android / iOS device checks</text>
+<rect x="50" y="330" width="420" height="120" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="68" y="362" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Local HTTP API</text>
+<text x="68" y="392" font-family="Arial" font-size="22" fill="#293e4b">127.0.0.1:8765</text>
+<text x="68" y="419" font-family="Arial" font-size="22" fill="#293e4b">Analyze / session / model status</text>
+<rect x="530" y="330" width="420" height="120" rx="12" fill="#f1f4f7" stroke="#8b98a5" stroke-width="2" stroke-dasharray="9 6"/>
+<text x="548" y="362" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Mobile on-device inference</text>
+<text x="548" y="392" font-family="Arial" font-size="22" fill="#293e4b">TFLite base + snore head</text>
+<text x="548" y="419" font-family="Arial" font-size="22" fill="#293e4b">Feature parity still pending</text>
+<rect x="50" y="520" width="420" height="120" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="68" y="552" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Python analysis worker</text>
+<text x="68" y="582" font-family="Arial" font-size="22" fill="#293e4b">predict.py + TFLite runtime</text>
+<text x="68" y="609" font-family="Arial" font-size="22" fill="#293e4b">Audio patterns and details</text>
+<rect x="530" y="520" width="420" height="120" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="548" y="552" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Versioned artifacts</text>
+<text x="548" y="582" font-family="Arial" font-size="22" fill="#293e4b">YAMNet + snore / cough heads</text>
+<text x="548" y="609" font-family="Arial" font-size="22" fill="#293e4b">Thresholds and model metrics</text>
+<rect x="50" y="710" width="420" height="120" rx="12" fill="#fff6e7" stroke="#bb8736" stroke-width="2" />
+<text x="68" y="742" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Experimental sleep audio</text>
+<text x="68" y="772" font-family="Arial" font-size="22" fill="#293e4b">Multi-type review segments</text>
+<text x="68" y="799" font-family="Arial" font-size="22" fill="#293e4b">Gated breathing estimate</text>
+<rect x="530" y="710" width="420" height="120" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="548" y="742" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Local files and memory</text>
+<text x="548" y="772" font-family="Arial" font-size="22" fill="#293e4b">Temporary WAV; deleted later</text>
+<text x="548" y="799" font-family="Arial" font-size="22" fill="#293e4b">Browser result / audio blobs</text>
+<rect x="50" y="900" width="420" height="120" rx="12" fill="#edf7f2" stroke="#328165" stroke-width="2" />
+<text x="68" y="932" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Typed analysis output</text>
+<text x="68" y="962" font-family="Arial" font-size="22" fill="#293e4b">Summary, timeline, events</text>
+<text x="68" y="989" font-family="Arial" font-size="22" fill="#293e4b">Quality status and coverage</text>
+<rect x="530" y="900" width="420" height="120" rx="12" fill="#f1f4f7" stroke="#8b98a5" stroke-width="2" stroke-dasharray="9 6"/>
+<text x="548" y="932" font-family="Arial" font-size="25" font-weight="bold" fill="#142a38">Persistent history</text>
+<text x="548" y="962" font-family="Arial" font-size="22" fill="#293e4b">SQLite / local history proposed</text>
+<text x="548" y="989" font-family="Arial" font-size="22" fill="#293e4b">Not implemented yet</text>
+<path d="M260 260 L260 320" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M260 450 L260 510" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M260 640 L260 700" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M260 830 L260 890" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M740 260 L740 320" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<path d="M530 580 L485 580" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M480 960 L520 960" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+
+
+<path d="M50 960 L25 960 L25 200 L40 200" fill="none" stroke="#526575" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="50" y="1090" font-family="Arial" font-size="23" fill="#142a38">Audio stays on the local machine in the current application.</text>
+<text x="50" y="1130" font-family="Arial" font-size="22" fill="#526575">Green: implemented   Amber: experimental   Dashed: planned / unverified</text>
+<path d="M740 520 L740 460" fill="none" stroke="#526575" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/></svg>

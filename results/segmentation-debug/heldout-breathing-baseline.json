@@ -1,0 +1,100 @@
+[
+  {
+    "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/breathing-deep.wav",
+    "snore_probability": 0.9815426468849182,
+    "yamnet_breathing": 0.08203125,
+    "yamnet_snoring": 0.04296875,
+    "predicted_snore": true
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/breathing-shallow.wav",
+    "snore_probability": 0.00896512158215046,
+    "yamnet_breathing": 0.03125,
+    "yamnet_snoring": 0.05859375,
+    "predicted_snore": false
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/breathing-deep.wav",
+    "snore_probability": 0.8500986099243164,
+    "yamnet_breathing": 0.08203125,
+    "yamnet_snoring": 0.01953125,
+    "predicted_snore": true
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/breathing-shallow.wav",
+    "snore_probability": 0.970686137676239,
+    "yamnet_breathing": 0.109375,
+    "yamnet_snoring": 0.4140625,
+    "predicted_snore": true
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/breathing-deep.wav",
+    "snore_probability": 0.9508635401725769,
+    "yamnet_breathing": 0.26171875,
+    "yamnet_snoring": 0.1484375,
+    "predicted_snore": true
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/breathing-shallow.wav",
+    "snore_probability": 0.056910086423158646,
+    "yamnet_breathing": 0.03125,
+    "yamnet_snoring": 0.00390625,
+    "predicted_snore": false
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/breathing-deep.wav",
+    "snore_probability": 0.11094852536916733,
+    "yamnet_breathing": 0.0,
+    "yamnet_snoring": 0.0,
+    "predicted_snore": false
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/breathing-shallow.wav",
+    "snore_probability": 0.16827839612960815,
+    "yamnet_breathing": 0.0078125,
+    "yamnet_snoring": 0.0,
+    "predicted_snore": false
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/breathing-deep.wav",
+    "snore_probability": 0.01971196010708809,
+    "yamnet_breathing": 0.01953125,
+    "yamnet_snoring": 0.0,
+    "predicted_snore": false
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/breathing-shallow.wav",
+    "snore_probability": 0.8313417434692383,
+    "yamnet_breathing": 0.19921875,
+    "yamnet_snoring": 0.0,
+    "predicted_snore": true
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/breathing-deep.wav",
+    "snore_probability": 0.44143038988113403,
+    "yamnet_breathing": 0.01953125,
+    "yamnet_snoring": 0.00390625,
+    "predicted_snore": false
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/breathing-shallow.wav",
+    "snore_probability": 0.15185768902301788,
+    "yamnet_breathing": 0.03125,
+    "yamnet_snoring": 0.0,
+    "predicted_snore": false
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/breathing-deep.wav",
+    "snore_probability": 0.21069468557834625,
+    "yamnet_breathing": 0.0,
+    "yamnet_snoring": 0.0,
+    "predicted_snore": false
+  },
+  {
+    "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/breathing-shallow.wav",
+    "snore_probability": 0.8066171407699585,
+    "yamnet_breathing": 0.0,
+    "yamnet_snoring": 0.0,
+    "predicted_snore": true
+  }
+]

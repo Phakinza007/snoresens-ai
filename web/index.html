@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sanor — Sleep sound journal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar"><div class="brand"><span class="brandmark">◐</span><span>SANOR<span class="brand-dot">.</span></span></div><span class="topnote">PRIVATE SLEEP AUDIO STUDIO</span></header>
+    <main>
+      <section class="hero"><div class="eyebrow">SLEEP SOUND / 01</div><h1>ฟังคืนของคุณ<br><em>ผ่านข้อมูลเสียง</em></h1><p>อัดเสียงบนคอมพิวเตอร์หรือเลือก WAV เพื่อดูช่วงที่โมเดลตรวจพบเสียงกรน แล้วเปรียบเทียบผลจากหลายคืน</p></section>
+      <section class="record-panel"><div class="record-top"><div><div class="eyebrow">RECORD THE NIGHT</div><h2>อัดเสียงขณะนอน</h2><p>เว็บจะบันทึก WAV ลงโฟลเดอร์ที่คุณเลือกครั้งละ 30 นาที และวิเคราะห์แต่ละไฟล์ให้อัตโนมัติ</p></div><span id="record-light" class="record-light" aria-hidden="true"></span></div><div class="record-actions"><button id="record-start" class="primary">● เริ่มอัดเสียง</button><button id="record-stop" class="secondary" disabled>■ หยุดอัดเสียง</button><span id="record-time" class="record-time">00:00:00</span></div><div id="record-status" class="record-status" aria-live="polite">ใช้ Chrome บนคอมพิวเตอร์ เลือกโฟลเดอร์บันทึกและอนุญาตไมโครโฟนเมื่อกดเริ่ม</div></section>
+      <section class="upload" id="dropzone"><div class="upload-icon">↥</div><div><h2>วางไฟล์เสียงที่นี่</h2><p>หรือเลือก WAV ได้หลายไฟล์ · สูงสุด 200 MB ต่อไฟล์</p></div><button id="choose" class="primary">เลือกไฟล์เสียง <span>↗</span></button><input id="files" type="file" accept=".wav,audio/wav" multiple hidden></section>
+      <div class="sample-download"><button id="load-eight-hour-demo" type="button" class="secondary compact">โหลดตัวอย่าง 8 ชั่วโมง แสดงผลทันที</button><p>ข้อมูลจำลองสำหรับลองดูค่าและกราฟ · ไม่มีคลิปเสียง 8 ชั่วโมง · ไม่ต้องรอวิเคราะห์</p></div>
+      <div class="sample-download"><a class="secondary compact" href="/samples/test_snore_16k.wav" download="test_snore_16k.wav">ดาวน์โหลดเสียงตัวอย่าง WAV</a><p>ประมาณ 2 นาที 30 วินาที · 4.6 MB · ดาวน์โหลดแล้วกดเลือกไฟล์เสียงเพื่อลองวิเคราะห์</p></div>
+      <section class="apnea-panel" aria-labelledby="apnea-heading"><h2 id="apnea-heading">วิเคราะห์การหายใจจากเสียง · รุ่นวิจัย</h2><p id="apnea-status" role="status">กำลังตรวจสอบโมเดลเสียง...</p><label><input id="apnea-enabled" type="checkbox" disabled> วิเคราะห์ด้วยโมเดลวิจัยเมื่อเลือกไฟล์ถัดไป</label><p>ใช้เสียงอย่างเดียว · แบบสอบถามจะเพิ่มภายหลัง</p></section>
+      <details class="analysis-settings"><summary>ตั้งค่าการค้นหาช่วงเงียบ</summary><div class="toolbar"><label>ระดับไม่เกิน (dBFS) <input id="quiet-threshold" type="number" value="-45" max="0" step="1" required></label><label>ระยะขั้นต่ำ (วินาที) <input id="quiet-duration" type="number" value="10" min="0.1" step="0.1" required></label></div><p>ใช้กับไฟล์ที่จะวิเคราะห์ถัดไป การอัดแต่ละเซสชันใช้ค่าที่เลือกตอนเริ่มอัด</p></details>
+      <div id="status" class="status" aria-live="polite"></div>
+      <section id="results" class="results" hidden><div class="section-heading"><div><div class="eyebrow">YOUR RECORDINGS</div><h2>เปรียบเทียบแต่ละไฟล์</h2></div><span id="count" class="pill"></span></div><div class="toolbar"><label>เทียบกับ <select id="baseline"></select></label><button id="export-comparison" class="secondary compact">ดาวน์โหลดตาราง CSV</button><button id="export-json" class="secondary compact">ดาวน์โหลดผลทั้งหมด JSON</button></div><div id="sessions" class="toolbar"></div><div class="table-wrap"><table><thead><tr><th>ไฟล์</th><th>เวลาที่อัด</th><th>พบเสียงกรน</th><th>คะแนนเสียงกรนรวม /100</th><th>นาทีกรน/ชม.</th><th>ช่วงกรน/ชม.</th><th>ระดับมัธยฐาน dBFS</th><th>ความถี่เด่น Hz</th><th>จังหวะ CV</th><th>ช่วงเงียบ</th><th>ค่าต่างจากไฟล์อ้างอิง</th></tr></thead><tbody id="rows"></tbody></table></div><div id="detail" class="detail"></div></section>
+      <aside class="notice"><span class="notice-icon">ⓘ</span><p>การอัดข้ามคืนต้องเปิดเว็บและคอมพิวเตอร์ไว้ อย่าปิดฝาเครื่องหรือให้เครื่องพัก เว็บเบราว์เซอร์ยังไม่รับประกันการอัดต่อเมื่อเครื่องล็อกหรือพัก จึงควรทดลองอัด 10–15 นาทีก่อน ผลเป็นการประมาณเสียงกรน ไม่ใช่คะแนนสุขภาพหรือการวินิจฉัยโรค “ต่อชั่วโมง” หมายถึงชั่วโมงที่อัดเสียง ไม่ใช่ชั่วโมงที่หลับจริง</p></aside>
+    </main>
+    <footer><span>SANOR / LOCAL ANALYSIS</span><span>เสียงที่อัดจะบันทึกในโฟลเดอร์ที่คุณเลือก</span></footer>
+  </div>
+  <script src="measurements.js" defer></script>
+  <script src="audio-charts.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

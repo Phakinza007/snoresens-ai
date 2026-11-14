@@ -1,0 +1,55 @@
+# Local runtimes, generated files and credentials
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+**/.env
+**/.env.*
+.vercel/
+**/.vercel/
+.openai/
+**/.openai/
+*.log
+*.zip
+!/exports/SnoresensAI-Demo-Screenshots.zip
+*.tar.gz
+
+# Training recordings, personal recordings and downloaded course material
+/data/*
+!/data/annotations_template.csv
+!/data/apnea/
+/data/apnea/*
+!/data/apnea/templates/
+/inbox-downloads/
+/Ai (1).pdf
+
+# Separate legacy hosting checkout has its own repository/credentials
+/deployments/snoresens-site/
+/experiments/
+
+# Publish curated test evidence; omit transient uploads and browser sessions
+/results/*
+!/results/segmentation-debug/
+/results/segmentation-debug/*
+!/results/segmentation-debug/browser-checks.json
+!/results/segmentation-debug/full-breathing-v1-v2.json
+!/results/segmentation-debug/heldout-breathing-baseline.json
+!/results/segmentation-debug/demo-v2-python.json
+!/results/segmentation-debug/demo-v2-browser.json
+!/results/segmentation-debug/v2-report-desktop.png
+!/results/segmentation-debug/v2-zoom-mobile.png
+!/results/phase3-evidence/
+/results/phase3-evidence/*
+!/results/phase3-evidence/data-audit.json
+!/results/phase3-evidence/cough-reevaluation.json
+!/results/phase3-evidence/cough-test-predictions.csv
+!/results/phase3-evidence/cough-split-manifest.json
+
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage/

@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Sanor browser verification</title><style>body{margin:0;font:14px system-ui}header{padding:8px;background:#e4ede4;display:flex;gap:12px;align-items:center}iframe{border:0;width:100%;height:calc(100vh - 50px)}</style><header><button id="sample">Load analyzed sample</button><button id="measurement">Load synthetic measurement test</button><button id="long">Load eight-hour timeline</button><span id="test-status">Local fixtures; analysis API verified separately</span></header><iframe src="../web/index.html" title="Sanor application"></iframe><script>
+const frame = document.querySelector('iframe');
+async function fixture() { return (await fetch('fixtures/sample-analysis.json')).json(); }
+document.querySelector('#sample').onclick = async () => {
+ const data = await fixture(); const wav = await (await fetch('../test_snore_16k.wav')).blob();
+ frame.contentWindow.addSanorResult('test_snore_16k.wav', data, wav);
+ document.querySelector('#test-status').textContent = 'Real sample loaded';
+};
+document.querySelector('#measurement').onclick = async () => {
+ const data=await (await fetch('fixtures/measurement-analysis.json')).json();
+ frame.contentWindow.addSanorResult('Synthetic measurement test (not model accuracy)',data);
+ document.querySelector('#test-status').textContent='Generated tone fixture: 200 Hz, louder return after quiet gap';
+};
+document.querySelector('#long').onclick = async () => {
+ const data = await fixture(); data.summary.recording_seconds = 28800;
+ data.timeline = Array.from({length:28800}, (_,i) => ({...data.timeline[i % data.timeline.length],start_seconds:i,duration_seconds:1}));
+ data.snore_events = Array.from({length:3000}, (_,i) => ({start_seconds:i*9,end_seconds:i*9+1,duration_seconds:1}));
+ delete data.audio_patterns.spectrogram; delete data.audio_patterns.rhythm_timeline; delete data.audio_patterns.rhythm_autocorrelation;
+ data.summary.snore_event_count=3000;data.summary.detected_snore_seconds=3000;data.summary.snore_percent_of_recording=10.42;
+ const start = performance.now();frame.contentWindow.addSanorResult('eight-hour-render-fixture.wav', data);
+ document.querySelector('#test-status').textContent = `Eight-hour rendering: ${Math.round(performance.now()-start)} ms`;
+};
+</script></html>
