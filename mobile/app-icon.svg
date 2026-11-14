@@ -1,0 +1,8 @@
+<!-- Snoresens app icon, adapted from Lucide Static 0.468.0 moon (ISC).
+     Original and license: ../web/snoresens/icons/moon.svg and LUCIDE-LICENSE.txt -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#3157f5"/>
+  <g transform="translate(224 224) scale(24)" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+  </g>
+</svg>

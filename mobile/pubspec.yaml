@@ -3,16 +3,19 @@ description: Offline snore sound journal
 publish_to: none
 version: 0.1.0+1
 environment:
-  sdk: '>=3.12.0 <4.0.0'
+  sdk: '>=3.14.0 <4.0.0'
+  flutter: '>=3.50.0'
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.1.0
   file_picker: ^13.1.0
   path_provider: ^2.1.5
   record: ^7.1.2
   tflite_flutter: ^0.12.1
   audioplayers: ^6.8.1
 dev_dependencies:
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 flutter:
