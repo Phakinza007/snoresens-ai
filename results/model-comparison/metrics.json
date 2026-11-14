@@ -1,0 +1,206 @@
+{
+  "features": "521 YAMNet class scores (yamnet_base.tflite), 15,600-sample first-second window",
+  "split": {
+    "train": {
+      "n": 693,
+      "snore": 350,
+      "not_snore": 343
+    },
+    "validation": {
+      "n": 149,
+      "snore": 75,
+      "not_snore": 74
+    },
+    "test": {
+      "n": 149,
+      "snore": 75,
+      "not_snore": 74
+    }
+  },
+  "selection": "Hyperparameters and best model chosen by validation accuracy (tie: validation F1); test evaluated once.",
+  "best_by_validation": "Logistic Regression",
+  "models": {
+    "Logistic Regression": {
+      "params": {
+        "C": 0.01
+      },
+      "threshold": 0.5,
+      "validation_accuracy": 0.9932885906040269,
+      "validation_f1": 0.9933774834437086,
+      "test": {
+        "accuracy": 0.9865771812080537,
+        "precision": 1.0,
+        "recall": 0.9733333333333334,
+        "f1": 0.9864864864864865,
+        "roc_auc": 0.9998198198198198,
+        "confusion_matrix": [
+          [
+            74,
+            0
+          ],
+          [
+            2,
+            73
+          ]
+        ]
+      },
+      "trained_on": "train 693 (this split)"
+    },
+    "Decision Tree": {
+      "params": {
+        "max_depth": 3,
+        "min_samples_leaf": 1
+      },
+      "threshold": 0.5,
+      "validation_accuracy": 0.9865771812080537,
+      "validation_f1": 0.9866666666666667,
+      "test": {
+        "accuracy": 0.9865771812080537,
+        "precision": 1.0,
+        "recall": 0.9733333333333334,
+        "f1": 0.9864864864864865,
+        "roc_auc": 0.98,
+        "confusion_matrix": [
+          [
+            74,
+            0
+          ],
+          [
+            2,
+            73
+          ]
+        ]
+      },
+      "trained_on": "train 693 (this split)"
+    },
+    "k-NN": {
+      "params": {
+        "n_neighbors": 3,
+        "weights": "uniform"
+      },
+      "threshold": 0.5,
+      "validation_accuracy": 0.9731543624161074,
+      "validation_f1": 0.9736842105263158,
+      "test": {
+        "accuracy": 0.9731543624161074,
+        "precision": 0.961038961038961,
+        "recall": 0.9866666666666667,
+        "f1": 0.9736842105263158,
+        "roc_auc": 0.9989189189189189,
+        "confusion_matrix": [
+          [
+            71,
+            3
+          ],
+          [
+            1,
+            74
+          ]
+        ]
+      },
+      "trained_on": "train 693 (this split)"
+    },
+    "Random Forest": {
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 1
+      },
+      "threshold": 0.5,
+      "validation_accuracy": 0.9932885906040269,
+      "validation_f1": 0.9933774834437086,
+      "test": {
+        "accuracy": 0.9865771812080537,
+        "precision": 1.0,
+        "recall": 0.9733333333333334,
+        "f1": 0.9864864864864865,
+        "roc_auc": 1.0,
+        "confusion_matrix": [
+          [
+            74,
+            0
+          ],
+          [
+            2,
+            73
+          ]
+        ]
+      },
+      "trained_on": "train 693 (this split)"
+    },
+    "SVM (RBF)": {
+      "params": {
+        "C": 1
+      },
+      "threshold": 0.5,
+      "validation_accuracy": 0.9731543624161074,
+      "validation_f1": 0.972972972972973,
+      "test": {
+        "accuracy": 0.9731543624161074,
+        "precision": 1.0,
+        "recall": 0.9466666666666667,
+        "f1": 0.9726027397260274,
+        "roc_auc": 0.9989189189189189,
+        "confusion_matrix": [
+          [
+            74,
+            0
+          ],
+          [
+            4,
+            71
+          ]
+        ]
+      },
+      "trained_on": "train 693 (this split)"
+    },
+    "Dense head v2 (web)": {
+      "params": "Dense(64,ReLU)\u2192Dropout(0.2)\u2192Dense(1,sigmoid)",
+      "threshold": 0.43999999999999984,
+      "validation_accuracy": 0.9731543624161074,
+      "validation_f1": 0.9733333333333334,
+      "test": {
+        "accuracy": 0.9664429530201343,
+        "precision": 0.9861111111111112,
+        "recall": 0.9466666666666667,
+        "f1": 0.9659863945578231,
+        "roc_auc": 0.9985585585585586,
+        "confusion_matrix": [
+          [
+            73,
+            1
+          ],
+          [
+            4,
+            71
+          ]
+        ]
+      },
+      "trained_on": "train 725 = this train split + 32 breathing clips"
+    },
+    "Dense head v1 (old)": {
+      "params": "Dense(64,ReLU)\u2192Dropout(0.2)\u2192Dense(1,sigmoid)",
+      "threshold": 0.63,
+      "validation_accuracy": 1.0,
+      "validation_f1": 1.0,
+      "test": {
+        "accuracy": 0.9798657718120806,
+        "precision": 1.0,
+        "recall": 0.96,
+        "f1": 0.9795918367346939,
+        "roc_auc": 1.0,
+        "confusion_matrix": [
+          [
+            74,
+            0
+          ],
+          [
+            3,
+            72
+          ]
+        ]
+      },
+      "trained_on": "original split unknown; may overlap this validation/test"
+    }
+  }
+}
