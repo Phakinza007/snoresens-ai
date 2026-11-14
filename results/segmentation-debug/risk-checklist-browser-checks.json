@@ -1,0 +1,56 @@
+{
+  "url": "https://snoresens-ai-int182.vercel.app",
+  "synthetic_data": true,
+  "checks": [
+    {
+      "case": "report keeps 20 ms analysis",
+      "passed": true
+    },
+    {
+      "case": "all five breathing questions render",
+      "passed": true
+    },
+    {
+      "case": "incomplete form cannot save",
+      "passed": true
+    },
+    {
+      "case": "completed checklist returns to report",
+      "passed": true
+    },
+    {
+      "case": "JSON includes saved answers and computed checklist",
+      "passed": true
+    },
+    {
+      "case": "checklist survives reload",
+      "passed": true
+    },
+    {
+      "case": "warning response updates displayed result",
+      "passed": true
+    },
+    {
+      "case": "checklist survives real 20 ms reanalysis",
+      "passed": true
+    },
+    {
+      "case": "mobile report does not overflow",
+      "passed": true
+    },
+    {
+      "case": "history groups reanalysis into the same night",
+      "passed": true
+    },
+    {
+      "case": "no JavaScript errors",
+      "passed": true
+    },
+    {
+      "case": "no audio or health POSTs",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "posts": []
+}

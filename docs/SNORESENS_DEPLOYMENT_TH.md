@@ -6,7 +6,11 @@ URL: https://snoresens-ai-int182.vercel.app
 
 เผยแพร่ production สำเร็จวันที่ 14 พฤศจิกายน 2026 สถานะ Vercel `READY`
 
-- Deployment ปัจจุบัน (ขอบเขต 20 ms): `dpl_XHoBLfecmimiU6pgwCygAbqzMNGe`
+- Deployment ปัจจุบัน (เช็กลิสต์ + 20 ms): `dpl_4XkxMsSx5quLJxFyw1AACBUUWLWP`
+- Source commit: `cb5705a5dbbbc3d4145cac0ae5d8eed8e5186aa0` บน branch `deploy/risk-assessment-20ms`
+- รวม feature ล่าสุด `a7a81ec` ของ Phurin กับ main เดิม เพื่อไม่ย้อนกลับไปใช้ 0.1 วินาที; ยังไม่ได้ merge branch สำหรับ deploy เข้า main
+- ตรวจ provenance ของเว็บได้ที่ `/build-info.json`
+- Deployment ก่อนหน้า (20 ms): `dpl_XHoBLfecmimiU6pgwCygAbqzMNGe`
 - Deployment รุ่น 2 ก่อนปรับขอบเขต: `dpl_B6YRM97CyxyjfFoaav7afsxtTz46`
 - Source: `deployments/snoresens-vercel`
 - ลิงก์ production เปิดหน้าเว็บและ WASM ได้ HTTP 200 โดยไม่ต้องส่ง Site owner QA credential
@@ -49,3 +53,8 @@ URL: https://snoresens-ai-int182.wrybarge4.chatgpt.site
 เวอร์ชันในเครื่องยังใช้ Python ที่ http://127.0.0.1:8765 และ /lab ตามเดิม เครื่องมือวิเคราะห์ spectral/breathing ขั้นสูงของ Python ไม่ได้รวมในเว็บ static ออนไลน์ จึงไม่แสดงลิงก์เครื่องมือที่ใช้ไม่ได้
 
 ภาพสำหรับพรีเซนต์เก็บที่ exports/demo-presentation/ พร้อมคำอธิบายที่มาของเสียงและข้อจำกัดของภาพไมโครโฟนจำลอง
+
+
+## ตรวจหลัง deploy เช็กลิสต์
+
+Node 20 tests ผ่าน ตรวจ production จริงผ่าน `docs/check_morning_checklist_browser.py` 12 ข้อ: คำถามการหายใจ 5 ข้อ, ห้ามบันทึกแบบไม่ครบ, บันทึก/แก้ไขคำตอบ, export, reload, เก็บคำตอบหลังวิเคราะห์เสียงจริงใหม่, ประวัติไม่แยกการวิเคราะห์ซ้ำเป็นคนละคืน, มือถือไม่ล้น, ไม่มี JS errors หรือ POST ส่งเสียง/คำตอบออกไป และ `docs/check_snore_boundaries_browser.py` ผ่าน 14 ข้อ หลักฐานอยู่ใน `results/segmentation-debug/risk-checklist-browser-checks.json` และ `production-micro20-checks.json` ใช้ข้อมูลเดโมและคำตอบจำลองใน browser profile แยก ไม่ได้ตรวจความแม่นยำเชิงคลินิกของเช็กลิสต์
