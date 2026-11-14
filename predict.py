@@ -1,4 +1,4 @@
-"""Run local audio models with 100 ms decisions over overlapping contexts."""
+"""Run local audio models with 20 ms boundary refinement and cached 100 ms contexts."""
 
 from __future__ import annotations
 
@@ -171,10 +171,10 @@ def main() -> None:
     parser.add_argument("wav", type=Path, help="WAV file to classify")
     parser.add_argument("--models", type=Path, default=Path(__file__).parent / "artifacts")
     parser.add_argument('--legacy-snore',action='store_true',help='Reproduce original head and one-second decisions')
-    parser.add_argument('--hop-seconds',type=float,default=.1,help='Decision spacing; model still sees 975 ms context')
+    parser.add_argument('--hop-seconds',type=float,default=.02,help='Boundary spacing; cached model decisions every 100 ms use 975 ms context')
     parser.add_argument(
         "--timeline-csv", type=Path,
-        help="Optionally save the per-second predictions to a CSV file",
+        help="Optionally save the per-cell predictions to a CSV file",
     )
     parser.add_argument(
         "--cough-review-csv", type=Path,
@@ -246,12 +246,17 @@ def main() -> None:
                 yield at,cell,context,at
         windows=legacy_windows()
     else:windows=analysis_windows(audio,args.hop_seconds)
+    cached_start=None
+    cached_scores=None
     for at,frame,waveform,context_start in windows:
         rms_dbfs_values.append(frame_rms_dbfs(frame))
         contexts.append((at,context_start))
-        base.set_tensor(base_in, waveform)
-        base.invoke()
-        scores = base.get_tensor(base_out)
+        if context_start!=cached_start:
+            base.set_tensor(base_in, waveform)
+            base.invoke()
+            cached_scores=base.get_tensor(base_out)
+            cached_start=context_start
+        scores=cached_scores
         sound_row = {}
         add_sound_scores(sound_row, scores)
         sound_scores.append(sound_row)
@@ -268,18 +273,27 @@ def main() -> None:
         probabilities.append(float(head.get_tensor(head_out)[0, 0]))
         frame_durations.append(len(frame) / SAMPLE_RATE)
 
-    floor=activity_threshold(rms_dbfs_values)
+    parent_levels=[frame_rms_dbfs(audio[at:at+1600]) for at in range(0,len(audio),1600)]
+    floor=activity_threshold(parent_levels) if args.hop_seconds<.1 else activity_threshold(rms_dbfs_values)
+    decisions=None if args.legacy_snore else decision_mask(probabilities,rms_dbfs_values,threshold,activity_floor=floor)
+    if decisions is not None and args.hop_seconds<.1:
+        decisions=[positive and parent_levels[at//1600] is not None and parent_levels[at//1600]>=floor
+                   for positive,(at,_) in zip(decisions,contexts,strict=True)]
     summary, events, timeline = summarize(
         probabilities, cough_scores, cough_probabilities,
         frame_durations, rms_dbfs_values, threshold,
-        None if args.legacy_snore else decision_mask(probabilities,rms_dbfs_values,threshold,activity_floor=floor)
+        decisions
     )
     for second, row in enumerate(timeline):
         at,context_start=contexts[second]
         row.update(sound_scores[second],analysis_hop_seconds=1 if args.legacy_snore else args.hop_seconds,
                    context_start_seconds=round(context_start/SAMPLE_RATE,3),
                    context_end_seconds=round(min(len(audio),context_start+YAMNET_SAMPLES)/SAMPLE_RATE,3))
-        if not args.legacy_snore:row.update(activity_floor_dbfs=round(floor,2),activity_pass=row['rms_dbfs'] is not None and row['rms_dbfs']>=floor)
+        if not args.legacy_snore:
+            parent_level=parent_levels[at//1600]
+            parent_pass=args.hop_seconds>=.1 or (parent_level is not None and parent_level>=floor)
+            row.update(activity_floor_dbfs=round(floor,2),activity_pass=parent_pass and rms_dbfs_values[second] is not None and rms_dbfs_values[second]>=floor,
+                       parent_rms_dbfs=round(parent_level,2) if parent_level is not None else None)
         features = dict(dominant_frequency_hz=None, spectral_centroid_hz=None)
         if row['prediction'] == 'snore' and not args.no_spectral:
             features = spectral_features(audio[at:at+round(frame_durations[second]*SAMPLE_RATE)], SAMPLE_RATE)
@@ -294,9 +308,11 @@ def main() -> None:
     summary['model_version']='snore-v2-breathing-negatives' if use_v2 else 'snore-v1'
     summary['analysis_hop_seconds']=1 if args.legacy_snore else args.hop_seconds
     summary['model_context_seconds']=.975
+    summary['segmentation_version']='micro-20ms-v1' if not args.legacy_snore and args.hop_seconds==.02 else 'activity-100ms-v1'
+    summary['model_hop_seconds']=1 if args.legacy_snore else max(.1,args.hop_seconds)
     if not args.legacy_snore:
         summary['activity_floor_dbfs']=round(floor,2)
-        summary['activity_gate_note']='Experimental 100 ms local activity gate: max(-60, P20 + min(6, (P95-P20)/2)) dBFS over finite cells >= -80 dBFS. May miss soft snoring; not a breathing classifier.'
+        summary['activity_gate_note']='Experimental local activity gate on boundary cells and their 100 ms parent: max(-60, P20 + min(6, (P95-P20)/2)) dBFS over finite cells >= -80 dBFS. May miss soft snoring; not a breathing classifier.'
     summary["cough_review_note"] = (
         "Threshold selected on prompted Coswara clips; do not use it to count coughs in sleep recordings."
         if cough_review_threshold is not None else

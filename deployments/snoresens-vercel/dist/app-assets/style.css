@@ -251,3 +251,6 @@
   .home-latest-stats { gap: 10px; }
   .home-latest-stats strong { font-size: 18px; }
 }
+
+/* Draw exact event spans rather than coloring a whole overview bucket. */
+#overview-timeline{display:block;width:100%;height:74px;border-radius:8px}

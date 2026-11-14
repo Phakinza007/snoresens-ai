@@ -36,6 +36,8 @@ __pycache__/
 !/results/segmentation-debug/
 /results/segmentation-debug/*
 !/results/segmentation-debug/browser-checks.json
+!/results/segmentation-debug/production-browser-checks.json
+!/results/segmentation-debug/production-v2-analysis.json
 !/results/segmentation-debug/full-breathing-v1-v2.json
 !/results/segmentation-debug/heldout-breathing-baseline.json
 !/results/segmentation-debug/demo-v2-python.json
@@ -53,3 +55,11 @@ __pycache__/
 .ruff_cache/
 .coverage
 coverage/
+
+# Curated 20 ms boundary regression evidence
+!/results/segmentation-debug/demo-micro20-python.json
+!/results/segmentation-debug/production-micro20-analysis.json
+!/results/segmentation-debug/production-micro20-checks.json
+!/results/segmentation-debug/full-breathing-micro20.json
+!/results/segmentation-debug/micro20-report-desktop.png
+!/results/segmentation-debug/micro20-zoom-mobile.png

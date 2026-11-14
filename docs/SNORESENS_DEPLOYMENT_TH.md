@@ -6,12 +6,27 @@ URL: https://snoresens-ai-int182.vercel.app
 
 เผยแพร่ production สำเร็จวันที่ 14 พฤศจิกายน 2026 สถานะ Vercel `READY`
 
-- Deployment: `dpl_LfyhWJMT7eHMfJMUkJpRuHybzcsV`
+- Deployment ปัจจุบัน (ขอบเขต 20 ms): `dpl_XHoBLfecmimiU6pgwCygAbqzMNGe`
+- Deployment รุ่น 2 ก่อนปรับขอบเขต: `dpl_B6YRM97CyxyjfFoaav7afsxtTz46`
 - Source: `deployments/snoresens-vercel`
 - ลิงก์ production เปิดหน้าเว็บและ WASM ได้ HTTP 200 โดยไม่ต้องส่ง Site owner QA credential
 - รันโมเดลบนเบราว์เซอร์เช่นเดียวกับเวอร์ชัน static ที่ทดสอบแล้ว
 
-ตรวจ production จริงหลัง deploy: อัปโหลดเสียงเดโม 45 วินาทีได้กรน 28 วินาที/3 ช่วง, เสียงตัวอย่างเต็ม, ประวัติ, การอัดไมโครโฟนจำลองและ flow รายงานทำงานได้ ไม่พบ uncaught JavaScript errors หรือ POST ส่งเสียงออกไป เก็บ screenshots จาก Vercel จำนวน 11 ภาพและ manifest ที่ `exports/demo-presentation/` (เดสก์ท็อป 3840 × 2160, มือถือ 780 × 1688) พร้อม ZIP `exports/SnoresensAI-Demo-Screenshots.zip`
+ตรวจ production รุ่น 2 จริงผ่าน `docs/check_snore_v2_browser.py`: ผ่าน 12 ข้อ รวมการเปิดผลรุ่นเดิมแล้ววิเคราะห์เสียงใหม่จริงเป็น 450 ช่อง ช่องละ 0.1 วินาที, ผลตรงกับ Python, เลื่อนฟังทีละ 0.1 วินาที, export JSON, reload และแสดงมือถือโดยไม่ล้นหน้า ไม่พบ JavaScript errors หรือ POST ส่งเสียงออกไป หลักฐานอยู่ที่ `results/segmentation-debug/production-browser-checks.json` พร้อมภาพ `v2-report-desktop.png` และ `v2-zoom-mobile.png`
+
+เดโม 45 วินาทีได้กรน 12.4 วินาที/10 ช่วงจากรุ่น 2 ตัวเลขนี้ยังไม่ใช่ความแม่นยำที่ตรวจเทียบช่วงเสียงด้วยคน ชุดเสียงหายใจ 14 ไฟล์ยังมี false positives รวม 4.6 วินาทีใน 8 ไฟล์ ดูข้อจำกัดและวิธีประเมินใน `docs/SNORE_V2_SEGMENTATION_TH.md`
+
+ภาพ 11 ภาพใน `exports/demo-presentation/` และ ZIP `exports/SnoresensAI-Demo-Screenshots.zip` เป็นภาพก่อนปรับรุ่น 2 (เดโมเดิม 28 วินาที/3 ช่วง) ไม่ควรนำตัวเลขจากภาพเก่ามารายงานเป็นผลรุ่นปัจจุบัน
+
+## ขอบเขต 20 ms — รุ่นปัจจุบัน
+
+ปรับขอบเขตทุก 0.02 วินาทีจากผลโมเดลที่ cache ทุก 0.1 วินาที พร้อมวัด RMS แต่ละช่องจริง กราฟภาพรวมระบายสีตามเหตุการณ์แทนการขยายเป็น bucket และกราฟซูมเลื่อนฟังทีละ 0.02 วินาที ผลเดโม 45 วินาทีเป็น 11.96 วินาที/11 เหตุการณ์ ไม่ถือเป็นการยืนยันความแม่นยำของ onset/offset และยังมีเสียงหายใจถูกนับผิดในชุดทดสอบ ดู `docs/SNORE_V2_SEGMENTATION_TH.md`
+
+ผลเก่าใน IndexedDB คงผลเดิมไว้ ต้องกด **วิเคราะห์ใหม่แบบละเอียด** เพื่อสร้างผลแบบ 20 ms จากเสียงต้นฉบับ
+
+หลักฐาน production ปัจจุบัน: `results/segmentation-debug/production-micro20-checks.json`, `production-micro20-analysis.json` และภาพ `micro20-report-desktop.png`, `micro20-zoom-mobile.png` สคริปต์ `docs/check_snore_boundaries_browser.py` ตรวจทั้งการวิเคราะห์จริงและสีบน canvas
+
+## ประวัติการเผยแพร่รุ่นเดิม
 
 ## การเผยแพร่ผ่าน Sites ก่อนผู้ใช้ระบุ Vercel
 

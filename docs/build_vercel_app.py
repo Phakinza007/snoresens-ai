@@ -21,5 +21,5 @@ heads['snore']=json.loads((ROOT/'artifacts/snore_v2/browser-head.json').read_tex
 metrics=json.loads((ROOT/'artifacts/snore_v2/metrics.json').read_text())
 heads.update(snore_threshold=metrics['threshold'],model_version=metrics['version'])
 (target/'models/heads.json').write_text(json.dumps(heads,separators=(',',':')))
-(target/'models/model-info.json').write_text(json.dumps(dict(version=metrics['version'],threshold=metrics['threshold'],decision_hop_seconds=.1,model_context_seconds=.975,temporal_accuracy_validated=False,classifier_test_reports=metrics['v2'],limitations=metrics['limitations'],activity_gate='Experimental local energy gate; may miss soft snoring; clip classification metrics are not temporal event accuracy.'),indent=2))
+(target/'models/model-info.json').write_text(json.dumps(dict(version=metrics['version'],threshold=metrics['threshold'],decision_hop_seconds=.02,model_hop_seconds=.1,segmentation_version="micro-20ms-v1",model_context_seconds=.975,temporal_accuracy_validated=False,classifier_test_reports=metrics['v2'],limitations=metrics['limitations'],activity_gate='Experimental local energy gate; may miss soft snoring; clip classification metrics are not temporal event accuracy.'),indent=2))
 print('Vercel UI/model metadata refreshed from local sources; browser inference runtime preserved.')

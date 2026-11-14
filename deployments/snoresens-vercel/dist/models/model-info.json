@@ -1,7 +1,9 @@
 {
   "version": "snore-v2-breathing-negatives",
   "threshold": 0.43999999999999984,
-  "decision_hop_seconds": 0.1,
+  "decision_hop_seconds": 0.02,
+  "model_hop_seconds": 0.1,
+  "segmentation_version": "micro-20ms-v1",
   "model_context_seconds": 0.975,
   "temporal_accuracy_validated": false,
   "classifier_test_reports": {
