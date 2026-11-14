@@ -1,0 +1,17 @@
+{
+  "source_commit": "b798350ef039a333bafcb03be0f01a649513e1d9",
+  "ipa_sha256": "0d337f1f5a2766ac9c3ea8ebae2f441160051cdd4e3816101680ae7b7fe10692",
+  "bundle_identifier": "com.phakinza.sanorMobile",
+  "display_name": "Snoresens AI",
+  "minimum_ios": "15.0",
+  "platform": "iphoneos",
+  "architecture": "arm64",
+  "microphone_description_present": true,
+  "model_version": "snore-v2-breathing-negatives",
+  "model_sha256": {
+    "yamnet_base.tflite": "10c95ea3eb9a7bb4cb8bddf6feb023250381008177ac162ce169694d05c317de",
+    "snore_score_head.tflite": "799925369753d1c2e5962f8bf23b5941294522ce1de1001470a0d8caf862d80a"
+  },
+  "signing": "unsigned; no embedded provisioning profile",
+  "physical_device_tested": false
+}

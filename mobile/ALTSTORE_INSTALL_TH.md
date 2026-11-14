@@ -18,7 +18,7 @@
 4. ส่งไฟล์ `Snoresens-AI-unsigned.ipa` ที่ build สำเร็จแล้วไปเก็บใน Files บน iPhone เช่น ผ่าน AirDrop
 5. ใน AltStore ไป My Apps > ปุ่ม + > เลือกไฟล์ IPA รอให้ลงชื่อและติดตั้ง จากนั้นเปิด Snoresens AI และอนุญาตไมโครโฟน
 
-ยังต้องรอ GitHub Actions build ผ่านก่อนจึงจะมีไฟล์ IPA ให้ใช้ การมี source/project หรือไฟล์ workflow ไม่ได้แปลว่าไฟล์แอป build สำเร็จแล้ว และยังไม่ได้ยืนยันการทำงานบน iPhone จริง
+GitHub Actions [run 43606730787](https://github.com/Phakinza007/snoresens-ai/actions/runs/43606730787) build สำเร็จแล้ว ไฟล์อยู่ที่ `exports/ios/Snoresens-AI-unsigned.ipa` ในเครื่องที่เตรียม หรือดาวน์โหลด artifact `SnoresensAI-iOS-unsigned` จาก run ข้างต้นแล้วแตก ZIP ตรวจแล้วว่าเป็น native arm64/iPhoneOS และโมเดลตรงกับ source แต่ยังไม่ได้ยืนยันการทำงานบน iPhone จริง
 
 บัญชีฟรีมีอายุ provisioning 7 วัน ต้อง refresh ภายในเวลานั้น (My Apps > Refresh All โดยเชื่อมต่อ AltServer) และมีข้อจำกัดจำนวนแอปที่ติดตั้งพร้อมกัน ไม่ควรลบ AltStore/AltServer จนกว่าจะเลือกวิธีลงชื่ออื่น
 

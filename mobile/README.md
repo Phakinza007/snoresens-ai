@@ -17,7 +17,7 @@ flutter test
 
 บน Mac ที่เตรียมในแชตนี้ติดตั้ง Flutter ที่ `~/Developer/flutter` และ CocoaPods 1.17.0 แล้ว แต่ยังไม่มี Xcode เต็มชุด จึงยัง build หรือติดตั้งจาก Mac เครื่องนี้ไม่ได้
 
-Workflow **Build iPhone app (unsigned)** ใน GitHub Actions ใช้ runner มาตรฐาน `xcode-27` และรันเมื่อสั่งเองเท่านั้น ตรวจโค้ด ทดสอบ แล้ว build iOS release แบบไม่ลงชื่อ ผล build/IPA ต้องตรวจสถานะของ workflow ก่อนอ้างว่าสำเร็จ ไฟล์ unsigned ยังต้องลงชื่อด้วยบัญชีของผู้ติดตั้งก่อนใช้งานบน iPhone
+Workflow **Build iPhone app (unsigned)** ใน GitHub Actions ใช้ runner มาตรฐาน `xcode-27` และรันเมื่อสั่งเองเท่านั้น ตรวจโค้ด ทดสอบ แล้ว build iOS release แบบไม่ลงชื่อ [build ครั้งแรกสำเร็จ](https://github.com/Phakinza007/snoresens-ai/actions/runs/43606730787) จาก source `b798350` ได้ release arm64 สำหรับ iOS 15 ขึ้นไป ตรวจ archive และ hash โมเดลทั้งสองตรงกับ source แล้ว ดู `results/native-ios/unsigned-build-checks.json` ไฟล์ unsigned ยังต้องลงชื่อด้วยบัญชีของผู้ติดตั้งก่อนใช้งานบน iPhone และยังไม่ผ่านการทดสอบบนโทรศัพท์จริง
 
 ## พฤติกรรมและข้อจำกัด
 

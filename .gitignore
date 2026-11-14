@@ -67,3 +67,9 @@ coverage/
 # Generated native installation archives
 *.ipa
 *.xcarchive/
+
+# Curated unsigned iPhone build verification
+!/results/native-ios/
+/results/native-ios/*
+!/results/native-ios/ci-build.json
+!/results/native-ios/unsigned-build-checks.json
