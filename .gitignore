@@ -36,6 +36,8 @@ __pycache__/
 !/results/segmentation-debug/
 /results/segmentation-debug/*
 !/results/segmentation-debug/browser-checks.json
+!/results/segmentation-debug/production-browser-checks.json
+!/results/segmentation-debug/production-v2-analysis.json
 !/results/segmentation-debug/full-breathing-v1-v2.json
 !/results/segmentation-debug/heldout-breathing-baseline.json
 !/results/segmentation-debug/demo-v2-python.json
