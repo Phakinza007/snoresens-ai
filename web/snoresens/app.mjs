@@ -5,7 +5,7 @@ import {startRecording} from './audio.mjs';
 const $=s=>document.querySelector(s),content=$('#content'),modal=$('#modal');
 const {researchScores,toCsv}=window.SanorMeasurements;
 const nav=[['home','house','หน้าหลัก'],['report','chart-no-axes-column','รายงาน'],['history','history','ประวัติ'],['profile','user-round','โปรไฟล์']];
-let records=[],selectedId=null,latestRecordingId=null,consentGranted=false,busy=false,session=null,starting=false,finishing=false,elapsed=0,toastTimer,sourceUrl,storageUnavailable=false;
+let records=[],selectedId=null,latestRecordingId=null,consentGranted=false,busy=false,reanalyzing=false,session=null,starting=false,finishing=false,elapsed=0,toastTimer,sourceUrl,storageUnavailable=false;
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon=(name,extra='')=>`<span class="icon ${extra}" style="--icon:url('/app-assets/icons/${name}.svg')" aria-hidden="true"></span>`;
 const clock=seconds=>{const s=Math.max(0,Math.floor(seconds||0));return [Math.floor(s/3600),Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':');};
@@ -19,44 +19,29 @@ function readName(){try{return localStorage.getItem('snoresens-name')||'ผู�
 function route(){return (location.hash.slice(1).split('/')[0]||'home');}
 function go(page,id){const hash='#'+page+(id?'/'+encodeURIComponent(id):'');if(location.hash===hash)render();else location.hash=hash;}
 function toast(message,error=false){clearTimeout(toastTimer);const node=$('#toast');node.textContent=message;node.className='toast'+(error?' error':'');node.hidden=false;toastTimer=setTimeout(()=>node.hidden=true,error?9000:4500);}
-function progress(text){$('#progress').hidden=!text;if(text)$('#progress-text').textContent=text;}
-function header(title,back=false){return `<header class="page-header">${back?`<button class="icon-button" data-action="back" aria-label="กลับหน้าหลัก">${icon('chevron-left')}</button><h1>${title}</h1>`:`${icon('moon','brand-logo')}<span class="brand-title">Snoresens AI</span><button class="icon-button header-end" data-action="guide" aria-label="คำแนะนำก่อนบันทึก">${icon('bell')}</button>`}</header>`;}
+function progress(text){$('#progress').hidden=!text||reanalyzing;if(text)$('#progress-text').textContent=text;}
+function header(title,back=false){return `<header class="page-header">${back?`<button class="icon-button" data-action="back" aria-label="กลับหน้าหลัก">${icon('chevron-left')}</button><h1>${title}</h1>`:`<button class="theme-toggle mobile-theme" data-action="toggle-theme" aria-label="เปิดโหมดมืด" aria-pressed="false">${icon('moon','brand-logo')}</button><span class="brand-title">Snoresens AI</span><button class="icon-button header-end" data-action="guide" aria-label="คำแนะนำก่อนบันทึก">${icon('bell')}</button>`}</header>`;}
+function syncTheme(){
+  const dark=document.documentElement.dataset.theme==='dark';
+  document.querySelector('meta[name="theme-color"]').content=dark?'#101827':'#f5f7ff';
+  for(const button of document.querySelectorAll('[data-action="toggle-theme"]')){
+    button.setAttribute('aria-pressed',String(dark));
+    button.setAttribute('aria-label',dark?'เปิดโหมดสว่าง':'เปิดโหมดมืด');
+  }
+}
 function renderNav(){for(const target of ['#side-nav','#bottom-nav'])$(target).innerHTML=nav.map(([key,glyph,label])=>`<a class="nav-item ${route()===key?'active':''}" href="#${key}" ${route()===key?'aria-current="page"':''}>${icon(glyph)}<span>${label}</span></a>`).join('');}
 function banner(){return session?.active?`<button class="record-banner" data-action="return-record">${icon('mic')}กำลังบันทึก · แตะเพื่อกลับ</button>`:'';}
 function empty(title='ยังไม่มีบันทึก',text='บันทึกเสียงหรืออัปโหลด WAV เพื่อดูผล'){return `<section class="empty-card"><div class="empty-icon">${icon('moon')}</div><h3>${title}</h3><p>${text}</p><button class="text-button" data-action="upload">${icon('upload')}เลือกไฟล์เสียง</button></section>`;}
 function recordCard(r,latest=false){return `<button class="${latest?'latest-card':'history-card'}" data-action="open-report" data-id="${esc(r.id)}">${latest?icon('sun','sun'):''}<div><div class="record-title">${esc(date(r.createdAt,latest))}${latest?` · บันทึก ${duration(r.analysis.summary.recording_seconds)}`:''}</div><div class="record-subtitle">${latest?'':duration(r.analysis.summary.recording_seconds)+' · '}${r.isSample?'เสียงตัวอย่าง':'เสียงของคุณ'}</div>${latest?`<span class="pill amber" style="margin-top:8px">${countLabel(r)}</span>`:''}</div>${latest?icon('chevron-right','chevron'):`<span class="pill">${countLabel(r)}</span>`}</button>`;}
 function home(){
-  const latest=records[0];
-  const disabled=busy||starting||finishing;
-  const heights=[10,18,9,28,40,19,12,24,35,16,8,20,31,46,22,13,27,39,18,9,26,35,15,8,19,29,43,21,12,23,33,16,8,20,30,14,9,18,25,12];
-  return `${header()}${banner()}
-    <section class="home-welcome"><h1>บันทึกเสียงคืนนี้</h1><span>${esc(date(new Date().toISOString()))}</span></section>
-    <div class="home-dashboard">
-      <section class="home-start">
-        <div class="home-recorder">
-          <div class="home-recorder-heading">${icon('moon')}<h2>บันทึกเสียงระหว่างนอน</h2></div>
-          <p>วางอุปกรณ์ข้างเตียง แล้วเริ่มบันทึก</p>
-          <div class="home-signal" aria-hidden="true"><div class="home-signal-line">${heights.map(h=>`<i style="--height:${h}px"></i>`).join('')}</div><div class="home-mic">${icon('mic')}</div><div class="home-signal-line">${heights.slice().reverse().map(h=>`<i style="--height:${h}px"></i>`).join('')}</div></div>
-          <button class="primary home-record-button" data-action="start-guide" ${disabled?'disabled':''}>${icon('mic')}${session?.active?'กลับไปดูการบันทึก':'เริ่มบันทึก'}${icon('chevron-right')}</button>
-          <p class="home-record-hint">เปิดเว็บและหน้าจอไว้ระหว่างบันทึก</p>
-        </div>
-        <div class="home-utilities">
-          <button class="home-utility" data-action="upload" ${disabled||session?.active?'disabled':''}>${icon('upload')}<span><strong>อัปโหลดเสียง</strong><small>เลือกไฟล์ WAV</small></span>${icon('chevron-right')}</button>
-          <button class="home-utility" data-action="sample" ${disabled||session?.active?'disabled':''}>${icon('headphones')}<span><strong>ลองเสียงตัวอย่าง</strong><small>ดูตัวอย่างผลวิเคราะห์</small></span>${icon('chevron-right')}</button>
-        </div>
-      </section>
-      <aside class="home-recent">
-        <div class="section-title"><h2>บันทึกล่าสุด</h2><a href="#history">ดูทั้งหมด ${icon('chevron-right')}</a></div>
-        ${latest?`<div class="home-latest">${recordCard(latest,true)}<div class="home-latest-stats"><div><span>เวลาบันทึก</span><strong>${duration(latest.analysis.summary.recording_seconds)}</strong></div><div><span>เวลาที่พบกรน</span><strong>${duration(latest.analysis.summary.detected_snore_seconds)}</strong></div></div><button class="text-button" data-action="open-report" data-id="${esc(latest.id)}">เปิดรายงาน ${icon('arrow-up-right')}</button></div>`:`<div class="home-no-record"><div class="home-empty-icon">${icon('audio-lines')}</div><h3>ยังไม่มีบันทึก</h3><p>ผลจะแสดงที่นี่เมื่อวิเคราะห์เสร็จ</p></div>`}
-      </aside>
-    </div>
-    <footer class="home-bottom"><span>${icon('shield-check')}เสียงและผลเก็บในเบราว์เซอร์นี้</span><p>ผลประมาณเสียงกรน ไม่ใช่การวินิจฉัยโรค</p></footer>`;
+  const heights=[13,30,8,26,39,10,43,32,13,24,15,9,28,11,10,7,18,24,10,10,38,16,26,48,20,11,31,39,14,11,26,12,8,18,32,20,9,15,43,26,12,36,13,18,26,11,12,20,12,9,17,29,10,32,26];
+  return `${header()}${banner()}<section class="intro"><h1>บันทึกเสียงคืนนี้</h1></section><div class="home-grid"><section><div class="hero-card"><h2>บันทึกเสียงระหว่างนอน</h2><p class="hero-copy">วางอุปกรณ์ข้างเตียง แล้วเริ่มบันทึก</p><div class="moon-art" aria-hidden="true"></div><div class="sound-wave" aria-hidden="true">${heights.map(h=>`<i style="--height:${h}px"></i>`).join('')}</div><div class="privacy-label">${icon('shield-check')}เสียงและผลเก็บในเบราว์เซอร์นี้</div></div><button class="primary start-button" data-action="start-guide" ${busy||starting||finishing?'disabled':''}>${session?.active?'กลับไปดูการบันทึก':'เริ่มบันทึกคืนนี้'}</button><button class="text-button upload-link" data-action="upload" ${busy?'disabled':''}>อัปโหลด WAV</button></section><aside class="home-side"><div class="section-title"><h2>บันทึกล่าสุด</h2><a href="#history">ดูทั้งหมด</a></div>${records.length?recordCard(records[0],true):empty()}<button class="text-button sample-action" data-action="sample" ${busy?'disabled':''}>${icon('headphones')}ลองเสียงตัวอย่าง</button><p class="storage-note">ผลเป็นการประมาณเสียงกรน ไม่ใช่การวินิจฉัยโรค</p></aside></div>`;
 }
 function report(){
   const r=current();if(!r)return header('รายงานการนอน',true)+empty();
   const s=r.analysis.summary,percent=pct(r),score=researchScores(r.analysis).combined;
   const hop=s.analysis_hop_seconds??1,isV2=s.model_version==='snore-v2-breathing-negatives';
-  return `${header('รายงานการนอน',true)}${banner()}<div class="report-meta"><span>บันทึกเมื่อ ${esc(date(r.createdAt))}</span><span class="pill">${r.isSample?'เสียงตัวอย่าง':'ผลวิเคราะห์เสียง'}</span></div><div class="analysis-method"><button class="text-button" data-action="reanalyze" ${busy?'disabled':''}>วิเคราะห์ใหม่</button></div><div class="report-layout"><section><div class="assessment"><span class="pill amber">${countLabel(r)}</span><h2>${s.detected_snore_seconds>0?'พบเสียงคล้ายกรน':'ไม่พบเสียงกรน'}</h2></div><div class="stats-grid"><div class="stat"><div class="label">ระยะเวลาบันทึก</div><div class="number">${duration(s.recording_seconds)}</div></div><div class="stat"><div class="label">เสียงกรน</div><div class="number">${duration(s.detected_snore_seconds)}</div></div></div><section class="sound-summary"><div class="section-title"><h2>สัดส่วนเสียง</h2><span class="small muted">${clock(s.recording_seconds)}</span></div><div class="ratio-track" role="img" aria-label="เสียงกรน ${value(percent)} เปอร์เซ็นต์"><span class="ratio-snore" style="width:${percent}%"></span><span class="ratio-other" style="width:${100-percent}%"></span></div><div class="ratio-legend"><span><i class="dot"></i>กรน ${value(percent)}%</span><span><i class="dot other"></i>ไม่พบกรน ${value(100-percent)}%</span></div></section><button class="insight-button" data-action="show-events">${icon('chart-no-axes-column')}<div><strong>พบกรน ${s.snore_event_count} ช่วง</strong></div>${icon('chevron-right')}</button><p class="report-note">${esc(r.name)}<br>สัดส่วนคำนวณจากเวลาบันทึก ไม่ใช่เวลาหลับ</p><button class="text-button" data-action="explanation">วิธีอ่านผล</button></section><section><div class="player-panel"><h3>ย้อนฟังเสียง</h3><audio id="report-audio" controls preload="metadata"></audio><div class="timeline-visual" id="audio-timeline" role="slider" tabindex="0" aria-label="เลือกเวลาจากกราฟเสียง" aria-valuemin="0" aria-valuemax="${s.recording_seconds}" aria-valuenow="0"><canvas id="overview-timeline" width="1600" height="74" aria-hidden="true"></canvas></div><div class="zoom-panel"><div class="zoom-title"><strong>ซูมละเอียด · ช่วงละ ${hop} วินาที</strong><span id="zoom-range"></span></div><canvas id="detail-timeline" width="1200" height="100" tabindex="0" role="slider" aria-label="เลือกเวลาในกราฟละเอียด ทีละ ${hop} วินาที" aria-valuemin="0" aria-valuemax="${s.recording_seconds}" aria-valuenow="0"></canvas><p>น้ำเงิน = พบกรน · เทา = ไม่พบกรน</p></div><div class="time-axis"><output id="play-time">00:00:00</output><span>${clock(s.recording_seconds)}</span></div><input class="seek" id="seek" type="range" min="0" max="${s.recording_seconds}" step="${hop}" value="0" aria-label="เลือกเวลาในไฟล์เสียง"><div id="events" class="event-buttons">${(r.analysis.snore_events||[]).slice(0,6).map(e=>`<button class="event-row" data-action="seek" data-time="${e.start_seconds}">${icon('play')}กรน · ${eventTime(e.start_seconds)}–${eventTime(e.end_seconds)}<span class="muted">${value(e.duration_seconds,2)} วิ.</span></button>`).join('')||'<p class="small muted">ไม่พบช่วงเสียงกรน</p>'}</div>${s.snore_event_count>6?'<button class="text-button" data-action="all-events">ดูทุกช่วง</button>':''}</div><details class="detail-toggle"><summary>รายละเอียดการวัด</summary><p class="small muted"><span>${isV2?'โมเดลรุ่น 2 · เพิ่มตัวอย่างเสียงหายใจ':'ผลจากโมเดลรุ่นเดิม'} · ตรวจทุก ${hop} วินาที</span></p><dl class="measurements"><dt>ระดับเสียงมัธยฐาน</dt><dd>${value(s.snore_median_rms_dbfs)} dBFS</dd><dt>ช่วงกรนยาวที่สุด</dt><dd>${value(s.longest_snore_event_seconds)} วิ.</dd><dt>คะแนนเสียงกรนรวม · เกณฑ์ทดลอง</dt><dd>${value(score.score)} / 100</dd></dl><p class="small muted">dBFS คือความดังสัมพัทธ์ในไฟล์ คะแนนรวมเป็นเกณฑ์ทดลองของโครงการ ไม่ใช่คะแนนสุขภาพหรือความเสี่ยงโรค หากข้อมูลไม่พอจะแสดง —</p>${s.activity_gate_note?'<p class="small muted">มีการตัดช่วงเสียงเบาตามระดับเสียงในไฟล์ จึงอาจพลาดเสียงกรนเบามาก ผลยังต้องตรวจฟังประกอบ</p>':''}<a class="text-button" href="/lab" target="_blank" rel="noopener">เปิดเครื่องมือวิเคราะห์ละเอียด ${icon('arrow-up-right')}</a></details><div class="export-row"><button class="secondary" data-action="export-json">${icon('download')}ผล JSON</button><button class="secondary" data-action="export-timeline">${icon('download')}Timeline CSV</button><button class="secondary" data-action="export-audio">${icon('download')}เสียง WAV</button></div><button class="text-button danger-text" data-action="delete-record">${icon('trash-2')}ลบบันทึกนี้</button></section></div>`;
+  return `${header('รายงานการนอน',true)}${banner()}<div class="report-meta"><span>บันทึกเมื่อ ${esc(date(r.createdAt))}</span><span class="pill">${r.isSample?'เสียงตัวอย่าง':'ผลวิเคราะห์เสียง'}</span></div><div class="analysis-method"><button class="text-button" data-action="reanalyze" aria-busy="${reanalyzing}" ${busy?'disabled':''}>${reanalyzing?'กำลังวิเคราะห์...':'วิเคราะห์ใหม่'}</button></div><div class="report-layout"><section><div class="assessment"><span class="pill amber">${countLabel(r)}</span><h2>${s.detected_snore_seconds>0?'พบเสียงคล้ายกรน':'ไม่พบเสียงกรน'}</h2></div><div class="stats-grid"><div class="stat"><div class="label">ระยะเวลาบันทึก</div><div class="number">${duration(s.recording_seconds)}</div></div><div class="stat"><div class="label">เสียงกรน</div><div class="number">${duration(s.detected_snore_seconds)}</div></div></div><section class="sound-summary"><div class="section-title"><h2>สัดส่วนเสียง</h2><span class="small muted">${clock(s.recording_seconds)}</span></div><div class="ratio-track" role="img" aria-label="เสียงกรน ${value(percent)} เปอร์เซ็นต์"><span class="ratio-snore" style="width:${percent}%"></span><span class="ratio-other" style="width:${100-percent}%"></span></div><div class="ratio-legend"><span><i class="dot"></i>กรน ${value(percent)}%</span><span><i class="dot other"></i>ไม่พบกรน ${value(100-percent)}%</span></div></section><button class="insight-button" data-action="show-events">${icon('chart-no-axes-column')}<div><strong>พบกรน ${s.snore_event_count} ช่วง</strong></div>${icon('chevron-right')}</button><p class="report-note">${esc(r.name)}<br>สัดส่วนคำนวณจากเวลาบันทึก ไม่ใช่เวลาหลับ</p><button class="text-button" data-action="explanation">วิธีอ่านผล</button></section><section><div class="player-panel"><h3>ย้อนฟังเสียง</h3><audio id="report-audio" controls preload="metadata"></audio><div class="timeline-visual" id="audio-timeline" role="slider" tabindex="0" aria-label="เลือกเวลาจากกราฟเสียง" aria-valuemin="0" aria-valuemax="${s.recording_seconds}" aria-valuenow="0"><canvas id="overview-timeline" width="1600" height="74" aria-hidden="true"></canvas></div><div class="zoom-panel"><div class="zoom-title"><strong>ซูมละเอียด · ช่วงละ ${hop} วินาที</strong><span id="zoom-range"></span></div><canvas id="detail-timeline" width="1200" height="100" tabindex="0" role="slider" aria-label="เลือกเวลาในกราฟละเอียด ทีละ ${hop} วินาที" aria-valuemin="0" aria-valuemax="${s.recording_seconds}" aria-valuenow="0"></canvas><p>น้ำเงิน = พบกรน · เทา = ไม่พบกรน</p></div><div class="time-axis"><output id="play-time">00:00:00</output><span>${clock(s.recording_seconds)}</span></div><input class="seek" id="seek" type="range" min="0" max="${s.recording_seconds}" step="${hop}" value="0" aria-label="เลือกเวลาในไฟล์เสียง"><div id="events" class="event-buttons">${(r.analysis.snore_events||[]).slice(0,6).map(e=>`<button class="event-row" data-action="seek" data-time="${e.start_seconds}">${icon('play')}กรน · ${eventTime(e.start_seconds)}–${eventTime(e.end_seconds)}<span class="muted">${value(e.duration_seconds,2)} วิ.</span></button>`).join('')||'<p class="small muted">ไม่พบช่วงเสียงกรน</p>'}</div>${s.snore_event_count>6?'<button class="text-button" data-action="all-events">ดูทุกช่วง</button>':''}</div><details class="detail-toggle"><summary>รายละเอียดการวัด</summary><p class="small muted"><span>${isV2?'โมเดลรุ่น 2 · เพิ่มตัวอย่างเสียงหายใจ':'ผลจากโมเดลรุ่นเดิม'} · ตรวจทุก ${hop} วินาที</span></p><dl class="measurements"><dt>ระดับเสียงมัธยฐาน</dt><dd>${value(s.snore_median_rms_dbfs)} dBFS</dd><dt>ช่วงกรนยาวที่สุด</dt><dd>${value(s.longest_snore_event_seconds)} วิ.</dd><dt>คะแนนเสียงกรนรวม · เกณฑ์ทดลอง</dt><dd>${value(score.score)} / 100</dd></dl><p class="small muted">dBFS คือความดังสัมพัทธ์ในไฟล์ คะแนนรวมเป็นเกณฑ์ทดลองของโครงการ ไม่ใช่คะแนนสุขภาพหรือความเสี่ยงโรค หากข้อมูลไม่พอจะแสดง —</p>${s.activity_gate_note?'<p class="small muted">มีการตัดช่วงเสียงเบาตามระดับเสียงในไฟล์ จึงอาจพลาดเสียงกรนเบามาก ผลยังต้องตรวจฟังประกอบ</p>':''}<a class="text-button" href="/lab" target="_blank" rel="noopener">เปิดเครื่องมือวิเคราะห์ละเอียด ${icon('arrow-up-right')}</a></details><div class="export-row"><button class="secondary" data-action="export-json">${icon('download')}ผล JSON</button><button class="secondary" data-action="export-timeline">${icon('download')}Timeline CSV</button><button class="secondary" data-action="export-audio">${icon('download')}เสียง WAV</button></div><button class="text-button danger-text" data-action="delete-record">${icon('trash-2')}ลบบันทึกนี้</button></section></div>`;
 }
 function history(){
   const chart=records.slice(0,7).reverse();
@@ -76,6 +61,7 @@ function render(){
   $('.app-body').classList.toggle('flow-mode',['prepare','consent','record'].includes(page));
   $('.app-body').classList.toggle('record-mode',page==='record');
   renderNav();content.innerHTML=({report,history,profile,prepare,consent,record:recording}[page]||home)();
+  syncTheme();
   document.title=({report:'รายงาน',history:'ประวัติ',profile:'โปรไฟล์',record:'บันทึกเสียง'}[page]||'หน้าหลัก')+' · Snoresens AI';
   if(page==='report'&&current())setupPlayer();
 }
@@ -126,6 +112,12 @@ async function begin(){if(starting||session?.active||finishing||busy)return;if(!
 document.addEventListener('click',async event=>{
   const button=event.target.closest('[data-action]');if(!button||button.disabled)return;const action=button.dataset.action;
   try {
+    if(action==='toggle-theme'){
+      const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';
+      document.documentElement.dataset.theme=theme;
+      try{localStorage.setItem('snoresens-theme',theme);}catch{}
+      syncTheme();return;
+    }
     if(action==='back'){go(route()==='consent'?'prepare':'home');return;}
     if(action==='upload'){if(busy||finishing||starting||session?.active){toast('กรุณาหยุดบันทึกหรือรอการวิเคราะห์ให้เสร็จก่อน');return;}$('#audio-file').click();return;}
     if(action==='open-report'){selectedId=button.dataset.id;go('report',selectedId);return;}
@@ -148,7 +140,22 @@ document.addEventListener('click',async event=>{
     if(action==='seek'){seek(Number(button.dataset.time));return;}
     if(action==='show-events'){$('#events')?.scrollIntoView({behavior:'smooth',block:'center'});return;}
     if(action==='all-events'){$('#events').innerHTML=current().analysis.snore_events.map(e=>`<button class="event-row" data-action="seek" data-time="${e.start_seconds}">${icon('play')}กรน · ${eventTime(e.start_seconds)}–${eventTime(e.end_seconds)} · ${value(e.duration_seconds,2)} วิ.</button>`).join('');button.remove();return;}
-    if(action==='reanalyze'){if(busy||starting||finishing||session?.active)return;const r=current();if(!r?.audio){toast('ไม่มีไฟล์เสียงเดิม กรุณาอัปโหลดใหม่',true);return;}const next=await analyze(r.audio,r.name,r.isSample,r.createdAt);go('report',next.id);return;}
+    if(action==='reanalyze'){
+      if(busy||starting||finishing||session?.active)return;
+      const r=current();
+      if(!r?.audio){toast('ไม่มีไฟล์เสียงเดิม กรุณาอัปโหลดใหม่',true);return;}
+      reanalyzing=true;
+      button.disabled=true;button.textContent='กำลังวิเคราะห์...';button.setAttribute('aria-busy','true');
+      try{
+        const next=await analyze(r.audio,r.name,r.isSample,r.createdAt);
+        go('report',next.id);
+      }finally{
+        reanalyzing=false;
+        const control=$('[data-action="reanalyze"]');
+        if(control){control.disabled=false;control.textContent='วิเคราะห์ใหม่';control.setAttribute('aria-busy','false');}
+      }
+      return;
+    }
     if(action==='export-json'){const r=current();download(r.name+'-analysis.json',JSON.stringify(exportData(r),null,2),'application/json');return;}
     if(action==='export-timeline'){const r=current();download(r.name+'-timeline.csv','\uFEFF'+toCsv(r.analysis.timeline||[]),'text/csv;charset=utf-8');return;}
     if(action==='export-audio'){const r=current();if(r.audio)download(r.name,r.audio,'audio/wav');else toast('ไม่มีไฟล์เสียงในรายการนี้');return;}
