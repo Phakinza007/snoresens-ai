@@ -10,3 +10,6 @@
 @media(min-width:800px){.record-mode main{padding-top:38px}.night-header{margin-bottom:48px}.night-moon{margin-bottom:40px}.record-screen h1{font-size:30px}}
 .analysis-method{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin:-6px 0 16px}.analysis-method .text-button{padding:5px 0;font-size:12px}.zoom-panel{margin-top:16px}.zoom-title{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-bottom:7px}.zoom-title strong{font-size:11px;color:var(--navy)}#detail-timeline{display:block;width:100%;height:44px;border-radius:7px;cursor:crosshair}.zoom-panel p{font-size:10px;color:var(--muted);margin-top:6px;line-height:1.7}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+/* Draw exact event spans rather than coloring a whole overview bucket. */
+#overview-timeline{display:block;width:100%;height:74px;border-radius:8px}

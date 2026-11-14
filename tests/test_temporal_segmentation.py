@@ -6,7 +6,7 @@ from predict import summarize
 class TemporalSegmentationTests(unittest.TestCase):
     def test_cells_cover_partial_recording_once_and_context_keeps_real_samples(self):
         audio=np.arange(37600,dtype=np.float32)
-        windows=list(analysis_windows(audio))
+        windows=list(analysis_windows(audio,.1))
         self.assertEqual(len(windows),24)
         self.assertEqual(sum(len(cell) for _,cell,_,_ in windows),len(audio))
         self.assertEqual(len(windows[-1][1]),800)
@@ -15,6 +15,19 @@ class TemporalSegmentationTests(unittest.TestCase):
             np.testing.assert_array_equal(context,audio[offset:offset+15600])
         self.assertEqual(windows[0][0],0)
         self.assertEqual(windows[-1][0],36800)
+
+    def test_20ms_cells_share_model_context_but_keep_a_20ms_quiet_gap(self):
+        audio=np.full(16000,.1,dtype=np.float32)
+        audio[320:640]=0
+        windows=list(analysis_windows(audio))
+        self.assertEqual(len(windows),50)
+        self.assertEqual([len(x[1]) for x in windows], [320]*50)
+        self.assertEqual([x[3] for x in windows[:5]], [windows[0][3]]*5)
+        levels=[None if not np.any(cell) else -20 for _,cell,_,_ in windows]
+        mask=decision_mask([.99]*50,levels,.44,activity_floor=-40)
+        _,events,_=summarize([.99]*50,[0]*50,[None]*50,[.02]*50,levels,.44,mask)
+        self.assertEqual(events[0]['end_seconds'],.02)
+        self.assertEqual(events[1]['start_seconds'],.04)
 
     def test_context_does_not_make_digital_silence_a_snore(self):
         self.assertEqual(decision_mask([.99,.99,.99],[None,-70,-20],.44),[False,False,True])
