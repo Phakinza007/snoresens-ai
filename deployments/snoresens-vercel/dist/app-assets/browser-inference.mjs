@@ -50,25 +50,27 @@ export async function analyzeInBrowser(blob,notify=()=>{}){
   const {base,heads}=await loadModels(notify);const timeline=[],events=[],levels=[];let snoreSeconds=0,start=null,meanRmsSum=0,maxRms=0;
   const cells=[...analysisPlan(samples.length)];
   const local=cells.map(cell=>{let power=0;for(let i=cell.at;i<cell.at+cell.length;i++)power+=samples[i]*samples[i];const rms=Math.sqrt(power/cell.length);return {rms,dbfs:rms>0?20*Math.log10(rms):null};});
-  const floor=activityThreshold(local.map(x=>x.dbfs));
-  let frame=0;
+  const parentLevels=[...analysisPlan(samples.length,1600)].map(cell=>{let power=0;for(let i=cell.at;i<cell.at+cell.length;i++)power+=samples[i]*samples[i];return power>0?10*Math.log10(power/cell.length):null;});
+  const floor=activityThreshold(parentLevels);
+  let frame=0,cachedContext=-1,cachedScores;
   for(const cell of cells){
     const {at,contextStart}=cell,segment=samples.subarray(at,at+cell.length),seconds=segment.length/16000;
     const input=new Float32Array(15600);input.set(samples.subarray(contextStart,Math.min(samples.length,contextStart+15600)));
-    const tensor=tf.tensor1d(input);let raw;
+    const tensor=contextStart===cachedContext?null:tf.tensor1d(input);let raw;
     try{
-      raw=base.predict(tensor);const output=Array.isArray(raw)?raw[0]:raw.dataSync?raw:Object.values(raw)[0];
-      const scores=output.dataSync(),probability=denseHead(scores,heads.snore),cough=denseHead(scores,heads.cough);
+      if(tensor){raw=base.predict(tensor);const output=Array.isArray(raw)?raw[0]:raw.dataSync?raw:Object.values(raw)[0];cachedScores=Float32Array.from(output.dataSync());cachedContext=contextStart;}
+      const scores=cachedScores,probability=denseHead(scores,heads.snore),cough=denseHead(scores,heads.cough);
       const {rms,dbfs}=local[frame];
-      const positive=isSnore(probability,dbfs,heads.snore_threshold,floor);
-      timeline.push({start_seconds:round(at/16000),duration_seconds:round(seconds),snore_probability:round(probability,6),cough_probability:round(cough,6),yamnet_cough_score:round(scores[42],6),yamnet_breathing_score:round(scores[36],6),yamnet_snoring_score:round(scores[38],6),rms_dbfs:dbfs===null?null:round(dbfs,2),prediction:positive?'snore':'non_snore',activity_floor_dbfs:round(floor,2),activity_pass:dbfs!==null&&dbfs>=floor,analysis_hop_seconds:.1,context_start_seconds:round(contextStart/16000),context_end_seconds:round(Math.min(samples.length,contextStart+15600)/16000)});
+      const parentDbfs=parentLevels[Math.floor(at/1600)],parentPass=Number.isFinite(parentDbfs)&&parentDbfs>=floor;
+      const positive=parentPass&&isSnore(probability,dbfs,heads.snore_threshold,floor);
+      timeline.push({start_seconds:round(at/16000),duration_seconds:round(seconds),snore_probability:round(probability,6),cough_probability:round(cough,6),yamnet_cough_score:round(scores[42],6),yamnet_breathing_score:round(scores[36],6),yamnet_snoring_score:round(scores[38],6),rms_dbfs:dbfs===null?null:round(dbfs,2),prediction:positive?'snore':'non_snore',activity_floor_dbfs:round(floor,2),activity_pass:parentPass&&dbfs!==null&&dbfs>=floor,parent_rms_dbfs:parentDbfs===null?null:round(parentDbfs,2),analysis_hop_seconds:.02,context_start_seconds:round(contextStart/16000),context_end_seconds:round(Math.min(samples.length,contextStart+15600)/16000)});
       if(positive){snoreSeconds+=seconds;meanRmsSum+=rms*seconds;maxRms=Math.max(maxRms,rms);if(dbfs!==null)levels.push(dbfs);if(start===null)start=at/16000;}
       else if(start!==null){events.push({start_seconds:round(start),end_seconds:round(at/16000),duration_seconds:round(at/16000-start)});start=null;}
-    }finally{tensor.dispose();if(raw)tf.dispose(raw);}
+    }finally{tensor?.dispose();if(raw)tf.dispose(raw);}
     if(frame++%50===0){notify(`วิเคราะห์ละเอียด ${round((at+segment.length)/16000,1)}/${round(samples.length/16000,1)} วินาที`);await new Promise(resolve=>setTimeout(resolve,0));}
   }
   const duration=samples.length/16000;
   if(start!==null)events.push({start_seconds:round(start),end_seconds:round(duration),duration_seconds:round(duration-start)});
   const mean=snoreSeconds?meanRmsSum/snoreSeconds:null;
-  return {summary:{recording_seconds:round(duration),detected_snore_seconds:round(snoreSeconds),snore_percent_of_recording:round(snoreSeconds/duration*100,2),snore_event_count:events.length,longest_snore_event_seconds:Math.max(0,...events.map(e=>e.duration_seconds)),snore_median_rms_dbfs:levels.length?round(percentile(levels,.5),2):null,snore_p95_rms_dbfs:levels.length?round(percentile(levels,.95),2):null,snore_mean_rms:mean,snore_max_rms:snoreSeconds?maxRms:null,snore_mean_rms_dbfs:mean>0?round(20*Math.log10(mean),2):null,snore_max_rms_dbfs:maxRms>0?round(20*Math.log10(maxRms),2):null,threshold:heads.snore_threshold,model_version:heads.model_version,analysis_hop_seconds:.1,model_context_seconds:.975,activity_floor_dbfs:round(floor,2),activity_gate_note:'Experimental local energy gate; may miss soft snoring. Not a breathing classifier.',interpretation:'Audio snore estimate only; not medical severity.',level_note:'Relative digital dBFS; not calibrated dB SPL.'},snore_events:events,timeline,inference:{runtime:'TFLite WASM + exported trained Dense heads',model_version:heads.model_version,decision_hop_seconds:.1,context_seconds:.975,activity_gate:'max(-60, P20 + min(6,(P95-P20)/2)) dBFS over finite cells >= -80',temporal_accuracy_validated:false,device:'browser',audio_uploaded:false,advanced_python_analysis_available:false}};
+  return {summary:{recording_seconds:round(duration),detected_snore_seconds:round(snoreSeconds),snore_percent_of_recording:round(snoreSeconds/duration*100,2),snore_event_count:events.length,longest_snore_event_seconds:Math.max(0,...events.map(e=>e.duration_seconds)),snore_median_rms_dbfs:levels.length?round(percentile(levels,.5),2):null,snore_p95_rms_dbfs:levels.length?round(percentile(levels,.95),2):null,snore_mean_rms:mean,snore_max_rms:snoreSeconds?maxRms:null,snore_mean_rms_dbfs:mean>0?round(20*Math.log10(mean),2):null,snore_max_rms_dbfs:maxRms>0?round(20*Math.log10(maxRms),2):null,threshold:heads.snore_threshold,model_version:heads.model_version,analysis_hop_seconds:.02,model_hop_seconds:.1,segmentation_version:'micro-20ms-v1',model_context_seconds:.975,activity_floor_dbfs:round(floor,2),activity_gate_note:'Experimental 20 ms boundary and 100 ms parent energy gate; may miss soft snoring. Not a breathing classifier.',interpretation:'Audio snore estimate only; not medical severity.',level_note:'Relative digital dBFS; not calibrated dB SPL.'},snore_events:events,timeline,inference:{runtime:'TFLite WASM + exported trained Dense heads',model_version:heads.model_version,decision_hop_seconds:.02,model_hop_seconds:.1,segmentation_version:'micro-20ms-v1',context_seconds:.975,activity_gate:'max(-60, P20 + min(6,(P95-P20)/2)) dBFS over finite 100 ms parents >= -80; 20 ms cells must also pass',temporal_accuracy_validated:false,device:'browser',audio_uploaded:false,advanced_python_analysis_available:false}};
 }

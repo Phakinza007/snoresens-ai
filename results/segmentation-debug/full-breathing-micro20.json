@@ -1,0 +1,90 @@
+{
+  "rows": [
+    {
+      "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/breathing-deep.wav",
+      "recording_seconds": 5.2906875,
+      "v2_100ms_seconds": 0,
+      "micro20_seconds": 0.0
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200505/GBZ88OAxQfg6NBTxjDRI0Pf59mq1/breathing-shallow.wav",
+      "recording_seconds": 8.704,
+      "v2_100ms_seconds": 0,
+      "micro20_seconds": 0.0
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/breathing-deep.wav",
+      "recording_seconds": 20.9066875,
+      "v2_100ms_seconds": 1.1,
+      "micro20_seconds": 1.08
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200505/sxkvX8kn2eQnE8pbiKR58Ruea3n2/breathing-shallow.wav",
+      "recording_seconds": 9.984,
+      "v2_100ms_seconds": 0.1,
+      "micro20_seconds": 0.1
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/breathing-deep.wav",
+      "recording_seconds": 8.277375,
+      "v2_100ms_seconds": 0.5,
+      "micro20_seconds": 0.5
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/Gs2gwBq34aMMglNC9jqGHS3ZzIs1/breathing-shallow.wav",
+      "recording_seconds": 5.888,
+      "v2_100ms_seconds": 0,
+      "micro20_seconds": 0.0
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/breathing-deep.wav",
+      "recording_seconds": 15.0186875,
+      "v2_100ms_seconds": 0.2,
+      "micro20_seconds": 0.2
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/NqXT0llYhqhv9usc7uEPUKfonRD2/breathing-shallow.wav",
+      "recording_seconds": 11.605375,
+      "v2_100ms_seconds": 0,
+      "micro20_seconds": 0.0
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/breathing-deep.wav",
+      "recording_seconds": 17.408,
+      "v2_100ms_seconds": 1.3,
+      "micro20_seconds": 1.2
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/RP28VzHbG0crJB2RnboqUaM9SRm1/breathing-shallow.wav",
+      "recording_seconds": 9.216,
+      "v2_100ms_seconds": 0,
+      "micro20_seconds": 0.0
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/breathing-deep.wav",
+      "recording_seconds": 8.277375,
+      "v2_100ms_seconds": 0.3,
+      "micro20_seconds": 0.28
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/awro2Lz4F9SgVweiUzROf1IE8GK2/breathing-shallow.wav",
+      "recording_seconds": 7.168,
+      "v2_100ms_seconds": 0.9,
+      "micro20_seconds": 0.9
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/breathing-deep.wav",
+      "recording_seconds": 29.952,
+      "v2_100ms_seconds": 0,
+      "micro20_seconds": 0.0
+    },
+    {
+      "file": "data/coswara/Extracted_data/20200604/uHPhyLsj5eYghJQOYj7iXa0fyOE3/breathing-shallow.wav",
+      "recording_seconds": 5.8026875,
+      "v2_100ms_seconds": 0.2,
+      "micro20_seconds": 0.1
+    }
+  ],
+  "before_seconds": 4.6,
+  "after_seconds": 4.36
+}
