@@ -5,6 +5,7 @@
   <meta name="theme-color" content="#f5f7ff"><title>Snoresens AI — ฟังและเข้าใจเสียงกรน</title>
   <link rel="icon" href="/app-assets/icons/moon.svg" type="image/svg+xml">
   <link rel="preload" href="/app-assets/thai.ttf" as="font" type="font/ttf" crossorigin>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem("snoresens-theme")==="dark"?"dark":"light";}catch{}</script>
   <link rel="stylesheet" href="/app-assets/style.css">
   <script src="/vendor/tf-core.min.js" defer></script>
   <script src="/vendor/tf-backend-cpu.min.js" defer></script>
@@ -15,7 +16,7 @@
 <body>
   <a class="skip-link" href="#content">ข้ามไปเนื้อหา</a>
   <div class="app-shell">
-    <aside class="sidebar" aria-label="เมนูสำหรับคอมพิวเตอร์"><a class="desktop-brand" href="#home"><span class="icon moon-icon" aria-hidden="true"></span>Snoresens AI</a><div class="side-caption">รู้จักเสียงกรน เข้าใจการพักผ่อน</div><nav id="side-nav"></nav><div class="side-foot"><span class="icon shield-icon" aria-hidden="true"></span><p>พื้นที่ส่วนตัวของคุณ<br><small>เสียงและผลเก็บบนเครื่องนี้</small></p></div></aside>
+    <aside class="sidebar" aria-label="เมนูสำหรับคอมพิวเตอร์"><div class="desktop-brand"><button class="theme-toggle" data-action="toggle-theme" aria-label="เปิดโหมดมืด" aria-pressed="false"><span class="icon moon-icon" aria-hidden="true"></span></button><a href="#home">Snoresens AI</a></div><nav id="side-nav"></nav><div class="side-foot"><span class="icon shield-icon" aria-hidden="true"></span><p>เสียงและผลเก็บ<br>ในเบราว์เซอร์นี้</p></div></aside>
     <div class="app-body"><main id="content" tabindex="-1"></main><nav id="bottom-nav" class="bottom-nav" aria-label="เมนูหลัก"></nav></div>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
