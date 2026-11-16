@@ -1,0 +1,10 @@
+{
+  "coswara_participants_disjoint": true,
+  "positive_event_labels": "weak clip labels, not human annotations",
+  "source_sha256": {
+    "artifacts/snore_v2/split-manifest.json": "5818f1890a78fb568b6bea59066614b769fdee0bfb7b6ef5fd66070791fc527b",
+    "artifacts/yamnet_base.tflite": "10c95ea3eb9a7bb4cb8bddf6feb023250381008177ac162ce169694d05c317de",
+    "artifacts/snore_v2/snore_score_head.tflite": "799925369753d1c2e5962f8bf23b5941294522ce1de1001470a0d8caf862d80a",
+    "artifacts/experimental_snore_v3/verifier.json": "1331a6e09e212d309daec4d5dd3be6d3e17197fd358c777b7ded48cd71a34958"
+  }
+}

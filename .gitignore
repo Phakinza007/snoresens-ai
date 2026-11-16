@@ -73,3 +73,12 @@ coverage/
 /results/native-ios/*
 !/results/native-ios/ci-build.json
 !/results/native-ios/unsigned-build-checks.json
+
+# Curated local verifier experiment evidence; no private audio or human labels
+!/results/snore-v3/
+/results/snore-v3/*
+!/results/snore-v3/metrics.json
+!/results/snore-v3/policy.json
+!/results/snore-v3/demo-summary.json
+!/results/snore-v3/review-browser-checks.json
+!/results/snore-v3/audit.json

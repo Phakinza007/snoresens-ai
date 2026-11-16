@@ -1,0 +1,114 @@
+{
+  "candidate": {
+    "recording_seconds": 45.0,
+    "detected_snore_seconds": 11.86,
+    "snore_percent_of_recording": 26.36,
+    "snore_event_count": 12,
+    "longest_snore_event_seconds": 1.58,
+    "snore_median_rms_dbfs": -13.18,
+    "snore_p95_rms_dbfs": -8.91,
+    "level_note": "dBFS is relative to this recording, not calibrated sound pressure level.",
+    "threshold": 0.43999999999999984,
+    "interpretation": "Audio snore estimate only; this is not a medical severity score.",
+    "cough_score_note": "Cough scores are review hints, not validated cough counts.",
+    "snore_mean_rms": 0.207908223,
+    "snore_max_rms": 0.4994591802,
+    "snore_mean_rms_dbfs": -13.64,
+    "snore_max_rms_dbfs": -6.03,
+    "model_version": "experimental-snore-v3-local-verifier",
+    "analysis_hop_seconds": 0.02,
+    "model_context_seconds": 0.975,
+    "verifier_context_seconds": 0.2,
+    "weakly_supervised": true,
+    "temporal_accuracy_validated": false
+  },
+  "baseline": {
+    "recording_seconds": 45.0,
+    "detected_snore_seconds": 11.96,
+    "snore_percent_of_recording": 26.58,
+    "snore_event_count": 11,
+    "longest_snore_event_seconds": 1.58,
+    "snore_median_rms_dbfs": -13.16,
+    "snore_p95_rms_dbfs": -8.9,
+    "level_note": "dBFS is relative to this recording, not calibrated sound pressure level.",
+    "threshold": 0.43999999999999984,
+    "interpretation": "Audio snore estimate only; this is not a medical severity score.",
+    "cough_score_note": "Cough scores are review hints, not validated cough counts.",
+    "snore_mean_rms": 0.2087963094,
+    "snore_max_rms": 0.4996538466,
+    "snore_mean_rms_dbfs": -13.61,
+    "snore_max_rms_dbfs": -6.03,
+    "cough_review_threshold": 0.5100000000000002,
+    "model_version": "snore-v2-breathing-negatives",
+    "analysis_hop_seconds": 0.02,
+    "model_context_seconds": 0.975,
+    "segmentation_version": "micro-20ms-v1",
+    "model_hop_seconds": 0.1,
+    "activity_floor_dbfs": -31.35,
+    "activity_gate_note": "Experimental local activity gate on boundary cells and their 100 ms parent: max(-60, P20 + min(6, (P95-P20)/2)) dBFS over finite cells >= -80 dBFS. May miss soft snoring; not a breathing classifier.",
+    "cough_review_note": "Threshold selected on prompted Coswara clips; do not use it to count coughs in sleep recordings."
+  },
+  "events": [
+    {
+      "start_seconds": 5.3,
+      "end_seconds": 6.84,
+      "duration_seconds": 1.54
+    },
+    {
+      "start_seconds": 9.08,
+      "end_seconds": 10.36,
+      "duration_seconds": 1.28
+    },
+    {
+      "start_seconds": 12.44,
+      "end_seconds": 13.48,
+      "duration_seconds": 1.04
+    },
+    {
+      "start_seconds": 13.5,
+      "end_seconds": 14.02,
+      "duration_seconds": 0.52
+    },
+    {
+      "start_seconds": 16.4,
+      "end_seconds": 17.98,
+      "duration_seconds": 1.58
+    },
+    {
+      "start_seconds": 18.32,
+      "end_seconds": 18.36,
+      "duration_seconds": 0.04
+    },
+    {
+      "start_seconds": 18.38,
+      "end_seconds": 18.4,
+      "duration_seconds": 0.02
+    },
+    {
+      "start_seconds": 25.1,
+      "end_seconds": 26.3,
+      "duration_seconds": 1.2
+    },
+    {
+      "start_seconds": 28.32,
+      "end_seconds": 29.68,
+      "duration_seconds": 1.36
+    },
+    {
+      "start_seconds": 31.94,
+      "end_seconds": 33.1,
+      "duration_seconds": 1.16
+    },
+    {
+      "start_seconds": 35.3,
+      "end_seconds": 36.5,
+      "duration_seconds": 1.2
+    },
+    {
+      "start_seconds": 39.0,
+      "end_seconds": 39.92,
+      "duration_seconds": 0.92
+    }
+  ],
+  "temporal_accuracy_validated": false
+}

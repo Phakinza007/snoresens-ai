@@ -1,0 +1,85 @@
+{
+  "policy": {
+    "local_context_seconds": 0.2,
+    "boundary_hop_seconds": 0.02,
+    "model": "StandardScaler + LogisticRegression(C=1, effective class/file balanced, seed=42)",
+    "positive_labels": "weak: loudest 200 ms core inherits positive clip label",
+    "negative_labels": "Kaggle negative clip label and full prompted breathing recordings",
+    "threshold_policy": "validation-only: minimum 95% recall of v2-positive Kaggle snore cores; maximize full validation breathing rejection",
+    "production_promotion": "requires independently human-timestamped validation; no automatic promotion",
+    "old_test_policy": "diagnostic, previously inspected; never train or select threshold on test",
+    "design_frozen_before_test": true
+  },
+  "threshold": 0.04,
+  "training_windows": 4264,
+  "validation_windows": 1345,
+  "clip_core_diagnostics": {
+    "validation": {
+      "v2_matrix": [
+        [
+          72,
+          2
+        ],
+        [
+          2,
+          73
+        ]
+      ],
+      "candidate_matrix": [
+        [
+          72,
+          2
+        ],
+        [
+          5,
+          70
+        ]
+      ]
+    },
+    "test": {
+      "v2_matrix": [
+        [
+          73,
+          1
+        ],
+        [
+          4,
+          71
+        ]
+      ],
+      "candidate_matrix": [
+        [
+          74,
+          0
+        ],
+        [
+          5,
+          70
+        ]
+      ]
+    }
+  },
+  "validation_breathing": {
+    "files": 12,
+    "seconds": 180.2243125,
+    "v2_false_seconds": 5.38,
+    "candidate_false_seconds": 0.24,
+    "files_with_candidate_false": 1
+  },
+  "legacy_breathing_diagnostic": {
+    "files": 14,
+    "seconds": 163.498875,
+    "v2_false_seconds": 4.36,
+    "candidate_false_seconds": 1.8800000000000001,
+    "files_with_candidate_false": 5
+  },
+  "fresh_breathing_robustness": {
+    "files": 8,
+    "seconds": 66.7986875,
+    "v2_false_seconds": 0.04,
+    "candidate_false_seconds": 0.04,
+    "files_with_candidate_false": 1
+  },
+  "fresh_people": 4,
+  "production_changed": false
+}

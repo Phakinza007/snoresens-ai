@@ -1,0 +1,11 @@
+{
+  "local_context_seconds": 0.2,
+  "boundary_hop_seconds": 0.02,
+  "model": "StandardScaler + LogisticRegression(C=1, effective class/file balanced, seed=42)",
+  "positive_labels": "weak: loudest 200 ms core inherits positive clip label",
+  "negative_labels": "Kaggle negative clip label and full prompted breathing recordings",
+  "threshold_policy": "validation-only: minimum 95% recall of v2-positive Kaggle snore cores; maximize full validation breathing rejection",
+  "production_promotion": "requires independently human-timestamped validation; no automatic promotion",
+  "old_test_policy": "diagnostic, previously inspected; never train or select threshold on test",
+  "design_frozen_before_test": true
+}

@@ -1,0 +1,49 @@
+{
+  "synthetic_checks": true,
+  "checks": [
+    {
+      "case": "review cases load",
+      "passed": true
+    },
+    {
+      "case": "audio can load",
+      "passed": true
+    },
+    {
+      "case": "cannot mark incomplete coverage as complete",
+      "passed": true
+    },
+    {
+      "case": "label must be explicitly selected",
+      "passed": true
+    },
+    {
+      "case": "interval saved",
+      "passed": true
+    },
+    {
+      "case": "overlap rejected",
+      "passed": true
+    },
+    {
+      "case": "annotation persists",
+      "passed": true
+    },
+    {
+      "case": "CSV uses original source timestamps",
+      "passed": true
+    },
+    {
+      "case": "CSV identifies reviewer and completion",
+      "passed": true
+    },
+    {
+      "case": "mobile has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "case": "no JavaScript errors",
+      "passed": true
+    }
+  ]
+}
