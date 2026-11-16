@@ -1,0 +1,59 @@
+{
+  "url": "https://snoresens-ai-v3-test.vercel.app",
+  "checks": [
+    {
+      "case": "test build clearly labeled",
+      "passed": true
+    },
+    {
+      "case": "idle page does not show false recording banner",
+      "passed": true
+    },
+    {
+      "case": "report identifies experimental v3",
+      "passed": true
+    },
+    {
+      "case": "real 2250 cell inference",
+      "passed": true
+    },
+    {
+      "case": "labels match Python",
+      "passed": true
+    },
+    {
+      "case": "event boundaries match Python",
+      "passed": true
+    },
+    {
+      "case": "local verifier scores match Python",
+      "passed": true
+    },
+    {
+      "case": "v3 never adds a v2 negative cell",
+      "passed": true
+    },
+    {
+      "case": "latest breathing checklist retained",
+      "passed": true
+    },
+    {
+      "case": "v3 persists after reload",
+      "passed": true
+    },
+    {
+      "case": "mobile no horizontal overflow",
+      "passed": true
+    },
+    {
+      "case": "no JS errors",
+      "passed": true
+    },
+    {
+      "case": "no audio POSTs",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "audio_posts": []
+}

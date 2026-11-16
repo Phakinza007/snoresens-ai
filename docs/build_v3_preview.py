@@ -24,6 +24,8 @@ app=re.sub(r'function banner\(\)\{return (.*?);\}',lambda m:"function banner(){r
 (dist/'app-assets/app.mjs').write_text(app)
 with (dist/'app-assets/style.css').open('a') as f:f.write('\n.experiment-banner{background:#fff1d8;border:1px solid #ead2a4;border-radius:14px;padding:12px 16px;margin-bottom:20px;font-size:13px;line-height:1.7;color:#614416}\n')
 info=json.loads((dist/'models/model-info.json').read_text());info.update(version='experimental-snore-v3-local-verifier',weakly_supervised=True,verifier_context_seconds=.2,verifier_threshold=json.loads((dist/'models/local-verifier.json').read_text())['threshold'],temporal_accuracy_validated=False)
+info['baseline_classifier_test_reports']=info.pop('classifier_test_reports')
+info['verifier_evaluation']=json.loads((ROOT/'results/snore-v3/metrics.json').read_text())
 (dist/'models/model-info.json').write_text(json.dumps(info,indent=2))
 (dist/'build-info.json').write_text(json.dumps(dict(source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),ui_base='deploy/risk-assessment-20ms',experimental=True),indent=2))
 for name in ('vercel.json','.vercelignore'):shutil.copy2(ROOT/'deployments/snoresens-vercel'/name,target/name)
