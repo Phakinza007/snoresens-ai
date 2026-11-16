@@ -25,5 +25,13 @@
   "frozen_model_version": "snore-v2-breathing-negatives",
   "native_microphone_tested": false,
   "physical_device_tested": false,
-  "lock_screen_tested": false
+  "lock_screen_tested": false,
+  "source_commit": "d64c1419c9c9450eb748be02f5144b281345e922",
+  "ios_build": {
+    "conclusion": "success",
+    "xcode": "27.1",
+    "run_url": "https://github.com/Phakinza007/snoresens-ai/actions/runs/43886713217",
+    "ci_tests_passed": 31,
+    "local_archive_matches_ci": true
+  }
 }

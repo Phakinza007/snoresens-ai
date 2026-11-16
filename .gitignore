@@ -99,3 +99,6 @@ coverage/
 !/results/native-ios/0.1.0/ci-build.json
 !/results/native-ios/0.1.0/unsigned-build-checks.json
 !/results/native-ios/feature-checks.json
+
+# Downloaded CI bundles; curated proof lives in results/native-ios
+/exports/ios/build-*/
