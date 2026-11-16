@@ -88,3 +88,14 @@ coverage/
 !/results/snore-v3/web-preview-checks.json
 
 /deployments/snoresens-v3-test-rollback/
+
+# Preserve the pre-background iPhone release evidence for rollback
+!/results/native-ios/0.1.0/
+!/results/native-ios/0.1.0/ci-build.json
+!/results/native-ios/0.1.0/unsigned-build-checks.json
+
+# Frozen initial native build proof for rollback
+!/results/native-ios/0.1.0/
+!/results/native-ios/0.1.0/ci-build.json
+!/results/native-ios/0.1.0/unsigned-build-checks.json
+!/results/native-ios/feature-checks.json

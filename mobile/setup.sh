@@ -27,6 +27,9 @@ if plist.exists():
     config = plistlib.loads(plist.read_bytes())
     config['NSMicrophoneUsageDescription'] = 'ใช้ไมโครโฟนเพื่อบันทึกและวิเคราะห์เสียงกรนบนอุปกรณ์ของคุณ'
     config['CFBundleDisplayName'] = 'Snoresens AI'
+    config['UIBackgroundModes'] = ['audio']
+    config['UIFileSharingEnabled'] = True
+    config['LSSupportsOpeningDocumentsInPlace'] = True
     plist.write_bytes(plistlib.dumps(config,sort_keys=False))
 project = Path('ios/Runner.xcodeproj/project.pbxproj')
 if project.exists():

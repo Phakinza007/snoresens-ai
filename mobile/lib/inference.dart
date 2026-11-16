@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:math';
 import 'dart:typed_data';
+
 import 'package:flutter/services.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
+
 import 'audio_patterns.dart';
 import 'wav.dart';
 import 'temporal_segmentation.dart' as temporal;
@@ -22,6 +24,19 @@ class SnoreResult {
     this.audioPatterns, {
     this.audioPath,
   });
+  factory SnoreResult.fromJson(Map<String, dynamic> d, {String? audioPath}) =>
+      SnoreResult(
+        d['name'] as String,
+        Map<String, dynamic>.from(d['summary'] as Map),
+        (d['timeline'] as List)
+            .map((r) => Map<String, dynamic>.from(r as Map))
+            .toList(),
+        (d['snore_events'] as List)
+            .map((r) => Map<String, dynamic>.from(r as Map))
+            .toList(),
+        Map<String, dynamic>.from(d['audio_patterns'] as Map),
+        audioPath: audioPath,
+      );
   double get seconds => (summary['recording_seconds'] as num).toDouble();
   double get snoreSeconds =>
       (summary['detected_snore_seconds'] as num).toDouble();
@@ -38,6 +53,10 @@ class SnoreResult {
   };
 }
 
+class AnalysisDeferred implements Exception {
+  const AnalysisDeferred();
+}
+
 class SnoreEngine {
   Interpreter? _base, _head;
   late final double threshold;
@@ -46,9 +65,9 @@ class SnoreEngine {
     try {
       _base = await Interpreter.fromAsset('assets/yamnet_base.tflite');
       _head = await Interpreter.fromAsset('assets/snore_score_head.tflite');
-      final config =
-          jsonDecode(await rootBundle.loadString('assets/mobile_metrics.json'))
-              as Map<String, dynamic>;
+      final config = jsonDecode(
+        await rootBundle.loadString('assets/mobile_metrics.json'),
+      ) as Map<String, dynamic>;
       threshold = (config['threshold'] as num).toDouble();
       modelVersion = config['version'] as String;
     } catch (_) {
@@ -63,6 +82,7 @@ class SnoreEngine {
     String? audioPath,
     double quietThresholdDbfs = -45,
     double minGapSeconds = 10,
+    bool Function()? shouldContinue,
   }) async {
     final audio = decodeWav(bytes);
     final timeline = <Map<String, dynamic>>[],
@@ -80,6 +100,9 @@ class SnoreEngine {
     var cachedStart = -1;
     var probability = 0.0;
     for (final cell in temporal.analysisPlan(audio.length)) {
+      if (shouldContinue != null && !shouldContinue()) {
+        throw const AnalysisDeferred();
+      }
       final start = cell.at, end = start + cell.length;
       final frame = Float32List.sublistView(audio, start, end);
       if (cell.contextStart != cachedStart) {
@@ -189,8 +212,7 @@ class SnoreEngine {
       'segmentation_version': 'micro-20ms-v1',
       'activity_floor_dbfs': rounded(floor, 2),
       'temporal_accuracy_validated': false,
-      'activity_gate_note':
-          'Experimental 20 ms boundary and 100 ms parent energy gate; may miss soft snoring. Not a breathing classifier.',
+      'activity_gate_note': 'Experimental 20 ms boundary and 100 ms parent energy gate; may miss soft snoring. Not a breathing classifier.',
     };
     return SnoreResult(
       name,

@@ -34,3 +34,9 @@ vercel deploy --prod --yes
 หาก static archive ในเครื่องหาย ใช้ Git tag สร้าง checkout แยกเพื่อเรียกคืน source/model รุ่นนั้นได้ รุ่น 2 มี `deployments/snoresens-vercel/dist` อยู่ใน Git ครบ ส่วนรุ่น 3 ให้ดู builder ใน commit ที่ tag ชี้ และใช้ UI base commit `8604a4adecf02984303bedaadb8f4e71b090c269` ตาม snapshot ที่บันทึกไว้ อย่าใช้ remote branch ที่อาจเปลี่ยนแล้วแทนโดยไม่ตรวจ hash
 
 Deployment เก่าบนผู้ให้บริการอาจมี retention จึงเก็บ Git tag และ static archive ควบคู่กัน ไม่อาศัย URL เก่าอย่างเดียว การ restore ไปเว็บหลักต้องเลือก project `snoresens-ai-int182` ให้ถูกต้อง
+
+## รุ่นแอป iPhone
+
+- รุ่นแอป 0.1.0+1 ก่อนเพิ่ม background recording: tag `snore-ios-v0.1.0` ชี้ source `b798350ef039a333bafcb03be0f01a649513e1d9` หลักฐานเดิมอยู่ใน `results/native-ios/0.1.0/` และ IPA เดิมสำรองในเครื่องที่ `exports/ios/versions/Snoresens-AI-0.1.0-unsigned.ipa`
+- รุ่นแอป 0.2.0+2 เพิ่มอัดเบื้องหลัง พัก/ต่อ ประวัติถาวร และประมวลผลต่อ ดู [release notes](../../mobile/RELEASE_0.2.0_TH.md) กับ [ไฟล์ build](../../exports/ios/README.md) ทั้งสองรุ่นแอปใช้หัวจำแนกเสียงกรนรุ่น 2 เหมือนเดิม
+- IPA ต้องลงชื่อผ่าน AltStore/Xcode รุ่นแอปกับรุ่นโมเดลเป็นคนละเลข การ build ผ่านไม่ยืนยันการอัดข้ามคืนบนโทรศัพท์

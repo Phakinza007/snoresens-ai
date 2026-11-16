@@ -68,5 +68,13 @@
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>ใช้ไมโครโฟนเพื่อบันทึกและวิเคราะห์เสียงกรนบนอุปกรณ์ของคุณ</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 </dict>
 </plist>

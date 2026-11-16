@@ -37,9 +37,13 @@ jobs:
           ditto build/ios/iphoneos/Runner.app build/unsigned/Payload/Runner.app
           cd build/unsigned
           zip -q -r Snoresens-AI-unsigned.ipa Payload
+      - name: Verify unsigned app and frozen model assets
+        run: python3 ../docs/verify_ios_archive.py build/unsigned/Snoresens-AI-unsigned.ipa --source-commit "$GITHUB_SHA" --expected-version 0.2.0 --require-background-audio --output build/unsigned/unsigned-build-checks.json
       - uses: actions/upload-artifact@v7
         with:
           name: SnoresensAI-iOS-unsigned
-          path: mobile/build/unsigned/Snoresens-AI-unsigned.ipa
+          path: |
+            mobile/build/unsigned/Snoresens-AI-unsigned.ipa
+            mobile/build/unsigned/unsigned-build-checks.json
           if-no-files-found: error
           retention-days: 7

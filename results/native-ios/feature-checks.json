@@ -1,0 +1,29 @@
+{
+  "app_version": "0.2.0+2",
+  "flutter_analyze": "No issues found",
+  "flutter_tests_passed": 31,
+  "ui_checks": {
+    "widths": [
+      390,
+      320
+    ],
+    "large_text_scale": 2,
+    "recording_controls_reachable": true,
+    "source": "Flutter widget test; simulated recording state"
+  },
+  "long_wav_test": {
+    "seconds": 601,
+    "parts": [
+      300,
+      300,
+      1
+    ],
+    "tail_preserved": true,
+    "weighted_summary": true,
+    "unfinished_parts_resumable": true
+  },
+  "frozen_model_version": "snore-v2-breathing-negatives",
+  "native_microphone_tested": false,
+  "physical_device_tested": false,
+  "lock_screen_tested": false
+}

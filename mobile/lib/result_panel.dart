@@ -2,9 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 import 'dart:typed_data';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:material_ui/material_ui.dart';
+
 import 'inference.dart';
 
 String metric(dynamic value, [int digits = 1]) =>
@@ -17,11 +19,11 @@ String audioTime(double seconds) {
 class ResultPanel extends StatefulWidget {
   final SnoreResult result;
   final SnoreResult? baseline;
-  final VoidCallback onDelete;
+  final VoidCallback? onDelete;
   const ResultPanel({
     super.key,
     required this.result,
-    required this.onDelete,
+    this.onDelete,
     this.baseline,
   });
   @override
@@ -183,10 +185,11 @@ class _ResultPanelState extends State<ResultPanel> {
               onPressed: () => _export(true),
               child: const Text('Timeline CSV'),
             ),
-            TextButton(
-              onPressed: widget.onDelete,
-              child: const Text('ลบผลนี้'),
-            ),
+            if (widget.onDelete != null)
+              TextButton(
+                onPressed: widget.onDelete,
+                child: const Text('ลบผลนี้'),
+              ),
           ],
         ),
         if (error != null)
