@@ -82,3 +82,7 @@ coverage/
 !/results/snore-v3/demo-summary.json
 !/results/snore-v3/review-browser-checks.json
 !/results/snore-v3/audit.json
+
+# Generated experimental preview site (no credentials committed)
+/deployments/snoresens-v3-preview/
+!/results/snore-v3/web-preview-checks.json
