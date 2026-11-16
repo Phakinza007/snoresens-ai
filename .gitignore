@@ -86,3 +86,5 @@ coverage/
 # Generated experimental preview site (no credentials committed)
 /deployments/snoresens-v3-preview/
 !/results/snore-v3/web-preview-checks.json
+
+/deployments/snoresens-v3-test-rollback/

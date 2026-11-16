@@ -1,0 +1,53 @@
+{
+  "snapshot_date": "2026-11-16",
+  "timezone": "Asia/Bangkok",
+  "versions": [
+    {
+      "tag": "snore-web-v2-2026-11-16",
+      "source_commit": "cb5705a5dbbbc3d4145cac0ae5d8eed8e5186aa0",
+      "project": "snoresens-ai-int182",
+      "alias": "https://snoresens-ai-int182.vercel.app",
+      "immutable_url": "https://snoresens-ai-int182-1hc3xa9s8-a0626568471-7492s-projects.vercel.app",
+      "deployment_id": "dpl_4XkxMsSx5quLJxFyw1AACBUUWLWP",
+      "model_version": "snore-v2-breathing-negatives",
+      "head_threshold": 0.43999999999999984,
+      "verifier_threshold": null,
+      "boundary_hop_seconds": 0.02,
+      "sha256": {
+        "app-assets/app.mjs": "3f80c5ad78c24096a920c4d9f31253b4a39b0fa40dd77efd619b036ce76becce",
+        "app-assets/browser-inference.mjs": "0cb6c80d066dc17072fb5a9e6c7d4f94abe23ec0de181424da2063acf76ea0a9",
+        "app-assets/temporal.mjs": "7b923f79591922b17c86f17e439533b4bdfd4870adc6993d2329a16e0163403f",
+        "models/heads.json": "580368d6765bbe71cce14be431b6f06be11e7e41c8faf9fa31c580e7fed2309a",
+        "models/yamnet_base.tflite": "10c95ea3eb9a7bb4cb8bddf6feb023250381008177ac162ce169694d05c317de"
+      },
+      "local_archive": "exports/version-backups/snore-web-v2-2026-11-16.tar.gz",
+      "archive_sha256": "d1ee9e0100df2946a48e1ff13d7a32c3ad3aedb8d9cd5fe70083fd0a4e38c346",
+      "archive_bytes": 14357575
+    },
+    {
+      "tag": "snore-web-v3-preview-2026-11-16",
+      "source_commit": "c1996b52ddc25f4547d7393e351f5a46624b1ec6",
+      "project": "snoresens-ai-v3-test",
+      "alias": "https://snoresens-ai-v3-test.vercel.app",
+      "immutable_url": "https://snoresens-ai-v3-test-mh8854bdh-a0626568471-7492s-projects.vercel.app",
+      "deployment_id": "dpl_EsqYoUb57pg4BQcjuHtNa21nTNdu",
+      "model_version": "experimental-snore-v3-local-verifier",
+      "head_threshold": 0.43999999999999984,
+      "verifier_threshold": 0.04,
+      "boundary_hop_seconds": 0.02,
+      "sha256": {
+        "app-assets/app.mjs": "8aaf2bbd3c94444c6d26d07d85700c1988602baff153f74a9679989c7502d0c6",
+        "app-assets/browser-inference.mjs": "110f68d8df20d6e544e924322d6ff6586c33ac078a28d0b70ef3ebbe8be5f1e9",
+        "app-assets/temporal.mjs": "7b923f79591922b17c86f17e439533b4bdfd4870adc6993d2329a16e0163403f",
+        "models/heads.json": "580368d6765bbe71cce14be431b6f06be11e7e41c8faf9fa31c580e7fed2309a",
+        "models/yamnet_base.tflite": "10c95ea3eb9a7bb4cb8bddf6feb023250381008177ac162ce169694d05c317de",
+        "app-assets/local-snore.mjs": "6a58cf8959ab57c78c2bab0fa9443bed551742f68186f8eef7dba43a83a97c06",
+        "models/local-verifier.json": "1331a6e09e212d309daec4d5dd3be6d3e17197fd358c777b7ded48cd71a34958"
+      },
+      "local_archive": "exports/version-backups/snore-web-v3-preview-2026-11-16.tar.gz",
+      "archive_sha256": "179aa38fe5abd5f9f714a50f023510340e2e081c408fd5d31045af2a1bcf7e52",
+      "archive_bytes": 14362533
+    }
+  ],
+  "notes": "Tags pin source; local archives preserve exact deployed static files. No rollback was executed. No credentials or recordings from users are included."
+}

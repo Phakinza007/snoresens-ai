@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-16",
+  "timezone": "Asia/Bangkok",
+  "reason": "User requested restoring the preceding model after trying v3; perceived accuracy preference, not a new benchmark.",
+  "restored_model": "snore-v2-breathing-negatives",
+  "restored_source_commit": "cb5705a5dbbbc3d4145cac0ae5d8eed8e5186aa0",
+  "project": "snoresens-ai-v3-test",
+  "alias": "https://snoresens-ai-v3-test.vercel.app",
+  "deployment_id": "dpl_6JQ3nMsWUVhV2n9wQ6nTEZrUhQKP",
+  "main_alias": "https://snoresens-ai-int182.vercel.app",
+  "main_model": "snore-v2-breathing-negatives",
+  "prior_v3_tag": "snore-web-v3-preview-2026-11-16",
+  "v2_tag": "snore-web-v2-2026-11-16",
+  "runtime_model_hashes_match_v2_archive": true,
+  "real_browser_checks_passed": 14
+}

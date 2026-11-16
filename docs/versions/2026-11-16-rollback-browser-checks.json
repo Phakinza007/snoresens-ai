@@ -1,0 +1,63 @@
+{
+  "url": "https://snoresens-ai-v3-test.vercel.app",
+  "checks": [
+    {
+      "case": "published model is v2 with 20 ms boundary cells",
+      "passed": true
+    },
+    {
+      "case": "old result retains 1 second version label",
+      "passed": true
+    },
+    {
+      "case": "old audio was really reanalyzed into 2250 cells",
+      "passed": true
+    },
+    {
+      "case": "browser and Python decisions agree",
+      "passed": true
+    },
+    {
+      "case": "browser and Python boundaries agree",
+      "passed": true
+    },
+    {
+      "case": "refinement never expands a previously negative 100 ms cell",
+      "passed": true
+    },
+    {
+      "case": "subsecond labels are visible",
+      "passed": true
+    },
+    {
+      "case": "zoom allows 0.02 second seeking",
+      "passed": true
+    },
+    {
+      "case": "canvas leaves trimmed gap gray and snore blue",
+      "passed": true
+    },
+    {
+      "case": "v2 result persists",
+      "passed": true
+    },
+    {
+      "case": "old result remains intact beside the new result",
+      "passed": true
+    },
+    {
+      "case": "mobile has no page overflow",
+      "passed": true
+    },
+    {
+      "case": "no audio uploads",
+      "passed": true
+    },
+    {
+      "case": "no JavaScript errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "audio_posts": []
+}
