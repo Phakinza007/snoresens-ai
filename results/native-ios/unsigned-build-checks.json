@@ -1,8 +1,8 @@
 {
-  "source_commit": "4de7482b58c1e60a2b6daabd10d3814e2d4cb46f",
-  "ipa_sha256": "0bd540393a3c2aeecbc01ae246364a2835037e24a8afeab4307de8256a20762f",
+  "source_commit": "d9e0cf085492fae623d9f53508011eff7ecd7e8d",
+  "ipa_sha256": "76a93b8c81baf1e556a77d7a80c250df90941e67ec3ccc1ac5703de21f7a33f2",
   "app_version": "0.3.0",
-  "build_number": "3",
+  "build_number": "4",
   "bundle_identifier": "com.phakinza.sanorMobile",
   "display_name": "Snoresens AI",
   "minimum_ios": "15.0",

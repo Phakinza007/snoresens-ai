@@ -41,6 +41,6 @@ Deployment เก่าบนผู้ให้บริการอาจมี
 - รุ่นแอป 0.2.0+2 เพิ่มอัดเบื้องหลัง พัก/ต่อ ประวัติถาวร และประมวลผลต่อ ดู [release notes](../../mobile/RELEASE_0.2.0_TH.md) กับ [ไฟล์ build](../../exports/ios/README.md) ทั้งสองรุ่นแอปใช้หัวจำแนกเสียงกรนรุ่น 2 เหมือนเดิม
 - IPA ต้องลงชื่อผ่าน AltStore/Xcode รุ่นแอปกับรุ่นโมเดลเป็นคนละเลข การ build ผ่านไม่ยืนยันการอัดข้ามคืนบนโทรศัพท์
 
-### 0.3.0+3 — หน้าตาเว็บบน iPhone
+### 0.3.0+4 — หน้าตาเว็บบน iPhone
 
-เพิ่ม UI ตามเว็บปัจจุบันโดยคง native recorder และหัวจำแนกรุ่น 2: tag `snore-ios-v0.3.0` ชี้ source `4de7482b58c1e60a2b6daabd10d3814e2d4cb46f` ดู [release notes](../../mobile/RELEASE_0.3.0_TH.md), [การออกแบบ](../../mobile/DESIGN.md) และ [ไฟล์ build](../../exports/ios/README.md) หลักฐาน 0.2.0 ถูกสำรองแยกใน `results/native-ios/0.2.0/` ก่อนสร้างรุ่นนี้
+เพิ่ม UI ตามเว็บปัจจุบันโดยคง native recorder และหัวจำแนกรุ่น 2: tag `snore-ios-v0.3.0` ชี้ source `d9e0cf085492fae623d9f53508011eff7ecd7e8d` ดู [release notes](../../mobile/RELEASE_0.3.0_TH.md), [การออกแบบ](../../mobile/DESIGN.md) และ [ไฟล์ build](../../exports/ios/README.md) หลักฐาน 0.2.0 ถูกสำรองแยกใน `results/native-ios/0.2.0/` ก่อนสร้างรุ่นนี้

@@ -1,8 +1,8 @@
-# Snoresens AI 0.3.0 (build 3) — หน้าตาเดียวกับเว็บ
+# Snoresens AI 0.3.0 (build 4) — หน้าตาเดียวกับเว็บ
 
 ปรับแอป Flutter ให้ตามเว็บ Snoresens ปัจจุบัน: การ์ดพระจันทร์ หน้าแรก เมนูล่าง หน้ารายงาน ประวัติ โปรไฟล์ และขั้นตอนเตรียม/ยินยอม/บันทึก ใช้ Noto Sans Thai และ Lucide SVG ชุดเดียวกัน ไม่เปลี่ยนหัวจำแนกเสียงกรนรุ่น 2 และไม่เปลี่ยนการตั้งค่าอัดเบื้องหลังจาก 0.2.0
 
-Build สำเร็จด้วย Xcode 27.1: [GitHub Actions 44467062193](https://github.com/Phakinza007/snoresens-ai/actions/runs/44467062193) จาก source `4de7482b58c1e60a2b6daabd10d3814e2d4cb46f` / tag `snore-ios-v0.3.0` (`IPA SHA256: 0bd540393a3c2aeecbc01ae246364a2835037e24a8afeab4307de8256a20762f`) ทดสอบ 37 ข้อผ่าน และตรวจ IPA ในเครื่องตรงกับ CI แล้ว ดู [ไฟล์ติดตั้ง](../exports/ios/README.md) ยังไม่ใช่ผลทดสอบบน iPhone จริง
+Build สำเร็จด้วย Xcode 27.1: [GitHub Actions 44478664364](https://github.com/Phakinza007/snoresens-ai/actions/runs/44478664364) จาก source `d9e0cf085492fae623d9f53508011eff7ecd7e8d` / tag `snore-ios-v0.3.0` (`IPA SHA256: 76a93b8c81baf1e556a77d7a80c250df90941e67ec3ccc1ac5703de21f7a33f2`) ทดสอบ 40 ข้อผ่าน และตรวจ IPA ในเครื่องตรงกับ CI แล้ว ดู [ไฟล์ติดตั้ง](../exports/ios/README.md) ยังไม่ใช่ผลทดสอบบน iPhone จริง
 
 ## ใช้งานที่เพิ่มและปรับ
 

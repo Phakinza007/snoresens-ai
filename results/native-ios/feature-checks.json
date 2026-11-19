@@ -1,7 +1,7 @@
 {
-  "app_version": "0.3.0+3",
+  "app_version": "0.3.0+4",
   "flutter_analyze": "No issues found",
-  "flutter_tests_passed": 37,
+  "flutter_tests_passed": 40,
   "ui_checks": {
     "widths": [
       390,
@@ -35,12 +35,12 @@
   "native_microphone_tested": false,
   "physical_device_tested": false,
   "lock_screen_tested": false,
-  "source_commit": "4de7482b58c1e60a2b6daabd10d3814e2d4cb46f",
+  "source_commit": "d9e0cf085492fae623d9f53508011eff7ecd7e8d",
   "ios_build": {
     "conclusion": "success",
     "xcode": "27.1",
-    "run_url": "https://github.com/Phakinza007/snoresens-ai/actions/runs/44467062193",
-    "ci_tests_passed": 37,
+    "run_url": "https://github.com/Phakinza007/snoresens-ai/actions/runs/44478664364",
+    "ci_tests_passed": 40,
     "local_archive_matches_ci": true
   }
 }

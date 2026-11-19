@@ -1,12 +1,12 @@
-# Snoresens AI iPhone — 0.3.0 (build 3)
+# Snoresens AI iPhone — 0.3.0 (build 4)
 
-Native arm64 / iOS 15+ release from source `4de7482b58c1e60a2b6daabd10d3814e2d4cb46f`, tagged `snore-ios-v0.3.0`. Built with Xcode 27.1, without signing.
+Native arm64 / iOS 15+ release from source `d9e0cf085492fae623d9f53508011eff7ecd7e8d`, tagged `snore-ios-v0.3.0`. Built with Xcode 27.1, without signing.
 
-- [Successful GitHub Actions build](https://github.com/Phakinza007/snoresens-ai/actions/runs/44467062193) — analyzer clean, 37 tests passed, native build and archive checks passed.
+- [Successful GitHub Actions build](https://github.com/Phakinza007/snoresens-ai/actions/runs/44478664364) — analyzer clean, 40 tests passed, native build and archive checks passed.
 - Artifact `SnoresensAI-iOS-unsigned` contains the IPA and verification JSON (7-day retention).
 - Local installer: `exports/ios/Snoresens-AI-unsigned.ipa` and frozen copy `exports/ios/versions/Snoresens-AI-0.3.0-unsigned.ipa`. Binaries are ignored by Git.
-- IPA SHA256: `0bd540393a3c2aeecbc01ae246364a2835037e24a8afeab4307de8256a20762f`.
-- Local verification matches the CI verification exactly: app 0.3.0+3, microphone description, `UIBackgroundModes: audio`, Files integration, web UI assets (`thai.ttf`, Lucide SVGs, `sample.wav`), and both model hashes identical to the original v2 app. See [archive verification](../../results/native-ios/unsigned-build-checks.json), [feature checks](../../results/native-ios/feature-checks.json), and [web UI checks](../../results/native-ios/web-ui-checks.json).
+- IPA SHA256: `76a93b8c81baf1e556a77d7a80c250df90941e67ec3ccc1ac5703de21f7a33f2`.
+- Local verification matches the CI verification exactly: app 0.3.0+4, microphone description, `UIBackgroundModes: audio`, Files integration, web UI assets (`thai.ttf`, Lucide SVGs, `sample.wav`), and both model hashes identical to the original v2 app. See [archive verification](../../results/native-ios/unsigned-build-checks.json), [feature checks](../../results/native-ios/feature-checks.json), and [web UI checks](../../results/native-ios/web-ui-checks.json).
 - Install by signing with your own Apple Account over the existing app through [AltServer / AltStore Classic](../../mobile/ALTSTORE_INSTALL_TH.md) or Xcode to preserve stored recordings and preferences.
 
 [Release notes for 0.3.0](../../mobile/RELEASE_0.3.0_TH.md): web-matched Snoresens interface, four bottom tabs, guided preparation/consent, dark recording screen, 20 ms zoomed report, morning checklist, and profile/data management, while preserving native background recording, durable Documents storage, five-minute analysis parts with resume, and the frozen v2 model.
