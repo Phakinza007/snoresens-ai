@@ -43,4 +43,4 @@ Deployment เก่าบนผู้ให้บริการอาจมี
 
 ### 0.3.0+3 — หน้าตาเว็บบน iPhone
 
-เพิ่ม UI ตามเว็บปัจจุบันโดยคง native recorder และหัวจำแนกรุ่น 2 ดู [release notes](../../mobile/RELEASE_0.3.0_TH.md) และ [การออกแบบ](../../mobile/DESIGN.md) หลักฐาน 0.2.0 ถูกสำรองแยกใน `results/native-ios/0.2.0/` ก่อนสร้างรุ่นนี้
+เพิ่ม UI ตามเว็บปัจจุบันโดยคง native recorder และหัวจำแนกรุ่น 2: tag `snore-ios-v0.3.0` ชี้ source `4de7482b58c1e60a2b6daabd10d3814e2d4cb46f` ดู [release notes](../../mobile/RELEASE_0.3.0_TH.md), [การออกแบบ](../../mobile/DESIGN.md) และ [ไฟล์ build](../../exports/ios/README.md) หลักฐาน 0.2.0 ถูกสำรองแยกใน `results/native-ios/0.2.0/` ก่อนสร้างรุ่นนี้

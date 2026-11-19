@@ -1,8 +1,8 @@
 {
-  "source_commit": "d64c1419c9c9450eb748be02f5144b281345e922",
-  "ipa_sha256": "91da49ff5332c9211517ff014d0f75a34544c41f96479f56289e8abde39495d1",
-  "app_version": "0.2.0",
-  "build_number": "2",
+  "source_commit": "4de7482b58c1e60a2b6daabd10d3814e2d4cb46f",
+  "ipa_sha256": "0bd540393a3c2aeecbc01ae246364a2835037e24a8afeab4307de8256a20762f",
+  "app_version": "0.3.0",
+  "build_number": "3",
   "bundle_identifier": "com.phakinza.sanorMobile",
   "display_name": "Snoresens AI",
   "minimum_ios": "15.0",
@@ -20,5 +20,11 @@
     "snore_score_head.tflite": "799925369753d1c2e5962f8bf23b5941294522ce1de1001470a0d8caf862d80a"
   },
   "signing": "unsigned; no embedded provisioning profile",
-  "physical_device_tested": false
+  "physical_device_tested": false,
+  "web_ui_asset_sha256": {
+    "thai.ttf": "5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8",
+    "icons/moon.svg": "5e5c866dd82fbea5c03e00c778fa283c6efc8c37db3b7937824fe0b8ad5382f7",
+    "icons/house.svg": "2c13f570d9b9727c9b6c23400c95acfa9737e91884ed926332edb18fd47a2a76",
+    "sample.wav": "aa1bd308849ca8c4f9da03b00a00c80c33e696e4634777ab60e1d88fa76873eb"
+  }
 }

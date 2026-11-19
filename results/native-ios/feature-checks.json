@@ -1,15 +1,20 @@
 {
-  "app_version": "0.2.0+2",
+  "app_version": "0.3.0+3",
   "flutter_analyze": "No issues found",
-  "flutter_tests_passed": 31,
+  "flutter_tests_passed": 37,
   "ui_checks": {
     "widths": [
       390,
       320
     ],
-    "large_text_scale": 2,
+    "large_text_scales": [
+      1.6,
+      2.0
+    ],
     "recording_controls_reachable": true,
-    "source": "Flutter widget test; simulated recording state"
+    "web_ui_parity": true,
+    "source": "Flutter widget test; simulated recording state and public web sample fixture",
+    "user_visual_acceptance": false
   },
   "long_wav_test": {
     "seconds": 601,
@@ -22,16 +27,20 @@
     "weighted_summary": true,
     "unfinished_parts_resumable": true
   },
+  "web_logic_fixtures": {
+    "checklist": 864,
+    "experimental_composite": 42
+  },
   "frozen_model_version": "snore-v2-breathing-negatives",
   "native_microphone_tested": false,
   "physical_device_tested": false,
   "lock_screen_tested": false,
-  "source_commit": "d64c1419c9c9450eb748be02f5144b281345e922",
+  "source_commit": "4de7482b58c1e60a2b6daabd10d3814e2d4cb46f",
   "ios_build": {
     "conclusion": "success",
     "xcode": "27.1",
-    "run_url": "https://github.com/Phakinza007/snoresens-ai/actions/runs/43886713217",
-    "ci_tests_passed": 31,
+    "run_url": "https://github.com/Phakinza007/snoresens-ai/actions/runs/44467062193",
+    "ci_tests_passed": 37,
     "local_archive_matches_ci": true
   }
 }
