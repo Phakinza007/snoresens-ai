@@ -737,12 +737,14 @@ class WebPrepare extends StatelessWidget {
 
 class WebConsent extends StatelessWidget {
   final bool accepted, enabled;
+  final String? error;
   final ValueChanged<bool> onAccept;
   final VoidCallback onBack, onBegin;
   const WebConsent({
     super.key,
     required this.accepted,
     required this.enabled,
+    this.error,
     required this.onAccept,
     required this.onBack,
     required this.onBegin,
@@ -819,6 +821,18 @@ class WebConsent extends StatelessWidget {
         textAlign: TextAlign.center,
         style: type(12, color: muted, height: 1.9),
       ),
+      if (error != null && error!.isNotEmpty) ...[
+        const SizedBox(height: 18),
+        WebSurface(
+          color: const Color(0xffffeff2),
+          radius: 14,
+          padding: const EdgeInsets.all(14),
+          child: Text(
+            error!,
+            style: type(12, color: const Color(0xffb84155)),
+          ),
+        ),
+      ],
       const SizedBox(height: 36),
       FilledButton(
         onPressed: accepted && enabled ? onBegin : null,
@@ -832,6 +846,7 @@ class WebRecording extends StatelessWidget {
   final bool active, paused, stopped, changing;
   final Duration elapsed;
   final String message;
+  final List<double>? levels;
   final VoidCallback onPause, onStop, onHome;
   const WebRecording({
     super.key,
@@ -841,6 +856,7 @@ class WebRecording extends StatelessWidget {
     required this.changing,
     required this.elapsed,
     required this.message,
+    this.levels,
     required this.onPause,
     required this.onStop,
     required this.onHome,
@@ -902,9 +918,9 @@ class WebRecording extends StatelessWidget {
         style: type(12, color: const Color(0xff9cb3d7)),
       ),
       const SizedBox(height: 36),
-      const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 22),
-        child: DecorativeWave(flat: true, height: 66),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 22),
+        child: DecorativeWave(flat: true, height: 66, levels: levels),
       ),
       const SizedBox(height: 36),
       Container(

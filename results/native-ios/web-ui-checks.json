@@ -1,5 +1,5 @@
 {
-  "app_version": "0.3.0+3",
+  "app_version": "0.3.0+4",
   "review_date": "2026-11-19",
   "reference_url": "https://snoresens-ai-int182.vercel.app",
   "reference_viewport": {
@@ -24,7 +24,7 @@
     ]
   },
   "flutter_analyze": "No issues found",
-  "flutter_tests_passed": 37,
+  "flutter_tests_passed": 40,
   "web_logic_fixtures": {
     "checklist": 864,
     "experimental_composite": 42

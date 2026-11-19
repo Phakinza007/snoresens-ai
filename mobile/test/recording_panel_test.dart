@@ -34,6 +34,7 @@ void main() {
                   changing: false,
                   elapsed: const Duration(hours: 8, minutes: 1),
                   message: 'กำลังรับเสียง · ล็อกหน้าจอได้',
+                  levels: List<double>.generate(46, (i) => i / 45),
                   onPause: () => pauses++,
                   onStop: () => stops++,
                   onHome: () {},
@@ -93,6 +94,32 @@ void main() {
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
     await tapVisible(tester, find.text('เริ่มบันทึกคืนนี้'));
+    expect(tester.takeException(), isNull);
+  });
+  testWidgets('consent displays start error near the action button', (
+    tester,
+  ) async {
+    await loadUiFont(tester);
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: snoresensTheme(),
+        home: Scaffold(
+          body: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: WebConsent(
+              accepted: true,
+              enabled: true,
+              error: 'กรุณาอนุญาตไมโครโฟนใน Settings',
+              onAccept: (_) {},
+              onBack: () {},
+              onBegin: () {},
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('กรุณาอนุญาตไมโครโฟนใน Settings'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }

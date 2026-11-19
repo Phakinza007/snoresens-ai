@@ -6,6 +6,8 @@ import 'dart:typed_data';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, kIsWeb, TargetPlatform;
 import 'package:material_ui/material_ui.dart';
 
 import 'inference.dart';
@@ -81,6 +83,7 @@ class _ResultPanelState extends State<ResultPanel> {
   AudioPlayer? player;
   StreamSubscription<Duration>? positionSubscription;
   StreamSubscription<PlayerState>? stateSubscription;
+  StreamSubscription<AudioEvent>? eventSubscription;
   double position = 0;
   int eventPage = 0;
   bool playing = false,
@@ -99,15 +102,45 @@ class _ResultPanelState extends State<ResultPanel> {
         if (mounted) setState(() => position = v.inMilliseconds / 1000);
       });
       stateSubscription = player!.onPlayerStateChanged.listen((v) {
-        if (mounted) setState(() => playing = v == PlayerState.playing);
+        if (mounted) {
+          setState(() {
+            playing = v == PlayerState.playing;
+            if (v == PlayerState.completed) position = 0;
+          });
+        }
       });
+      eventSubscription = player!.eventStream.listen(
+        (_) {},
+        onError: (Object e) {
+          if (mounted) setState(() => error = 'เล่นเสียงไม่ได้: $e');
+        },
+      );
       _prepare();
+    }
+  }
+
+  Future<void> _configurePlaybackSession() async {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.iOS) return;
+    await player!.setAudioContext(
+      AudioContext(
+        iOS: AudioContextIOS(category: AVAudioSessionCategory.playback),
+      ),
+    );
+  }
+
+  Future<void> _ensureSourceLoaded() async {
+    final path = widget.result.audioPath;
+    if (path == null) return;
+    if (player!.source == null) {
+      await player!.setSourceDeviceFile(path);
     }
   }
 
   Future<void> _prepare() async {
     if (widget.result.audioPath == null) return;
     try {
+      await _configurePlaybackSession();
+      await player!.setReleaseMode(ReleaseMode.stop);
       await player!.setSourceDeviceFile(widget.result.audioPath!);
       if (mounted) setState(() => playerReady = true);
     } catch (e) {
@@ -119,6 +152,7 @@ class _ResultPanelState extends State<ResultPanel> {
     if (!playerReady) return;
     final t = value.clamp(0, widget.result.seconds).toDouble();
     try {
+      await _ensureSourceLoaded();
       await player!.seek(Duration(milliseconds: (t * 1000).round()));
       if (mounted) setState(() => position = t);
     } catch (e) {
@@ -132,6 +166,9 @@ class _ResultPanelState extends State<ResultPanel> {
       if (playing) {
         await player!.pause();
       } else {
+        await _configurePlaybackSession();
+        await _ensureSourceLoaded();
+        await player!.setVolume(mutedAudio ? 0 : 1);
         if (player!.state == PlayerState.completed) {
           await player!.seek(Duration.zero);
         }
@@ -186,6 +223,7 @@ class _ResultPanelState extends State<ResultPanel> {
   void dispose() {
     positionSubscription?.cancel();
     stateSubscription?.cancel();
+    eventSubscription?.cancel();
     player?.dispose();
     super.dispose();
   }

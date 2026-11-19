@@ -723,6 +723,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       'consent' => WebConsent(
         accepted: consent,
         enabled: enabled && !active,
+        error: message.isEmpty ? null : message,
         onAccept: (value) => setState(() => consent = value),
         onBack: () => _go('prepare'),
         onBegin: _start,
@@ -736,6 +737,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         message: active
             ? (c?.message ?? 'วิเคราะห์หลังคุณหยุดบันทึก')
             : message,
+        levels: c?.levels,
         onPause: () => c?.togglePause(),
         onStop: _stop,
         onHome: () => _go('home'),

@@ -5,12 +5,15 @@ import 'package:sanor_mobile/capture_session.dart';
 
 class FakeRecorder implements CaptureRecorder {
   final controller = StreamController<RecordState>.broadcast(sync: true);
+  final levelController = StreamController<double>.broadcast(sync: true);
   bool permission = true, failStart = false, failStop = false;
   int starts = 0, stops = 0;
   Completer<void>? gate;
   Future<void> Function()? beforeStart;
   @override
   Stream<RecordState> get states => controller.stream;
+  @override
+  Stream<double> get levels => levelController.stream;
   @override
   Future<bool> hasPermission() async {
     await gate?.future;
@@ -37,5 +40,8 @@ class FakeRecorder implements CaptureRecorder {
   }
 
   @override
-  Future<void> dispose() => controller.close();
+  Future<void> dispose() async {
+    await levelController.close();
+    await controller.close();
+  }
 }

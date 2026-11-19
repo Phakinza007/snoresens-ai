@@ -427,34 +427,48 @@ const waveHeights = [
 class DecorativeWave extends StatelessWidget {
   final bool flat;
   final double height;
-  const DecorativeWave({super.key, this.flat = false, this.height = 58});
+  final List<double>? levels;
+  const DecorativeWave({
+    super.key,
+    this.flat = false,
+    this.height = 58,
+    this.levels,
+  });
   @override
   Widget build(BuildContext context) => ExcludeSemantics(
     child: SizedBox(
       height: height,
       width: double.infinity,
-      child: CustomPaint(painter: _WavePainter(flat)),
+      child: CustomPaint(painter: _WavePainter(flat, levels)),
     ),
   );
 }
 
 class _WavePainter extends CustomPainter {
   final bool flat;
-  _WavePainter(this.flat);
+  final List<double>? levels;
+  _WavePainter(this.flat, this.levels);
   @override
   void paint(Canvas c, Size s) {
+    final live = levels;
+    final count = live != null && live.isNotEmpty
+        ? live.length
+        : flat
+        ? 46
+        : waveHeights.length;
     final gap = flat ? 4.0 : 3.0;
-    final heights = flat ? List.filled(46, 3) : waveHeights;
     final w = math.max(
           1.0,
-          math.min(
-            4.0,
-            (s.width - gap * (heights.length - 1)) / heights.length,
-          ),
+          math.min(4.0, (s.width - gap * (count - 1)) / count),
         ),
         p = Paint()..color = const Color(0xffa6c4ff);
-    for (var i = 0; i < heights.length; i++) {
-      final h = flat ? 3.0 : heights[i].toDouble();
+    for (var i = 0; i < count; i++) {
+      final double h;
+      if (live != null && live.isNotEmpty) {
+        h = 3.0 + live[i].clamp(0.0, 1.0) * math.max(0.0, s.height - 6.0);
+      } else {
+        h = flat ? 3.0 : waveHeights[i].toDouble();
+      }
       c.drawRRect(
         RRect.fromRectAndRadius(
           Rect.fromLTWH(i * (w + gap), (s.height - h) / 2, w, h),
@@ -466,7 +480,8 @@ class _WavePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _WavePainter old) => old.flat != flat;
+  bool shouldRepaint(covariant _WavePainter old) =>
+      old.flat != flat || old.levels != levels;
 }
 
 class BedArt extends StatelessWidget {

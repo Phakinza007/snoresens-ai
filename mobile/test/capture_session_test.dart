@@ -108,4 +108,28 @@ void main() {
     expect(captureConfig.audioRouteChange, AudioRouteChangeMode.pause);
     expect(captureConfig.iosConfig.categoryOptions, isEmpty);
   });
+  test('real microphone levels populate bars while recording and reset when paused or stopped', () async {
+    expect(normalizeAmplitude(-160), 0);
+    expect(normalizeAmplitude(double.nan), 0);
+    expect(normalizeAmplitude(-65), 0);
+    expect(normalizeAmplitude(-35), closeTo(0.5, 1e-6));
+    expect(normalizeAmplitude(0), 1);
+
+    await session.start();
+    expect(session.levels, everyElement(0));
+    recorder.levelController.add(0.75);
+    expect(session.levels.last, 0.75);
+
+    await session.togglePause();
+    expect(session.levels, everyElement(0));
+    recorder.levelController.add(0.9);
+    expect(session.levels, everyElement(0));
+
+    await session.togglePause();
+    recorder.levelController.add(0.4);
+    expect(session.levels.last, 0.4);
+
+    await session.stop();
+    expect(session.levels, everyElement(0));
+  });
 }

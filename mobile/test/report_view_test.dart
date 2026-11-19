@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:sanor_mobile/result_panel.dart';
@@ -135,6 +137,117 @@ void main() {
         );
         expect(tester.takeException(), isNull);
       }
+    },
+  );
+  testWidgets(
+    'iOS playback restores playback audio context, uses stop release mode, and can play',
+    (tester) async {
+      await loadUiFont(tester);
+      debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
+      final calls = <(String, Map<Object?, Object?>?)>[];
+      final messenger =
+          TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
+      final mockedEventChannels = <String>['xyz.luan/audioplayers.global/events'];
+      messenger.setMockMethodCallHandler(
+        const MethodChannel('xyz.luan/audioplayers.global'),
+        (call) async => 1,
+      );
+      messenger.setMockStreamHandler(
+        const EventChannel('xyz.luan/audioplayers.global/events'),
+        MockStreamHandler.inline(onListen: (_, _) {}),
+      );
+      messenger.setMockMethodCallHandler(
+        const MethodChannel('xyz.luan/audioplayers'),
+        (call) async {
+          final args = call.arguments as Map<Object?, Object?>?;
+          calls.add((call.method, args));
+          if (call.method == 'create') {
+            final id = args!['playerId'] as String;
+            final ch = 'xyz.luan/audioplayers/events/$id';
+            mockedEventChannels.add(ch);
+            messenger.setMockStreamHandler(
+              EventChannel(ch),
+              MockStreamHandler.inline(onListen: (_, _) {}),
+            );
+          } else if (call.method == 'setSourceUrl') {
+            final id = args!['playerId'] as String;
+            await messenger.handlePlatformMessage(
+              'xyz.luan/audioplayers/events/$id',
+              const StandardMethodCodec().encodeSuccessEnvelope({
+                'event': 'audio.onPrepared',
+                'value': true,
+              }),
+              (_) {},
+            );
+          }
+          if (call.method == 'getCurrentPosition') return 0;
+          return 1;
+        },
+      );
+      addTearDown(() {
+        for (final ch in mockedEventChannels) {
+          messenger.setMockStreamHandler(EventChannel(ch), null);
+        }
+        messenger.setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers.global'),
+          null,
+        );
+        messenger.setMockMethodCallHandler(
+          const MethodChannel('xyz.luan/audioplayers'),
+          null,
+        );
+      });
+      final base = fixture();
+      final withAudio = SnoreResult(
+        base.name,
+        base.summary,
+        base.timeline,
+        base.snoreEvents,
+        base.audioPatterns,
+        audioPath: '/tmp/fake_snore.wav',
+      );
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: snoresensTheme(),
+          home: Scaffold(
+            body: SingleChildScrollView(
+              padding: const EdgeInsets.all(24),
+              child: ResultPanel(result: withAudio),
+            ),
+          ),
+        ),
+      );
+      await waitForUi(
+        tester,
+        () => calls.any((c) => c.$1 == 'setSourceUrl'),
+      );
+      expect(
+        calls.any(
+          (c) =>
+              c.$1 == 'setAudioContext' && c.$2?['category'] == 'playback',
+        ),
+        isTrue,
+      );
+      expect(
+        calls.any(
+          (c) =>
+              c.$1 == 'setReleaseMode' &&
+              c.$2?['releaseMode'] == 'ReleaseMode.stop',
+        ),
+        isTrue,
+      );
+      calls.clear();
+      await tapVisible(tester, find.byTooltip('เล่นเสียง'));
+      expect(
+        calls.any(
+          (c) =>
+              c.$1 == 'setAudioContext' && c.$2?['category'] == 'playback',
+        ),
+        isTrue,
+      );
+      expect(calls.any((c) => c.$1 == 'resume'), isTrue);
+      expect(tester.takeException(), isNull);
     },
   );
 }
