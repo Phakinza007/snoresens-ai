@@ -13,6 +13,7 @@ parser.add_argument('ipa', type=Path)
 parser.add_argument('--source-commit', required=True)
 parser.add_argument('--expected-version')
 parser.add_argument('--require-background-audio', action='store_true')
+parser.add_argument('--require-web-ui', action='store_true')
 parser.add_argument('--output', type=Path, default=ROOT / 'results/native-ios/unsigned-build-checks.json')
 args = parser.parse_args()
 with zipfile.ZipFile(args.ipa) as archive:
@@ -42,6 +43,15 @@ with zipfile.ZipFile(args.ipa) as archive:
         digest = hashlib.sha256(archive.read(matches[0])).hexdigest()
         assert digest == hashlib.sha256(path.read_bytes()).hexdigest(), f'Wrong model {name}'
         models[name] = digest
+    ui_assets = {}
+    if args.require_web_ui:
+        for relative in ['thai.ttf', 'icons/moon.svg', 'icons/house.svg', 'sample.wav']:
+            suffix = '/flutter_assets/assets/ui/' + relative
+            matches = [name for name in archive.namelist() if name.endswith(suffix)]
+            assert len(matches) == 1, f'Missing web UI asset {relative}'
+            digest = hashlib.sha256(archive.read(matches[0])).hexdigest()
+            assert digest == hashlib.sha256((ROOT / 'mobile/assets/ui' / relative).read_bytes()).hexdigest(), f'Wrong web UI asset {relative}'
+            ui_assets[relative] = digest
     config_path = next(name for name in archive.namelist() if name.endswith('/flutter_assets/assets/mobile_metrics.json'))
     config = json.loads(archive.read(config_path))
     assert config['version'] == 'snore-v2-breathing-negatives', 'Wrong model configuration'
@@ -58,6 +68,8 @@ result = dict(
     model_version=config['version'], model_sha256=models,
     signing='unsigned; no embedded provisioning profile', physical_device_tested=False,
 )
+if args.require_web_ui:
+    result['web_ui_asset_sha256'] = ui_assets
 args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
 print(json.dumps(result, ensure_ascii=False, indent=2))

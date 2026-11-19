@@ -1,7 +1,7 @@
 name: sanor_mobile
 description: Offline snore sound journal
 publish_to: none
-version: 0.2.0+2
+version: 0.3.0+3
 environment:
   sdk: '>=3.14.0 <4.0.0'
   flutter: '>=3.50.0'
@@ -14,13 +14,23 @@ dependencies:
   record: ^7.1.2
   tflite_flutter: ^0.12.1
   audioplayers: ^6.8.1
+  flutter_svg: ^2.4.0
 dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 flutter:
   uses-material-design: true
+  fonts:
+    - family: SnoresensThai
+      fonts:
+        - asset: assets/ui/thai.ttf
+          weight: 400
+        - asset: assets/ui/thai.ttf
+          weight: 700
   assets:
     - assets/yamnet_base.tflite
     - assets/snore_score_head.tflite
     - assets/mobile_metrics.json
+    - assets/ui/
+    - assets/ui/icons/

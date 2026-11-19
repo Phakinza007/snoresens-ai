@@ -17,3 +17,6 @@ class RecordingClock {
       _total +
       (_since != null && now >= _since! ? now - _since! : Duration.zero);
 }
+
+String recordingTime(Duration d) =>
+    '${d.inHours.toString().padLeft(2, '0')}:${(d.inMinutes % 60).toString().padLeft(2, '0')}:${(d.inSeconds % 60).toString().padLeft(2, '0')}';

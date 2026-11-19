@@ -1,0 +1,44 @@
+{
+  "app_version": "0.3.0+3",
+  "review_date": "2026-11-19",
+  "reference_url": "https://snoresens-ai-int182.vercel.app",
+  "reference_viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "ui_render": "Flutter widget test, not a physical iPhone screenshot",
+  "viewed_screens": [
+    "home",
+    "prepare",
+    "consent",
+    "record",
+    "report",
+    "profile",
+    "history"
+  ],
+  "small_screen_test": {
+    "width": 320,
+    "large_text_scales": [
+      1.6,
+      2.0
+    ]
+  },
+  "flutter_analyze": "No issues found",
+  "flutter_tests_passed": 37,
+  "web_logic_fixtures": {
+    "checklist": 864,
+    "experimental_composite": 42
+  },
+  "assets_shared_with_web": true,
+  "model_version": "snore-v2-breathing-negatives",
+  "public_web_sample_used_for_visual_report": true,
+  "physical_device_tested": false,
+  "user_visual_acceptance": false,
+  "material_differences": [
+    "iOS safe areas",
+    "native offline processing and background-recording copy",
+    "long recordings retain five-minute part selection",
+    "event lists paginate for bounded rendering",
+    "sample checklist excluded from real recording trends"
+  ]
+}

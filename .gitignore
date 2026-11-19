@@ -102,3 +102,13 @@ coverage/
 
 # Downloaded CI bundles; curated proof lives in results/native-ios
 /exports/ios/build-*/
+
+# Previous native release and new UI review evidence
+!/results/native-ios/0.2.0/
+!/results/native-ios/0.2.0/ci-build.json
+!/results/native-ios/0.2.0/unsigned-build-checks.json
+!/results/native-ios/0.2.0/feature-checks.json
+!/results/native-ios/web-ui-checks.json
+!/results/native-ios/ui-0.3.0-home.png
+!/results/native-ios/ui-0.3.0-report.png
+!/results/native-ios/ui-0.3.0-record.png

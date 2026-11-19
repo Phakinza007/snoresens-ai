@@ -102,6 +102,33 @@ class RecordingStore {
     }
   }
 
+  Future<Map<String, dynamic>> readPreferences() async {
+    try {
+      return jsonDecode(
+        await File('${root.path}/preferences.json').readAsString(),
+      );
+    } catch (_) {
+      return {};
+    }
+  }
+
+  Future<void> savePreferences(Map<String, dynamic> value) =>
+      _atomic('${root.path}/preferences.json', value);
+  Future<void> clearRecordings() async {
+    await for (final file in root.list(followLinks: false)) {
+      if (file is File &&
+          [
+            '.wav',
+            '.record.json',
+            '.analysis.json',
+            '.record.json.tmp',
+            '.analysis.json.tmp',
+          ].any(file.path.endsWith)) {
+        await file.delete();
+      }
+    }
+  }
+
   Future<void> delete(String id) async {
     for (final suffix in ['.wav', '.record.json', '.analysis.json']) {
       final f = File(_path(id, suffix));

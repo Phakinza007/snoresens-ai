@@ -1,4 +1,5 @@
 import 'dart:ui' as ui;
+
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sanor_mobile/result_panel.dart';
@@ -45,4 +46,27 @@ void main() {
       image.dispose();
     },
   );
+  test('new overview and zoom preserve exact 20 ms snore boundaries', () async {
+    final rows = <Map<String, dynamic>>[
+      {'start_seconds': 9.08, 'duration_seconds': .02, 'prediction': 'snore'},
+    ];
+    final recorder = ui.PictureRecorder();
+    PreciseTimelinePainter(
+      rows,
+      9,
+      10,
+      9.5,
+      zoom: true,
+    ).paint(Canvas(recorder), const Size(1000, 44));
+    final img = await recorder.endRecording().toImage(1000, 44),
+        rgba = await img.toByteData(format: ui.ImageByteFormat.rawRgba);
+    List<int> pixel(int x) => rgba!.buffer.asUint8List().sublist(
+      (20 * 1000 + x) * 4,
+      (20 * 1000 + x) * 4 + 3,
+    );
+    expect(pixel(90), [49, 87, 245]);
+    expect(pixel(70), isNot([49, 87, 245]));
+    expect(pixel(110), isNot([49, 87, 245]));
+    img.dispose();
+  });
 }

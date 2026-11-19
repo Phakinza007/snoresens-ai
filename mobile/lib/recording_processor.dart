@@ -25,7 +25,7 @@ class RecordingProcessor {
     required this.onProgress,
   });
 
-  Future<bool> process(RecordingEntry entry) async {
+  Future<bool> process(RecordingEntry entry, {bool force = false}) async {
     if (entry.parentId != null) {
       throw ArgumentError('Process the original recording');
     }
@@ -40,7 +40,7 @@ class RecordingProcessor {
         onProgress(index);
         final id = '${entry.id}_p$index';
         final previous = existing[id];
-        if (previous?.status == 'done' && previous?.summary != null) {
+        if (!force && previous?.status == 'done' && previous?.summary != null) {
           try {
             SnoreResult.fromJson(await store.readAnalysis(id));
             if (await File(store.audioPath(id)).exists()) {

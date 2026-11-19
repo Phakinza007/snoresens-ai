@@ -145,4 +145,27 @@ void main() {
       );
     },
   );
+  test('explicit reanalysis recomputes completed parts instead of using the resume cache', () async {
+    var calls = 0;
+    final job = RecordingProcessor(
+      store,
+      foreground: () => true,
+      onProgress: (_) {},
+      analyze: (name, bytes, {audioPath, shouldContinue}) async {
+        calls++;
+        return analyze(
+          name,
+          bytes,
+          audioPath: audioPath,
+          shouldContinue: shouldContinue,
+        );
+      },
+    );
+    await job.process(entry);
+    expect(calls, 3);
+    await job.process(entry);
+    expect(calls, 3);
+    await job.process(entry, force: true);
+    expect(calls, 6);
+  });
 }
