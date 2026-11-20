@@ -49,3 +49,17 @@ export async function startRecording({onChunk,onError,onTick,onDone,partMillis=3
   } catch(error){active=false;await release();throw error;}
   return {stop,pause(){if(!active||paused)return;paused=true;node.port.postMessage('pause');stream.getAudioTracks().forEach(t=>t.enabled=false);},resume(){if(!active||!paused)return;paused=false;stream.getAudioTracks().forEach(t=>t.enabled=true);node.port.postMessage('resume');},get active(){return active;},get paused(){return paused;}};
 }
+
+// Decode a compressed file (MP3/M4A) in the browser and re-encode it as the WAV the analyzer expects:
+// mono, 16 kHz, 16-bit PCM. Decoding cannot restore detail the compression already removed.
+export async function toWav16k(file){
+  const context=new AudioContext({sampleRate:16000});
+  try{
+    let decoded;
+    try{decoded=await context.decodeAudioData(await file.arrayBuffer());}
+    catch{throw new Error(`เปิดไฟล์ ${file.name} ไม่ได้ ลองแปลงเป็น WAV ก่อนอัปโหลด`);}
+    const samples=new Float32Array(decoded.length);
+    for(let c=0;c<decoded.numberOfChannels;c++){const channel=decoded.getChannelData(c);for(let i=0;i<samples.length;i++)samples[i]+=channel[i]/decoded.numberOfChannels;}
+    return pcmWav(samples);
+  }finally{await context.close().catch(()=>{});}
+}
