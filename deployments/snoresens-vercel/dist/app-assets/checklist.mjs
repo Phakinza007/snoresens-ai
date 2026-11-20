@@ -11,7 +11,7 @@ export const QUESTIONS=[
   {id:'witnessed',group:'warning',label:'คนข้าง ๆ เห็นว่าหยุดหายใจขณะหลับ',options:[['yes','ใช่'],['no','ไม่ใช่'],['unknown','ไม่มีคนสังเกต']]},
   {id:'congestion',group:'context',label:'เมื่อคืนคัดจมูก เป็นหวัด หรือภูมิแพ้',options:YN},
 ];
-export const GROUPS={morning:'อาการตอนตื่น (หายใจทางปาก)',warning:'การหายใจขณะหลับ',context:'ปัจจัยที่อาจทำให้ผลคลาดเคลื่อน'};
+export const GROUPS={morning:'อาการตอนตื่น',warning:'การหายใจขณะหลับ',context:'ปัจจัยที่อาจทำให้ผลคลาดเคลื่อน'};
 const MOUTH=['sore_throat','dry_mouth'];
 const yes=v=>v==='yes'||v==='mild'||v==='severe';
 
@@ -29,7 +29,7 @@ export function snorePercent(night){
   const snore=night.reduce((s,r)=>s+(r.analysis?.summary?.detected_snore_seconds||0),0);
   return rec>0?100*snore/rec:null;
 }
-// A night counts as a mouth-breathing night when it has a symptom and no blocked nose / cold / allergy.
+// A night counts as a symptom night (sore/dry throat or dry mouth) when it has a symptom and no blocked nose / cold / allergy.
 const mouthNight=a=>morningSymptoms(a).length>0&&!yes(a?.congestion);
 
 // history: answers of earlier nights (newest first), excluding this one.
@@ -40,7 +40,7 @@ export function evaluate(answers,{snorePct=null,history=[]}={}){
   let level='monitor';
   if(yes(answers.witnessed)){level='urgent';reasons.push('มีคนเห็นว่าหยุดหายใจขณะหลับ');}
   if(yes(answers.choking)){level='urgent';reasons.push('สะดุ้งตื่นเพราะสำลักหรือหายใจไม่ออก');}
-  if(snoring&&symptoms.length&&!congested){if(level==='monitor')level='consult';reasons.push(`แอปตรวจพบกรน ${snorePct.toFixed(0)}% ของเวลาบันทึก ร่วมกับอาการหายใจทางปากตอนตื่น`);}
-  if(symptomNights>=REPEAT_NIGHTS){if(level==='monitor')level='consult';reasons.push(`มีอาการหายใจทางปาก ${symptomNights} ใน ${recent.length} คืนล่าสุด`);}
+  if(snoring&&symptoms.length&&!congested){if(level==='monitor')level='consult';reasons.push(`แอปตรวจพบกรน ${snorePct.toFixed(0)}% ของเวลาบันทึก ร่วมกับคอแห้งหรือปากแห้งตอนตื่น`);}
+  if(symptomNights>=REPEAT_NIGHTS){if(level==='monitor')level='consult';reasons.push(`มีคอแห้งหรือปากแห้งตอนตื่น ${symptomNights} ใน ${recent.length} คืนล่าสุด`);}
   return {level,reasons,symptoms,snoring,snorePct,symptomNights,nightsConsidered:recent.length,confounder:congested};
 }
